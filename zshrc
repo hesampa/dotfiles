@@ -5,7 +5,7 @@ export LANG=en_US.UTF-8
 
 . `brew --prefix`/etc/profile.d/z.sh
 
-ZSH_THEME="mh"
+ZSH_THEME='mh'
 
 plugins=(git brew )
 

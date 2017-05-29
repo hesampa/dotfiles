@@ -62,7 +62,7 @@
         " timeout on keycodes, not on mappings
         set notimeout
         set ttimeout
-        set timeoutlen=100
+        set timeoutlen=1000
     "}}}
 
 " }}}
