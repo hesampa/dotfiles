@@ -60,8 +60,7 @@
 
     " timeout {{{2
         " timeout on keycodes, not on mappings
-        set notimeout
-        set ttimeout
+        set ttimeoutlen=0
         set timeoutlen=1000
     "}}}
 
