@@ -1,2 +1,2 @@
 # dotfiles
-Probably the best bee<ESC>caw dotfiles in the world. :x
+Probably the best bee&lt;ESC&rt;caw dotfiles in the world. :w
