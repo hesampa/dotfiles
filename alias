@@ -1,7 +1,11 @@
 # ALIASES
 # latex report
+export LADIR=~/dropbox/kth/master/report/
 
-alias larep='cd ~/dropbox/kth/master/report/; vim ./sections/*.tex main.tex ./refs/*.bib'
+alias larep='cd $LADIR; vim ./sections/*.tex main.tex ./refs/*.bib'
+
+alias crep='latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles'
+
 
 # VIM
 alias v='vim'
