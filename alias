@@ -6,7 +6,6 @@ alias larep='cd $LADIR; vim ./sections/*.tex main.tex ./refs/*.bib'
 
 alias crep='latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles'
 
-
 # VIM
 alias v='vim'
 alias vi='vim'
@@ -15,6 +14,7 @@ alias mvim='mvim -v'
 # DOTFILES
 alias vimrc='vim ~/dotfiles/vimrc'
 alias zshrc='vim ~/dotfiles/zshrc'
+alias tmuxrc='vim ~/dotfiles/tmux.conf'
 
 # PYTHON
 alias py2='python'
