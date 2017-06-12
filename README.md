@@ -1,2 +1,2 @@
 # dotfiles
-Probably the best bee&lt;ESC&gt;caw dotfiles in the world. :w
+IA^[10aa^[5aw^[a yea^[4ah^[5a!^[:w^M
