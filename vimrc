@@ -111,7 +111,7 @@
 
         " python {{{3
             au FileType python call ProgramType()
-            au FileType python noremap <buffer> <Leader>j :w<CR>:!python3 %<CR>
+            au FileType python noremap <buffer> <Leader>j :w<CR>:!python %<CR>
         " }}}
 
         " tex {{{3
