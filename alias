@@ -1,9 +1,6 @@
-# ALIASES
 # latex report
 export LADIR=~/dropbox/kth/master/report/
-
 alias larep='cd $LADIR; vim ./sections/*.tex main.tex ./refs/*.bib'
-
 alias crep='latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles'
 
 # VIM
@@ -20,4 +17,9 @@ alias tmuxrc='vim ~/dotfiles/tmux.conf'
 alias py2='python'
 alias py3='python3'
 
+# tmux
 alias t='tmux'
+
+
+# ls
+alias lsl='ls -1'
