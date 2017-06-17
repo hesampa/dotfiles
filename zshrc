@@ -8,8 +8,8 @@ export DESK=~/desktop/
 . `brew --prefix`/etc/profile.d/z.sh
 
 # oh my zsh
-# ZSH_THEME='mh'
-# plugins=(git brew)
+ZSH_THEME='mh'
+plugins=(git brew)
 
 # 10ms for key sequences
 KEYTIMEOUT=1
@@ -20,4 +20,3 @@ source ~/.salias
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 PROMPT="[%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
-RPROMPT='$(git_prompt_info)'
