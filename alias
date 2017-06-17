@@ -12,6 +12,10 @@ alias mvim='mvim -v'
 alias vimrc='vim ~/dotfiles/vimrc'
 alias zshrc='vim ~/dotfiles/zshrc'
 alias tmuxrc='vim ~/dotfiles/tmux.conf'
+alias aliases='vim ~/dotfiles/alias'
+alias szsh='source ~/dotfiles/zshrc'
+alias stmux='tmux source-file ~/dotfiles/tmux.conf'
+alias salias='source ~/dotfiles/alias'
 
 # PYTHON
 alias py2='python'
@@ -19,7 +23,6 @@ alias py3='python3'
 
 # tmux
 alias t='tmux'
-
 
 # ls
 alias lsl='ls -1'

@@ -103,9 +103,8 @@
     " universal programtype {{{3
         function ProgramType()
             set formatprg=par\ -w72j        " format using par
-            hi ColorColumn ctermbg=red
+            hi ColorColumn ctermfg=1
             call matchadd('ColorColumn', '\%74v', 74) " higlights nth col
-            unmap <silent><Leader>vw
         endfunction
     " }}}
 
