@@ -97,6 +97,35 @@
         endif
     " }}}
 
+    " resize-window {{{2
+        function IsMostBottomRight()
+            let oldw = winnr()
+            silent! exe "normal! \<c-w>j"
+            let neww = winnr()
+            silent! exe oldw.'wincmd w'
+            return oldw == neww
+        endfunction
+
+        function ResizeUp()
+            if IsMostBottomRight()
+                silent! exe "normal! \<c-w>-"
+            else
+                silent! exe "normal! \<c-w>+"
+            endif
+        endfunction
+
+        function ResizeDown()
+            if IsMostBottomRight()
+                silent! exe "normal! \<c-w>+"
+            else
+                silent! exe "normal! \<c-w>-"
+            endif
+        endfunction
+
+        nnoremap <silent> <c-w>+ :call ResizeUp()<cr>
+        nnoremap <silent> <c-w>- :call ResizeDown()<cr>
+        " }}}
+
     " universal bindings {{{2
         noremap ; :
         noremap <silent><Leader>l :set hls!<CR>
