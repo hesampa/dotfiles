@@ -81,7 +81,7 @@
 " term settings {{{1
     set t_Co=16
     set background=dark
-    colorscheme base16-tomorrow
+    colorscheme base16-tomorrow-night
 " }}}
 
 " keybindings {{{1
