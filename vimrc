@@ -88,8 +88,8 @@
 " keybindings {{{1
 
     " tmux-navigation {{{2
-        let g:tmux_navigator_no_mappings = 1
         if has('mac')
+            let g:tmux_navigator_no_mappings = 1
             nnoremap <silent> ˙ :TmuxNavigateLeft<cr>
             nnoremap <silent> ∆ :TmuxNavigateDown<cr>
             nnoremap <silent> ˚ :TmuxNavigateUp<cr>
@@ -100,6 +100,7 @@
 
     " vim-resize {{{2
         if has('mac')
+            let g:vim_resize_disable_auto_mappings = 1
             nnoremap <silent> Ó :CmdResizeLeft<cr>
             nnoremap <silent> Ô :CmdResizeDown<cr>
             nnoremap <silent>  :CmdResizeUp<cr>
