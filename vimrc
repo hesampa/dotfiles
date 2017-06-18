@@ -98,7 +98,7 @@
     " }}}
 
     " resize-window {{{2
-        function IsMostBottomRight()
+        function IsMostBottom()
             let oldw = winnr()
             silent! exe "normal! \<c-w>j"
             let neww = winnr()
@@ -107,7 +107,7 @@
         endfunction
 
         function ResizeUp()
-            if IsMostBottomRight()
+            if IsMostBottom()
                 silent! exe "normal! \<c-w>-"
             else
                 silent! exe "normal! \<c-w>+"
@@ -115,7 +115,7 @@
         endfunction
 
         function ResizeDown()
-            if IsMostBottomRight()
+            if IsMostBottom()
                 silent! exe "normal! \<c-w>+"
             else
                 silent! exe "normal! \<c-w>-"
