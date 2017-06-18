@@ -153,7 +153,7 @@
             au FileType vimwiki setlocal syntax=on
         " }}}
 
-" }}}
+    "}}}
 
 
 "}}}
