@@ -86,6 +86,17 @@
 
 " keybindings {{{1
 
+    " tmux-navigation {{{2
+        let g:tmux_navigator_no_mappings = 1
+        if has('mac')
+            nnoremap <silent> ˙ :TmuxNavigateLeft<cr>
+            nnoremap <silent> ∆ :TmuxNavigateDown<cr>
+            nnoremap <silent> ˚ :TmuxNavigateUp<cr>
+            nnoremap <silent> ¬ :TmuxNavigateRight<cr>
+            nnoremap <silent> π :TmuxNavigatePrevious<cr>
+        endif
+    " }}}
+
     " universal bindings {{{2
         noremap ; :
         noremap <silent><Leader>l :set hls!<CR>
@@ -135,8 +146,6 @@
 
 
 "}}}
-"
-
 
 " vim: foldmethod=marker
 
