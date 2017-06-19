@@ -89,24 +89,20 @@
 " keybindings {{{1
 
     " tmux-navigation {{{2
-        if has('mac')
-            let g:tmux_navigator_no_mappings = 1
-            nnoremap <silent> ˙ :TmuxNavigateLeft<cr>
-            nnoremap <silent> ∆ :TmuxNavigateDown<cr>
-            nnoremap <silent> ˚ :TmuxNavigateUp<cr>
-            nnoremap <silent> ¬ :TmuxNavigateRight<cr>
-            nnoremap <silent> π :TmuxNavigatePrevious<cr>
-        endif
+        let g:tmux_navigator_no_mappings = 1
+        nnoremap <silent> h :TmuxNavigateLeft<cr>
+        nnoremap <silent> j :TmuxNavigateDown<cr>
+        nnoremap <silent> k :TmuxNavigateUp<cr>
+        nnoremap <silent> l :TmuxNavigateRight<cr>
+        nnoremap <silent> p :TmuxNavigatePrevious<cr>
     " }}}
 
     " vim-resize {{{2
-        if has('mac')
-            let g:vim_resize_disable_auto_mappings = 1
-            nnoremap <silent> Ó :CmdResizeLeft<cr>
-            nnoremap <silent> Ô :CmdResizeDown<cr>
-            nnoremap <silent>  :CmdResizeUp<cr>
-            nnoremap <silent> Ò :CmdResizeRight<cr>
-        endif
+        let g:vim_resize_disable_auto_mappings = 1
+        nnoremap <silent> H :CmdResizeLeft<cr>
+        nnoremap <silent> J :CmdResizeDown<cr>
+        nnoremap <silent> K :CmdResizeUp<cr>
+        nnoremap <silent> L :CmdResizeRight<cr>
     "}}}
 
     " universal bindings {{{2
