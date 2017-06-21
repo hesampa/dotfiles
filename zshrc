@@ -5,6 +5,10 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/
 export DOTFILES=~/dotfiles
 export DESK=~/desktop/
 
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 . `brew --prefix`/etc/profile.d/z.sh
 
 # oh my zsh
