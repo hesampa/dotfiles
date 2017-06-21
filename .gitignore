@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!alias
+!tmux.conf
+!vimrc
+!zshrc
+
+# ...even if they are in subdirectories
+!*/
