@@ -130,6 +130,7 @@
         " python {{{3
             au FileType python call ProgramType()
             au FileType python noremap <buffer> <Leader>j :w<CR>:!python %<CR>
+            au FileType python setlocal foldmethod=indent
         " }}}
 
         " tex {{{3
