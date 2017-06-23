@@ -6,6 +6,7 @@
     Plug 'chriskempson/base16-vim'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'godlygeek/tabular',               { 'on':  'Tab' }
+    Plug 'majutsushi/tagbar'
     Plug 'raimondi/delimitmate'
     Plug 'sjl/gundo.vim',                   { 'on':  'GundoToggle' }
     Plug 'tpope/vim-commentary'
@@ -157,4 +158,3 @@
 "}}}
 
 " vim: foldmethod=marker
-
