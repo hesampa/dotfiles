@@ -81,12 +81,6 @@
     set ttyscroll=3
 " }}}
 
-" term settings {{{1
-    set t_Co=16
-    set background=dark
-    colorscheme base16-tomorrow-night
-" }}}
-
 " keybindings {{{1
 
     " tmux-navigation {{{2
@@ -156,5 +150,13 @@
 
 
 "}}}
+
+" term settings {{{1
+    set t_Co=16
+    set background=dark
+    colorscheme base16-tomorrow-night
+    hi StatusLine ctermbg=237
+    hi VertSplit ctermbg=237
+" }}}
 
 " vim: foldmethod=marker

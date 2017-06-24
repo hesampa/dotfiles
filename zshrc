@@ -2,8 +2,8 @@ export ZSH=/Users/Hesam/.oh-my-zsh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
-export DOTFILES=~/dotfiles
-export DESK=~/desktop/
+export dotfiles=~/dotfiles
+export desk=~/desktop/
 
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
