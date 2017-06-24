@@ -142,7 +142,7 @@
         " vimwiki {{{3
             let g:vimwiki_list = [{'path' : '~/Dropbox/vimwiki/files/', 'path_html' : '~/Dropbox/vimwiki/html/'}]
             syntax manual
-            au FileType vimwiki setlocal spell
+            au FileType vimwiki set spell
             au FileType vimwiki setlocal syntax=on
         " }}}
 
@@ -155,6 +155,8 @@
     set t_Co=16
     set background=dark
     colorscheme base16-tomorrow-night
+    hi IncSearch ctermbg=white ctermfg=black
+    hi Search ctermbg=NONE ctermfg=1
     hi StatusLine ctermbg=237
     hi VertSplit ctermbg=237
 " }}}
