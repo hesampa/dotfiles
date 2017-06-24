@@ -19,7 +19,7 @@ plugins=(git brew)
 KEYTIMEOUT=1
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/alias
+source $dotfiles/alias
 source ~/.salias
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
