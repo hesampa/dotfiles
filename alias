@@ -1,21 +1,12 @@
-# latex report
-export LADIR=~/dropbox/kth/master/report/
-alias larep='cd $LADIR; vim ./sections/*.tex main.tex ./refs/*.bib'
-alias crep='latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles'
+# brew
+alias bc='brew cleanup'
+alias bd='brew doctor'
+alias bi='brew install'
+alias bl='brew list'
+alias bp='brew prune'
+alias bu='brew upgrade'
 
-# git
-alias ga='git add .'
-alias gc='git commit'
-alias gh='git push'
-alias gs='git status'
-alias gu='git pull'
-
-# VIM
-alias mvim='mvim -v'
-alias v='vim'
-alias vi='vim'
-
-# DOTFILES
+# dotfiles
 alias aliases='vim ~/dotfiles/alias'
 alias salias='source ~/dotfiles/alias'
 alias stmux='tmux source-file ~/dotfiles/tmux.conf'
@@ -24,7 +15,23 @@ alias tmuxrc='vim ~/dotfiles/tmux.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
 alias zshrc='vim ~/dotfiles/zshrc'
 
-# PYTHON
+# git
+alias ga='git add .'
+alias gc='git commit'
+alias gh='git push'
+alias gs='git status'
+alias gu='git pull'
+
+# latex report
+alias larep='cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib'
+alias crep='latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles'
+
+# vim
+alias mvim='mvim -v'
+alias v='vim'
+alias vi='vim'
+
+# python
 alias py2='python'
 alias py3='python3'
 
