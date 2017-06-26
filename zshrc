@@ -21,8 +21,6 @@ plugins=(git brew)
 KEYTIMEOUT=1
 
 source $ZSH/oh-my-zsh.sh
-source $dotfiles/alias
-source ~/.salias
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 PROMPT="[%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
