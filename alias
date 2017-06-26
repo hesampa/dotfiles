@@ -1,42 +1,43 @@
 # brew
-alias bc='brew cleanup'
-alias bd='brew doctor'
-alias bi='brew install'
-alias bl='brew list'
-alias bp='brew prune'
-alias bu='brew upgrade'
+alias bc="brew cleanup"
+alias bd="brew doctor"
+alias bi="brew install"
+alias bl="brew list"
+alias bp="brew prune"
+alias bu="brew upgrade"
 
 # dotfiles
-alias aliases='vim ~/dotfiles/alias'
-alias salias='source ~/dotfiles/alias'
-alias stmux='tmux source-file ~/dotfiles/tmux.conf'
-alias szsh='source ~/dotfiles/zshrc'
-alias tmuxrc='vim ~/dotfiles/tmux.conf'
-alias vimrc='vim ~/dotfiles/vimrc'
-alias zshrc='vim ~/dotfiles/zshrc'
+alias aliases="vim ~/dotfiles/alias"
+alias salias="source ~/dotfiles/alias"
+alias stmux="tmux source-file ~/dotfiles/tmux.conf"
+alias szsh="source ~/dotfiles/zshrc"
+alias tmuxrc="vim ~/dotfiles/tmux.conf"
+alias vimrc="vim ~/dotfiles/vimrc"
+alias zshrc="vim ~/dotfiles/zshrc"
 
 # git
-alias ga='git add .'
-alias gc='git commit'
-alias gh='git push'
-alias gs='git status'
-alias gu='git pull'
+alias ga="git add ."
+alias gc="git commit"
+alias gd="git diff"
+alias gh="git push"
+alias gs="git status"
+alias gu="git pull"
 
 # latex report
-alias larep='cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib'
-alias crep='latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles'
+alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
+alias crep="latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles"
 
 # vim
-alias mvim='mvim -v'
-alias v='vim'
-alias vi='vim'
+alias mvim="mvim -v"
+alias v="vim"
+alias vi="vim"
 
 # python
-alias py2='python'
-alias py3='python3'
+alias py2="python"
+alias py3="python3"
 
 # tmux
-alias t='tmux'
+alias t="tmux"
 
 # ls
-alias ll='ls -1'
+alias ll="ls -1"

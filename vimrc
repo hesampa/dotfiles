@@ -155,10 +155,10 @@
     set t_Co=16
     set background=dark
     colorscheme base16-tomorrow-night
-    hi IncSearch ctermbg=white ctermfg=black
+
+    hi IncSearch ctermbg=15 ctermfg=0
     hi Search ctermbg=NONE ctermfg=1
-    hi StatusLine ctermbg=237
-    hi VertSplit ctermbg=237
+    hi VertSplit ctermbg=10 ctermfg=10
 " }}}
 
 " vim: foldmethod=marker
