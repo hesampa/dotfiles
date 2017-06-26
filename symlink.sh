@@ -1,21 +1,21 @@
 #!/bin/bash
 
-echo 'Symlinking dotfiles...'
+echo "Symlinking dotfiles..."
 
-files=('vimrc' 'zshrc' 'tmux.conf')
 
 if [ ! -d $dotfiles ]; then
-    echo 'dotfiles folder not setup correctly. Exiting...'
+    echo "dotfiles folder not setup correctly. Exiting..."
     exit 1
 fi
 
-for file in ${files[@]}:
-do
+files=("tmux.conf" "vimrc" "zshenv" "zshrc")
+
+for file in "${files[@]}"; do
     if [ -e ~/.$file ]; then
         rm ~/.$file
     fi
         ln -sf $dotfiles/$file ~/.$file
-        echo "$file"
+        echo "$file linked"
 done
 
-echo 'Done!'
+echo "Done!"

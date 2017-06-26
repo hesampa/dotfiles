@@ -41,3 +41,4 @@ alias t="tmux"
 
 # ls
 alias ll="ls -1"
+alias lla="ls -1a"
