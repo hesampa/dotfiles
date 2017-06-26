@@ -43,12 +43,11 @@
 
     " ruler and statusline {{{2
         set laststatus=2
-        " set noshowmode                  " do not duplicate to statusline
         set number                      " show line numbers
         set relativenumber              " relative line numbers
-        set ruler
-        set rulerformat=%l,%c
-        set showcmd                     " show commands in bottom left corner
+        " set ruler
+        " set rulerformat=%l,%c
+        set showcmd                     " show commands in bottom right corner
         set showmatch                   " show matching brace temporarily
     " }}}
 
