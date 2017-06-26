@@ -5,15 +5,15 @@
     Plug 'breuckelen/vim-resize'
     Plug 'chriskempson/base16-vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'godlygeek/tabular',               { 'on':  'Tab' }
-    Plug 'majutsushi/tagbar'
+    Plug 'godlygeek/tabular',                   { 'on':  'Tab' }
+    Plug 'majutsushi/tagbar',                   { 'on': 'TagbarToggle'}
     Plug 'raimondi/delimitmate'
-    Plug 'sjl/gundo.vim',                   { 'on':  'GundoToggle' }
+    Plug 'sjl/gundo.vim',                       { 'on':  'GundoToggle' }
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
-    Plug 'vimwiki/vimwiki',                 { 'on': 'VimwikiIndex' }
+    Plug 'vimwiki/vimwiki',                     { 'on': 'VimwikiIndex' }
 
     call plug#end()
 
@@ -101,6 +101,7 @@
     "}}}
 
     " universal bindings {{{2
+        noremap <silent><Leader>t :TagbarToggle<CR>
         noremap ; :
         noremap <silent><Leader>l :set hls!<CR>
         noremap Q gqip
