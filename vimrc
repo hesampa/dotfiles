@@ -45,8 +45,8 @@
         set laststatus=2
         set number                      " show line numbers
         set relativenumber              " relative line numbers
-        " set ruler
-        " set rulerformat=%l,%c
+        set noruler
+        set rulerformat=%l:%c
         set showcmd                     " show commands in bottom right corner
         set showmatch                   " show matching brace temporarily
     " }}}
