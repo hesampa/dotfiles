@@ -42,13 +42,13 @@
     " }}}
 
     " ruler and statusline {{{2
-        set laststatus=2
-        set number                      " show line numbers
-        set relativenumber              " relative line numbers
+        set laststatus=2            " always show statusline
+        set number                  " show line numbers
+        set relativenumber
         set noruler
         set rulerformat=%l:%c
-        set showcmd                     " show commands in bottom right corner
-        set showmatch                   " show matching brace temporarily
+        set showcmd                 " show commands in bottom right corner
+        set showmatch               " show matching brace temporarily
     " }}}
 
     " indentation {{{2
@@ -74,10 +74,9 @@
 " }}}
 
 " performance {{{1
-    syntax off
     " set synmaxcol=80
     set ttyfast
-    set ttyscroll=3
+    " set ttyscroll=3
 " }}}
 
 " keybindings {{{1
@@ -151,14 +150,19 @@
 
 "}}}
 
-" term settings {{{1
+" colors and highlight {{{1
     set t_Co=16
     set background=dark
     colorscheme base16-tomorrow-night
 
+    syntax off
+
     hi IncSearch ctermbg=15 ctermfg=0
     hi Search ctermbg=NONE ctermfg=1
     hi VertSplit ctermbg=10 ctermfg=10
+
+    " au InsertEnter * hi StatusLine ctermfg=5
+    " au InsertLeave * hi StatusLine ctermfg=12
 " }}}
 
 " vim: foldmethod=marker
