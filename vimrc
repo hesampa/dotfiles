@@ -74,9 +74,9 @@
 " }}}
 
 " performance {{{1
-    " set synmaxcol=80
+    set lazyredraw
     set ttyfast
-    " set ttyscroll=3
+    set ttyscroll=3
 " }}}
 
 " keybindings {{{1
