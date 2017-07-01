@@ -152,8 +152,8 @@
 
 " colors and highlight {{{1
     set t_Co=16
-    set background=light
     colorscheme base16-tomorrow-night
+    set background=light
 
     syntax off
 
@@ -161,8 +161,9 @@
     hi Search ctermbg=NONE ctermfg=1
     hi VertSplit ctermbg=10 ctermfg=10
 
-    " au InsertEnter * hi StatusLine ctermfg=5
-    " au InsertLeave * hi StatusLine ctermfg=12
+    " otherwise text black in GNOME
+    hi ModeMsg cterm=NONE
+    hi DiffText cterm=NONE
 " }}}
 
 " vim: foldmethod=marker
