@@ -152,7 +152,7 @@
 
 " colors and highlight {{{1
     set t_Co=16
-    set background=dark
+    set background=light
     colorscheme base16-tomorrow-night
 
     syntax off

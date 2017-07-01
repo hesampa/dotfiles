@@ -46,3 +46,11 @@ alias t="tmux"
 # ls
 alias ll="ls -1"
 alias lla="ll -a"
+
+# date
+alias week="date +%V"
+
+# moving, copying
+alias del="rmtrash"
+
+
