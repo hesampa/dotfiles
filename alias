@@ -7,7 +7,7 @@ alias bp="brew prune"
 alias bu="brew upgrade"
 
 # config files
-alias aliases="vim ~/dotfiles/alias"
+alias alice="vim ~/dotfiles/alias"
 alias salias="source ~/dotfiles/alias"
 alias sshrc="vim ~/.ssh/config"
 alias tmuxrc="vim ~/dotfiles/tmux.conf"
@@ -52,5 +52,3 @@ alias week="date +%V"
 
 # moving, copying
 alias del="rmtrash"
-
-
