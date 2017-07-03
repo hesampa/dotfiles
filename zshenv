@@ -5,3 +5,5 @@ fi
 if [ -f ~/dotfiles/alias ]; then
     source ~/.salias
 fi
+
+export trash=~/.Trash/
