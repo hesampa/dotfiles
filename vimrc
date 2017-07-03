@@ -45,7 +45,7 @@
         set laststatus=2            " always show statusline
         set number                  " show line numbers
         set relativenumber
-        set noruler
+        set ruler
         set rulerformat=%l:%c
         set showcmd                 " show commands in bottom right corner
         set showmatch               " show matching brace temporarily
@@ -157,8 +157,8 @@
 
     syntax off
 
-    hi IncSearch ctermbg=15 ctermfg=0
-    hi Search ctermbg=NONE ctermfg=1
+    hi IncSearch ctermbg=14 ctermfg=0
+    hi Search cterm=reverse ctermbg=14 ctermfg=0
     hi VertSplit ctermbg=10 ctermfg=10
 
     " otherwise text black in GNOME
