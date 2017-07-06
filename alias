@@ -52,3 +52,4 @@ alias week="date +%V"
 
 # moving, copying
 alias del="rmtrash"
+alias emptytrash="rm -r ~/.Trash/*"

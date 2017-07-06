@@ -116,7 +116,8 @@
     " universal programtype {{{3
         function ProgramType()
             set formatprg=par\ -w72j        " format using par
-            hi ColorColumn ctermfg=1
+            call matchadd('Todo', 'TODO')
+            hi ColorColumn ctermfg=1 ctermbg=0
             call matchadd('ColorColumn', '\%74v', 74) " higlights nth col
         endfunction
     " }}}
