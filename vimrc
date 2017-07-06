@@ -117,7 +117,6 @@
         function ProgramType()
             set formatprg=par\ -w72j        " format using par
             call matchadd('Todo', 'TODO')
-            hi ColorColumn ctermfg=1 ctermbg=0
             call matchadd('ColorColumn', '\%74v', 74) " higlights nth col
         endfunction
     " }}}
@@ -158,8 +157,10 @@
 
     syntax off
 
+    hi ColorColumn ctermfg=1 ctermbg=0
     hi IncSearch ctermbg=14 ctermfg=0
     hi Search cterm=reverse ctermbg=14 ctermfg=0
+    hi Todo cterm=NONE ctermfg=3 ctermbg=0
     hi VertSplit ctermbg=10 ctermfg=10
 
     " otherwise text black in GNOME
