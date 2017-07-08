@@ -151,11 +151,11 @@
 "}}}
 
 " colors and highlight {{{1
-    set t_Co=16
-    colorscheme base16-tomorrow-night
-    set background=light
-
     syntax off
+
+    set t_Co=16
+    set background=light
+    colorscheme base16-tomorrow-night
 
     hi ColorColumn ctermfg=1 ctermbg=0
     hi IncSearch ctermbg=14 ctermfg=0
