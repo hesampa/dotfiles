@@ -12,7 +12,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+space exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -66,7 +66,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+/* bindsym $mod+space focus mode_toggle */
 
 # focus the parent container
 bindsym $mod+a focus parent
