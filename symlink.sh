@@ -10,11 +10,8 @@ fi
 files=("tmux.conf" "vimrc" "zshenv" "zshrc")
 
 for file in "${files[@]}"; do
-    if [ -e ~/.$file ]; then
-        rm ~/.$file
-    fi
-        ln -sf ~/dotfiles/$file ~/.$file
-        echo "$file linked"
+    ln -sf ~/dotfiles/$file ~/.$file
+    echo "$file linked"
 done
 
 echo "Done!"
