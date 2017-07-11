@@ -1,10 +1,10 @@
 [options]
     font = Source Code Pro 13
-
     cursor_blink = off
+    mouse_autohide = true
+    allow_bold = true
 
 [colors]
-
     # special
     foreground      = #c5c8c6
     foreground_bold = #c5c8c6

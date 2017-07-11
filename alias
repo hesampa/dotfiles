@@ -1,19 +1,24 @@
 # brew
-alias bc="brew cleanup"
-alias bd="brew doctor"
-alias bi="brew install"
-alias bl="brew list"
-alias bp="brew prune"
-alias bu="brew upgrade"
+if hash brew 2>/dev/null; then
+    alias bc="brew cleanup"
+    alias bd="brew doctor"
+    alias bi="brew install"
+    alias bl="brew list"
+    alias bp="brew prune"
+    alias bu="brew upgrade"
+fi
 
 # config files
 alias alice="vim ~/dotfiles/alias"
-alias salias="source ~/dotfiles/alias"
+alias salice="source ~/dotfiles/alias"
+alias bashrc="vim ~/dotfiles/bashrc"
 alias sshrc="vim ~/.ssh/config"
 alias tmuxrc="vim ~/dotfiles/tmux.conf"
 alias vimrc="vim ~/dotfiles/vimrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias zshrc="vim ~/dotfiles/zshrc"
+alias i3rc="vim ~/dotfiles/config/config.i3"
+alias termiterc="vim ~/dotfiles/config/config.termite"
 
 alias stmux="tmux source-file ~/dotfiles/tmux.conf"
 alias szsh="source ~/dotfiles/zshrc"
@@ -46,6 +51,7 @@ alias t="tmux -2"
 # ls
 alias ll="ls -1"
 alias lla="ll -a"
+alias ls="ls --color=auto"
 
 # date
 alias week="date +%V"

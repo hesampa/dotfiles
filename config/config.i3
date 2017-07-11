@@ -15,14 +15,13 @@ floating_modifier $mod
 bindsym $mod+space exec termite
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+ctrl+d kill
 
-# start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+## PROGRAMS
+bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+g exec google-chrome-stable
 
 # change focus
 bindsym $mod+h focus left

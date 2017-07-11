@@ -7,7 +7,7 @@ if [ ! -d ~/dotfiles ]; then
     exit 1
 fi
 
-files=("tmux.conf" "vimrc" "zshenv" "zshrc")
+files=("bashrc" "tmux.conf" "vimrc" "zshenv" "zshrc")
 
 for file in "${files[@]}"; do
     ln -sf ~/dotfiles/$file ~/.$file
