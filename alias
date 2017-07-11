@@ -10,16 +10,18 @@ fi
 
 # config files
 alias alice="vim ~/dotfiles/alias"
-alias salice="source ~/dotfiles/alias"
 alias bashrc="vim ~/dotfiles/bashrc"
+alias i3rc="vim ~/dotfiles/config/config.i3"
+alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias sshrc="vim ~/.ssh/config"
+alias termiterc="vim ~/dotfiles/config/config.termite"
 alias tmuxrc="vim ~/dotfiles/tmux.conf"
 alias vimrc="vim ~/dotfiles/vimrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias zshrc="vim ~/dotfiles/zshrc"
-alias i3rc="vim ~/dotfiles/config/config.i3"
-alias termiterc="vim ~/dotfiles/config/config.termite"
 
+# source
+alias salice="source ~/dotfiles/alias"
+alias sbashrc="source ~/dotfiles/bashrc"
 alias stmux="tmux source-file ~/dotfiles/tmux.conf"
 alias szsh="source ~/dotfiles/zshrc"
 
