@@ -17,3 +17,5 @@ export PS1="\[\033[38;5;7m\][\h:\[$(tput sgr0)\]\[\033[38;5;1m\]\w\[$(tput sgr0)
 if [ -d ~/dotfiles/ ]; then
     source ~/dotfiles/alias
 fi
+
+alias ls='ls --color=auto'

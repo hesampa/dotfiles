@@ -51,7 +51,6 @@ alias t="tmux -2"
 # ls
 alias ll="ls -1"
 alias lla="ll -a"
-alias ls="ls --color=auto"
 
 # date
 alias week="date +%V"
