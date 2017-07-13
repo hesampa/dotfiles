@@ -155,7 +155,7 @@
 
     set t_Co=16
     set background=light
-    colorscheme base16-ocean
+    colorscheme base16-tomorrow-night
 
     hi ColorColumn ctermfg=1 ctermbg=0
     hi IncSearch ctermbg=14 ctermfg=0
