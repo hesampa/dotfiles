@@ -16,6 +16,7 @@ alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias sshrc="vim ~/.ssh/config"
 alias termiterc="vim ~/dotfiles/config/config.termite"
 alias tmuxrc="vim ~/dotfiles/tmux.conf"
+alias xinitrc="vim ~/dotfiles/xinitrc"
 alias vimrc="vim ~/dotfiles/vimrc"
 alias zshrc="vim ~/dotfiles/zshrc"
 

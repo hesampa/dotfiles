@@ -5,7 +5,7 @@
 export VISUAL=vim
 export EDITOR=vim
 
-LS_COLORS=$LS_COLORS:'ex=0;32:ln=0;35:di=0;34:ow=0;34'
+LS_COLORS=$LS_COLORS:'ex=0;32:ln=0;35:di=0;31:ow=0;34'
 export LS_COLORS
 
 # If not running interactively, don't do anything

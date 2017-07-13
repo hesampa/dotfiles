@@ -1,7 +1,6 @@
-# keyboard repeat
 xset r rate 200 25
+xset s off -dpms # disable screen blanking
 
-# keyboard mappings
 setxkbmap -option altwin:swap_lalt_lwin
 setxkbmap -option ctrl:nocaps
 
