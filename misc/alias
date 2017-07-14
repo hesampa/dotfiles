@@ -9,22 +9,22 @@ if hash brew 2>/dev/null; then
 fi
 
 # config files
-alias alice="vim ~/dotfiles/alias"
-alias bashrc="vim ~/dotfiles/bashrc"
-alias i3rc="vim ~/dotfiles/config/config.i3"
+alias alice="vim ~/dotfiles/misc/alias"
+alias bashrc="vim ~/dotfiles/bash/.bashrc"
+alias i3rc="vim ~/dotfiles/i3/.config/config"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias sshrc="vim ~/.ssh/config"
-alias termiterc="vim ~/dotfiles/config/config.termite"
-alias tmuxrc="vim ~/dotfiles/tmux.conf"
+alias termiterc="vim ~/dotfiles/termite/.config/termite/config"
+alias tmuxrc="vim ~/dotfiles/tmux/.tmux.conf"
 alias xinitrc="vim ~/dotfiles/xinitrc"
-alias vimrc="vim ~/dotfiles/vimrc"
-alias zshrc="vim ~/dotfiles/zshrc"
+alias vimrc="vim ~/dotfiles/vim/.vimrc"
+alias zshrc="vim ~/dotfiles/zsh/.zshrc"
 
 # source
-alias salice="source ~/dotfiles/alias"
-alias sbashrc="source ~/dotfiles/bashrc"
-alias stmux="tmux source-file ~/dotfiles/tmux.conf"
-alias szsh="source ~/dotfiles/zshrc"
+alias salice="source ~/dotfiles/misc/alias"
+alias sbashrc="source ~/dotfiles/bash/.bashrc"
+alias stmux="tmux source-file ~/dotfiles/tmux/.tmux.conf"
+alias szsh="source ~/dotfiles/zsh/.zshrc"
 
 # git
 alias ga="git add"

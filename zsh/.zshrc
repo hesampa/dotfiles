@@ -22,6 +22,6 @@ KEYTIMEOUT=1
 
 source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $dotfiles/alias
+source $dotfiles/misc/alias
 
 PROMPT="[%m:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
