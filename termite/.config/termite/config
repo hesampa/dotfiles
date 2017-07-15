@@ -1,6 +1,6 @@
 [options]
-    # font = Source Code Pro 13
-    font = Source Code Pro 13
+    # font = Source Code Pro 18
+    font = Inconsolata 16
     cursor_blink = off
     mouse_autohide = true
     allow_bold = true
