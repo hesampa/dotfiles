@@ -119,6 +119,7 @@
             call matchadd('Todo', 'TODO')
             call matchadd('ColorColumn', '\%74v', 74) " higlights nth col
         endfunction
+        au BufRead,BufNewFile * setfiletype conf
     " }}}
 
         " python {{{3
