@@ -11,7 +11,7 @@ fi
 # config files
 alias alice="vim ~/dotfiles/misc/alias"
 alias bashrc="vim ~/dotfiles/bash/.bashrc"
-alias i3rc="vim ~/dotfiles/i3/.config/config"
+alias i3rc="vim ~/dotfiles/i3/.config/i3/config"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias sshrc="vim ~/.ssh/config"
 alias termiterc="vim ~/dotfiles/termite/.config/termite/config"
