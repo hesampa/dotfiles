@@ -26,6 +26,7 @@ alias zshrc="vim ~/dotfiles/zsh/.zshrc"
 alias salice="source ~/dotfiles/misc/alias"
 alias sbashrc="source ~/dotfiles/bash/.bashrc"
 alias stmux="tmux source-file ~/dotfiles/tmux/.tmux.conf"
+alias szshenv="source ~/dotfiles/zsh/.zshenv"
 alias szsh="source ~/dotfiles/zsh/.zshrc"
 
 # git
