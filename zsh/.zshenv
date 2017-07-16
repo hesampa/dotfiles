@@ -1,8 +1,8 @@
-if [ -f ~/dotfiles/alias ]; then
+if [ -f ~/dotfiles/misc/alias ]; then
     source ~/dotfiles/alias
 fi
 
-if [ -f ~/dotfiles/alias ]; then
+if [ -f ~/.salias ]; then
     source ~/.salias
 fi
 

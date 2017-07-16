@@ -15,13 +15,12 @@ fi
 
 # oh my zsh
 ZSH_THEME='mh'
-plugins=(git brew)
+plugins=(brew git)
 
 # 10ms for key sequences
 KEYTIMEOUT=1
 
 source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $dotfiles/misc/alias
 
 PROMPT="[%m:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) "
