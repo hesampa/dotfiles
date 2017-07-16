@@ -10,7 +10,7 @@ fi
 
 # config files
 alias alice="vim ~/dotfiles/misc/alias"
-alias bashp="vim ~/dotfiles/bash/.bash_profile"
+alias bashenv="vim ~/dotfiles/bash/.bash_profile"
 alias bashrc="vim ~/dotfiles/bash/.bashrc"
 alias i3rc="vim ~/dotfiles/i3/.config/i3/config"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
@@ -24,6 +24,7 @@ alias zshrc="vim ~/dotfiles/zsh/.zshrc"
 
 # source
 alias salice="source ~/dotfiles/misc/alias"
+alias sbashenv="source ~/dotfiles/bash/.bash_profile"
 alias sbashrc="source ~/dotfiles/bash/.bashrc"
 alias stmux="tmux source-file ~/dotfiles/tmux/.tmux.conf"
 alias szshenv="source ~/dotfiles/zsh/.zshenv"

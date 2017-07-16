@@ -1,7 +1,7 @@
 [[ -r ~/dotfiles/bash/.bashrc ]] && source ~/dotfiles/bash/.bashrc
 
-export EDITOR=/usr/local/bin/vim
-export VISUAL=/usr/local/bin/vim
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 
 LS_COLO=RS$LS_COLORS:'ex=0;32:ln=0;35:di=0;34:ow=0;34'
 export LS_COLORS
