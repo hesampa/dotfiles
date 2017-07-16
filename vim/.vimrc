@@ -110,45 +110,8 @@
 " }}}
 
 " filetype settings {{{1
-
-    " programtype {{{2
-
-    " universal programtype {{{3
-        function ProgramType()
-            set formatprg=par\ -w72j        " format using par
-            call matchadd('Todo', 'TODO')
-            call matchadd('ColorColumn', '\%74v', 74) " higlights nth col
-        endfunction
-        au BufRead,BufNewFile * setfiletype conf
-    " }}}
-
-        " python {{{3
-            au FileType python call ProgramType()
-            au FileType python noremap <buffer> <Leader>j :w<CR>:!python %<CR>
-            au FileType python set foldmethod=indent
-        " }}}
-
-        " tex {{{3
-            function TexSettings()
-                noremap <buffer><Leader>j :w<CR>:!latexmk -dvi- -pdf -outdir=outfiles %; latexmk -outdir=outfiles -c %<CR>
-                set formatprg=par\ -w100j
-                setlocal spell
-            endfunction
-
-            au FileType tex,plaintex call TexSettings()
-
-        " }}}
-
-        " vimwiki {{{3
-            let g:vimwiki_list = [{'path' : '~/Dropbox/vimwiki/files/', 'path_html' : '~/Dropbox/vimwiki/html/'}]
-            syntax manual
-            au FileType vimwiki set spell
-            au FileType vimwiki setlocal syntax=on
-        " }}}
-
-    "}}}
-
-
+    au BufRead,BufNewFile * setfiletype conf
+    let g:vimwiki_list = [{'path' : '~/Dropbox/vimwiki/files/', 'path_html' : '~/Dropbox/vimwiki/html/'}]
 "}}}
 
 " colors and highlight {{{1
