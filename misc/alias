@@ -18,6 +18,7 @@ alias termiterc="vim ~/dotfiles/termite/.config/termite/config"
 alias tmuxrc="vim ~/dotfiles/tmux/.tmux.conf"
 alias xinitrc="vim ~/dotfiles/xinitrc"
 alias vimrc="vim ~/dotfiles/vim/.vimrc"
+alias zshenv="vim ~/dotfiles/zsh/.zshenv"
 alias zshrc="vim ~/dotfiles/zsh/.zshrc"
 
 # source
