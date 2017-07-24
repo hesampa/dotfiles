@@ -42,7 +42,7 @@
     " }}}
 
     " ruler and statusline {{{2
-        set laststatus=2            " always show statusline
+        set laststatus=1            " always show statusline
         set number                  " show line numbers
         set relativenumber
         set ruler
@@ -126,6 +126,8 @@
     hi Search cterm=reverse ctermbg=14 ctermfg=0
     hi Todo cterm=NONE ctermfg=3 ctermbg=0
     hi VertSplit ctermbg=10 ctermfg=10
+
+    call matchadd('Todo', 'TODO')
 
     " otherwise text black in GNOME
     hi ModeMsg cterm=NONE
