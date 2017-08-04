@@ -8,6 +8,7 @@
 
 export EDITOR=vim
 export VISUAL=vim
+export TERM=xterm-256color
 export dotfiles=~/dotfiles
 
 LS_COLORS=$LS_COLORS:'ex=0;32:ln=0;35:di=0;34:ow=0;34'
