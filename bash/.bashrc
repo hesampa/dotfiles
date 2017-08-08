@@ -5,11 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 export EDITOR=vim
 export VISUAL=vim
 export TERM=xterm-256color
 export dotfiles=~/dotfiles
+
+export LD_LIBRARY_PATH=/opt/cuda/lib64
 
 LS_COLORS=$LS_COLORS:'ex=0;32:ln=0;35:di=0;34:ow=0;34'
 export LS_COLORS

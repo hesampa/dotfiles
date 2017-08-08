@@ -1,4 +1,4 @@
-xset r rate 215 30
+xset r rate 220 30
 xset s off -dpms # disable screen blanking
 
 # setxkbmap -option altwin:swap_lalt_lwin
