@@ -80,6 +80,12 @@
 " }}}
 
 " keybindings {{{1
+"
+    " scroll {{{2
+        nnoremap <C-e> 5<C-e>
+        nnoremap <C-y> 5<C-y>
+
+    " }}}
 
     " tmux-navigation {{{2
         let g:tmux_navigator_no_mappings = 1
