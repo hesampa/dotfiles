@@ -41,7 +41,7 @@ alias gu="git pull"
 
 # latex report
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
-alias crep="latexmk -pvc -dvi- -pdf -outdir=$LADIR/outfiles"
+alias crep="latexmk -pvc -dvi- -pdf -outdir=$ladir/outfiles"
 
 # vim
 alias mvim="mvim -v"
