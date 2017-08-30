@@ -121,6 +121,6 @@ bar {
         font pango:monosans 11
 }
 
-# exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id parcellite
 exec --no-startup-id dropbox
