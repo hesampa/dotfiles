@@ -18,6 +18,7 @@ alias sshrc="vim ~/.ssh/config"
 alias termiterc="vim ~/dotfiles/termite/.config/termite/config"
 alias tmuxrc="vim ~/dotfiles/tmux/.tmux.conf"
 alias xinitrc="vim ~/dotfiles/xinit/.xinitrc"
+alias alarc="vim ~/dotfiles/alacritty/.config/alacritty/alacritty.yml"
 alias vimrc="vim ~/dotfiles/vim/.vimrc"
 alias zshenv="vim ~/dotfiles/zsh/.zshenv"
 alias zshrc="vim ~/dotfiles/zsh/.zshrc"
@@ -41,7 +42,7 @@ alias gu="git pull"
 
 # latex report
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
-alias crep="latexmk -pvc -dvi- -pdf -outdir=$ladir/outfiles"
+alias crep="latexmk -pvc -pdf -outdir=$ladir/outfiles"
 
 # vim
 alias mvim="mvim -v"
