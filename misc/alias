@@ -62,6 +62,7 @@ alias lla="ll -a"
 
 # date
 alias week="date +%V"
+alias cal="cal -wm"
 
 # moving, copying
 alias del="rmtrash"
