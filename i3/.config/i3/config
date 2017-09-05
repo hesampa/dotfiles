@@ -6,7 +6,7 @@ font pango:Incolsolata 7
 
 # new window
 new_window normal 1 px
-# hide_edge_borders both
+hide_edge_borders both
 for_window [class=".*"] title_format "%class"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -56,7 +56,7 @@ set $WS2 2 
 set $WS3 3 
 set $WS4 4 
 set $WS5 5 
-set $WS6 6
+set $WS6 6 
 set $WS7 7 
 set $WS8 8 ♪
 set $WS9 9 
