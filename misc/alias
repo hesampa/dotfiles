@@ -45,7 +45,6 @@ alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
 alias crep="latexmk -pvc -pdf -outdir=$ladir/outfiles"
 
 # vim
-alias mvim="mvim -v"
 alias v="vim"
 alias vi="vim"
 
@@ -67,3 +66,6 @@ alias cal="cal -wm"
 # moving, copying
 alias del="rmtrash"
 alias emptytrash="rm -r ~/.Trash/*"
+
+#tar
+alias tgz='tar -zxvf'
