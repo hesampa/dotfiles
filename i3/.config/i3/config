@@ -155,7 +155,6 @@ set $base0F #a3685a
 bar {
     status_command i3blocks -c ~/dotfiles/i3/.config/i3/i3blocks.conf
     font pango:FontAwesome 10
-    # strip_workspace_numbers yes
     position top
 
     colors {
@@ -164,7 +163,7 @@ bar {
         statusline $base04
 
         # State             Border  BG      Text
-        focused_workspace   $base00 $base0E $base00
+        focused_workspace   $base0E $base0E $base00
         active_workspace    $base00 $base00 $base00
         inactive_workspace  $base00 $base00 $base03
         urgent_workspace    $base08 $base08 $base00
@@ -174,7 +173,7 @@ bar {
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base02 $base0E $base00 $base00   $base01
+client.focused          $base0E $base0E $base00 $base00   $base01
 client.focused_inactive $base01 $base01 $base04 $base00   $base01
 client.unfocused        $base00 $base00 $base04 $base00   $base01
 client.urgent           $base08 $base08 $base00 $base08   $base08
