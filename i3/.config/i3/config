@@ -163,7 +163,7 @@ bar {
         statusline $base04
 
         # State             Border  BG      Text
-        focused_workspace   $base0E $base0E $base00
+        focused_workspace   $base0D $base0D $base00
         active_workspace    $base00 $base00 $base00
         inactive_workspace  $base00 $base00 $base03
         urgent_workspace    $base08 $base08 $base00
@@ -173,7 +173,7 @@ bar {
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base0E $base0E $base00 $base00   $base01
+client.focused          $base0D $base0D $base00 $base00   $base01
 client.focused_inactive $base02 $base02 $base04 $base00   $base01
 client.unfocused        $base01 $base01 $base04 $base00   $base01
 client.urgent           $base08 $base08 $base00 $base08   $base08
