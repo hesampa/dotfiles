@@ -9,6 +9,7 @@ export EDITOR=vim
 export VISUAL=vim
 export TERM=xterm-256color
 export dotfiles=~/dotfiles
+export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # Use bash-completion, if available
 # [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
@@ -29,8 +30,8 @@ fi
 alias ls='ls --color=auto'
 
 
-
-
+# fasd
+eval "$(fasd --init auto)"
 
 
 
@@ -62,6 +63,7 @@ if [ -d ~/.bash_it ]; then
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
     export BASH_IT_THEME='rjorgenson'
+    # export BASH_IT_THEME='modern'
 
     # (Advanced): Change this to the name of your remote repo if you
     # cloned bash-it with a remote other than origin such as `bash-it`.

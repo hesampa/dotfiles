@@ -2,7 +2,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Incolsolata 8
+font pango:Incolsolata 7
 
 # new window
 new_window normal 1 px
@@ -175,7 +175,7 @@ bar {
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base0E $base0E $base00 $base00   $base01
 client.focused_inactive $base02 $base02 $base04 $base00   $base01
-client.unfocused        $base00 $base00 $base04 $base00   $base01
+client.unfocused        $base01 $base01 $base04 $base00   $base01
 client.urgent           $base08 $base08 $base00 $base08   $base08
 client.placeholder      $base00 $base01 $base05 $base01   $base00
 client.background       $base07
