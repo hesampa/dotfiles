@@ -40,12 +40,18 @@ alias gh="git push"
 alias gs="git status"
 alias gu="git pull"
 
+
+
+# fasd
+alias v='f -e vim' # quick opening files with vim
+alias m='f -e mplayer' # quick opening files with mplayer
+alias o='a -e xdg-open' # quick opening files with xdg-open
+
 # latex report
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
 alias crep="latexmk -pvc -pdf -outdir=$ladir/outfiles"
 
 # vim
-alias v="vim"
 alias vi="vim"
 
 # python
