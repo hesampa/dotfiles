@@ -1,5 +1,5 @@
 [options]
-    font = Inconsolata 13
+    font = Dina 10
     cursor_blink = off
     mouse_autohide = true
     allow_bold = true
