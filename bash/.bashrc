@@ -8,7 +8,7 @@
 export EDITOR=vim
 export VISUAL=vim
 export TERM=xterm-256color
-export dotfiles=~/dotfiles
+export dotfiles=$HOME/dotfiles
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export LD_LIBRARY_PATH=/opt/cuda/lib64
 
@@ -24,30 +24,22 @@ fi
 alias ls='ls --color=auto'
 
 # fasd
-eval "$(fasd --init auto)"
+if [ -e /bin/fasd ]; then
+    eval "$(fasd --init auto)"
+fi
 
-
-
-
-
-
-
-#
 #
 # bash-it
 #
-#
 
-
-if [ -d ~/.bash_it ]; then
+if [ -d $HOME/.bash_it ]; then
 
     # Path to the bash it configuration
     export BASH_IT="$HOME/.bash_it"
 
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
-    export BASH_IT_THEME='rjorgenson'
-    # export BASH_IT_THEME='modern'
+    export BASH_IT_THEME='zork'
 
     # (Advanced): Change this to the name of your remote repo if you
     # cloned bash-it with a remote other than origin such as `bash-it`.
