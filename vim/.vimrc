@@ -127,18 +127,18 @@
     set background=light
     colorscheme base16-tomorrow-night
 
-    hi ColorColumn ctermfg=1 ctermbg=0
+    hi ColorColumn ctermfg=3 ctermbg=0
     hi IncSearch ctermbg=14 ctermfg=0
-    hi Search cterm=reverse ctermbg=14 ctermfg=0
+    hi Search cterm=bold,reverse ctermbg=14 ctermfg=0
     hi Todo cterm=NONE ctermfg=3 ctermbg=0
     hi VertSplit ctermbg=10 ctermfg=10
 
     au WinEnter * call matchadd('Todo', 'TODO')
     au BufWinEnter * call matchadd('Todo', 'TODO')
 
-    " otherwise text black in GNOME
-    hi ModeMsg cterm=NONE
-    hi DiffText cterm=NONE
+    " otherwise text black in GNOME because these are in bold
+    " hi ModeMsg cterm=NONE
+    " hi DiffText cterm=NONE
 " }}}
 
 " vim: foldmethod=marker
