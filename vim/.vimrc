@@ -26,7 +26,7 @@
     set autoindent
     set backspace=indent,eol,start  " backapsce behaviour
     set encoding=utf8
-    set formatprg=par\ -w72j
+    " set formatprg=par\ -w72j
     set hidden                      " switch between unsaved buffers
     set lcs=trail:¬,tab:▸\          " listchars tabs, trail sp
     set list

@@ -23,10 +23,6 @@ fi
 
 alias ls='ls --color=auto'
 
-# fasd
-if [ -e /bin/fasd ]; then
-    eval "$(fasd --init auto)"
-fi
 
 #
 # bash-it
@@ -87,5 +83,10 @@ if [ -d $HOME/.bash_it ]; then
 fi
 
 
+
+# fasd
+if [ -e /bin/fasd ]; then
+    eval "$(fasd --init auto)"
+fi
 
 export GREP_COLOR="1;31"
