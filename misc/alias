@@ -74,3 +74,8 @@ alias tgz='tar -zxvf'
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e cvlc' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
+
+
+# redshift
+alias night='redshift -O 2800 -b 0.5'
+alias day='redshift -x'
