@@ -79,3 +79,7 @@ alias o='a -e xdg-open' # quick opening files with xdg-open
 # redshift
 alias night='redshift -O 2800 -b 0.5'
 alias day='redshift -x'
+
+# keybr
+alias se='setxkbmap se'
+alias us='setxkbmap us'
