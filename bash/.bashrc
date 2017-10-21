@@ -85,7 +85,7 @@ fi
 
 
 # fasd
-if [ -e /bin/fasd ]; then
+if [ -e /bin/fasd ] || [ -e /usr/local/Cellar/fasd/ ]; then
     eval "$(fasd --init auto)"
 fi
 
