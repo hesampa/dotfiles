@@ -10,7 +10,6 @@ export VISUAL=vim
 export TERM=screen-256color
 export dotfiles=$HOME/dotfiles
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export LD_LIBRARY_PATH=/opt/cuda/lib64
 
 LS_COLORS=$LS_COLORS:'ex=1;32:ln=0;35:di=1;34:ow=1;34'
 export LS_COLORS
@@ -82,11 +81,13 @@ if [ -d $HOME/.bash_it ]; then
     source "$BASH_IT"/bash_it.sh
 fi
 
-
-
 # fasd
 if [ -e /bin/fasd ] || [ -e /usr/local/Cellar/fasd/ ]; then
     eval "$(fasd --init auto)"
 fi
 
 export GREP_COLOR="1;31"
+
+if [ -f $HOME/.profile ]; then
+    source $HOME/.profile
+fi
