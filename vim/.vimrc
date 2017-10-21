@@ -28,8 +28,6 @@
     set encoding=utf8
     " set formatprg=par\ -w72j
     set hidden                      " switch between unsaved buffers
-    set lcs=trail:¬,tab:▸\          " listchars tabs, trail sp
-    set list
     set nocompatible                " be iMproved, required
     set nostartofline               " Scroll to non-blank lines
     set path+=**                    " :find for files in subdirs
@@ -135,6 +133,9 @@
 
     au WinEnter * call matchadd('Todo', 'TODO')
     au BufWinEnter * call matchadd('Todo', 'TODO')
+
+    au WinEnter * call matchadd('Question', 'NOTE')
+    au BufWinEnter * call matchadd('Question', 'NOTE')
 
     " otherwise text black in GNOME because these are in bold
     " hi ModeMsg cterm=NONE

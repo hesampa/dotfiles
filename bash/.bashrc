@@ -7,7 +7,7 @@
 
 export EDITOR=vim
 export VISUAL=vim
-export TERM=xterm-256color
+export TERM=screen-256color
 export dotfiles=$HOME/dotfiles
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export LD_LIBRARY_PATH=/opt/cuda/lib64
