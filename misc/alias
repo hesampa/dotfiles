@@ -40,6 +40,8 @@ alias gh="git push"
 alias gs="git status"
 alias gu="git pull"
 
+# find
+alias ff='find -L -iname'
 
 # latex report
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
@@ -47,6 +49,7 @@ alias crep="latexmk -pvc -pdf -outdir=./outfiles"
 
 # vim
 alias vi="vim"
+alias view="vim -R"
 
 # python
 alias py2="python"
@@ -83,3 +86,11 @@ alias day='redshift -x'
 # keybr
 alias se='setxkbmap se'
 alias us='setxkbmap us'
+
+
+# flexget
+alias shows='flexget series list'
+
+
+# subliminal
+alias sub="subliminal download -l en -s"

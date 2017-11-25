@@ -6,10 +6,11 @@
 [[ $- != *i* ]] && return
 
 export EDITOR=vim
-export VISUAL=vim
-export TERM=screen-256color
-export dotfiles=$HOME/dotfiles
 export RANGER_LOAD_DEFAULT_RC=FALSE
+export SUDO_EDITOR=vim
+export TERM=screen-256color
+export VISUAL=vim
+export dotfiles=$HOME/dotfiles
 
 LS_COLORS=$LS_COLORS:'ex=1;32:ln=0;35:di=1;34:ow=1;34'
 export LS_COLORS

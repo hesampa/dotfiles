@@ -142,4 +142,5 @@
     " hi DiffText cterm=NONE
 " }}}
 
+" set shell=/bin/bash\ -i
 " vim: foldmethod=marker

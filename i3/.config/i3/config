@@ -13,12 +13,12 @@ for_window [class=".*"] title_format " %class"
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+ctrl+d kill
+bindsym $mod+d kill
 
 ## PROGRAMS
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+c exec chromium
-bindsym $mod+d exec rofi -show run
+bindsym $mod+r exec rofi -show run
 bindsym $mod+space exec alacritty
 
 # change focus
@@ -50,7 +50,7 @@ bindsym $mod+s split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -125,7 +125,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# bindsym $mod+Shift+r mode "resize"
 
 ## Base16 Tomorrow Night
 # Author: Chris Kempson (http://chriskempson.com)
@@ -180,6 +180,6 @@ client.background       $base00
 
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id dropbox
-exec --no-startup-id feh --bg-scale ~/Downloads/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/Dropbox/tmp/wallpaper.jpg
 exec --no-startup-id parcellite
 exec --no-startup-id unclutter --timeout 1
