@@ -42,6 +42,8 @@ alias gu="git pull"
 
 # find
 alias ff='find -L -iname'
+alias fp="find -L -path"
+alias fd='find -L -type d -iname'
 
 # latex report
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
@@ -67,7 +69,7 @@ alias week="date +%V"
 alias cal="cal -wm"
 
 # moving, copying
-alias del="rmtrash"
+alias del="mv ~/.Trash/"
 alias emptytrash="rm -r ~/.Trash/*"
 
 #tar
@@ -81,6 +83,7 @@ alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # redshift
 alias night='redshift -O 2800 -b 0.5'
+alias dark='redshift -O 2000 -b 0.2'
 alias day='redshift -x'
 
 # keybr
@@ -94,3 +97,14 @@ alias shows='flexget series list'
 
 # subliminal
 alias sub="subliminal download -l en -s"
+
+# 
+alias alsa="alsamixer"
+
+# zathura
+alias zat="zathura"
+
+# pacman
+alias update="sudo pacman -Syu"
+alias downgrade="sudo pacman -U"
+alias pacins="sudo pacman -S"
