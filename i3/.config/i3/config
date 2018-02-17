@@ -20,6 +20,7 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+c exec chromium
 bindsym $mod+r exec rofi -show run
 bindsym $mod+space exec alacritty
+bindsym $mod+Shift+space exec termite
 
 # change focus
 bindsym $mod+h focus left
@@ -55,7 +56,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+s floating toggle
 
 # Assign Workspace Variables
 set $WS1 1 
@@ -99,7 +100,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
