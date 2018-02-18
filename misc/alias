@@ -1,13 +1,3 @@
-# brew
-if hash brew 2>/dev/null; then
-    alias bc="brew cleanup"
-    alias bd="brew doctor"
-    alias bi="brew install"
-    alias bl="brew list"
-    alias bp="brew prune"
-    alias bu="brew upgrade"
-fi
-
 # config files
 alias alice="vim ~/dotfiles/misc/alias"
 alias bashenv="vim ~/dotfiles/bash/.bash_profile"
@@ -77,9 +67,8 @@ alias tgz='tar -zxvf'
 
 # fasd
 alias v='f -e vim' # quick opening files with vim
-alias m='f -e cvlc' # quick opening files with mplayer
+alias m='f -e mpv' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
-
 
 # redshift
 alias night='redshift -O 2800 -b 0.5'
@@ -90,10 +79,8 @@ alias day='redshift -x'
 alias se='setxkbmap se'
 alias us='setxkbmap us'
 
-
 # flexget
 alias shows='flexget series list'
-
 
 # subliminal
 alias sub="subliminal download -l en -s"
@@ -106,5 +93,6 @@ alias zat="zathura"
 
 # pacman
 alias update="sudo pacman -Syu"
+alias upgrade="sudo pacman -Syu"
 alias downgrade="sudo pacman -U"
 alias pacins="sudo pacman -S"

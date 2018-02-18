@@ -10,19 +10,13 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 export SUDO_EDITOR=vim
 export TERM=screen-256color
 export VISUAL=vim
-export dotfiles=$HOME/dotfiles
 
 LS_COLORS=$LS_COLORS:'ex=1;32:ln=0;35:di=1;34:ow=1;34'
 export LS_COLORS
 
 export PS1="\[\033[38;5;7m\][\h:\[$(tput sgr0)\]\[\033[38;5;1m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
-if [ -d $dotfiles ]; then
-    source $dotfiles/misc/alias
-fi
-
 alias ls='ls --color=auto'
-
 
 #
 # bash-it
@@ -87,8 +81,8 @@ if [ -e /bin/fasd ] || [ -e /usr/local/Cellar/fasd/ ]; then
     eval "$(fasd --init auto)"
 fi
 
-export GREP_COLOR="1;31"
-
-if [ -f $HOME/.profile ]; then
-    source $HOME/.profile
+if [ -d $dotfiles ]; then
+    source $dotfiles/misc/alias
 fi
+
+export GREP_COLOR="1;31"
