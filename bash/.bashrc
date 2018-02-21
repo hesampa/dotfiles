@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 export EDITOR=vim
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export SUDO_EDITOR=vim
