@@ -103,3 +103,6 @@ alias screendwn="xrandr --output HDMI1 --off"
 
 # rename
 alias rename="perl-rename"
+
+# history
+alias his=history
