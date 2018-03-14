@@ -100,3 +100,6 @@ alias pacins="sudo pacman -S"
 # xrandr
 alias screenup="xrandr --output HDMI1 --mode 2560x1440 --above eDP1"
 alias screendwn="xrandr --output HDMI1 --off"
+
+# rename
+alias rename="perl-rename"
