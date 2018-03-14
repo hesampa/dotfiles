@@ -81,8 +81,12 @@ if [ -d $HOME/.bash_it ]; then
 fi
 
 # fasd
-if [ -e /bin/fasd ] || [ -e /usr/local/Cellar/fasd/ ]; then
+if [ -e /bin/fasd ]; then
     eval "$(fasd --init auto)"
+fi
+
+if [ -e /bin/thefuck ]; then
+    eval $(thefuck --alias)
 fi
 
 if [ -d $dotfiles ]; then
