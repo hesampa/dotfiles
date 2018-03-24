@@ -83,7 +83,7 @@ alias us='setxkbmap us'
 alias shows='flexget series list'
 
 # subliminal
-alias sub="subliminal download -l en -s"
+alias sub="subliminal download -l"
 
 # 
 alias alsa="alsamixer"
