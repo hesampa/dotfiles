@@ -42,6 +42,12 @@ alias crep="latexmk -pvc -pdf -outdir=./outfiles"
 # vim
 alias vi="vim"
 alias view="vim -R"
+## permutations
+alias vmi="vim"
+alias ivm="vim"
+alias imv="vim"
+alias mvi="vim"
+alias miv="vim"
 
 # python
 alias py2="python"
