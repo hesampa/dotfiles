@@ -31,7 +31,8 @@ alias gs="git status"
 alias gu="git pull"
 
 # find
-alias ff='find -L -iname'
+alias fn='find -L -iname'
+alias fr='find -L -regex'
 alias fp="find -L -path"
 alias fd='find -L -type d -iname'
 
@@ -59,6 +60,7 @@ alias t="tmux -u"
 # ls
 alias ll="ls -1"
 alias lla="ll -a"
+alias lsgrep="ls | grep -P"
 
 # date
 alias week="date +%V"
@@ -112,3 +114,7 @@ alias rename="perl-rename"
 
 # history
 alias his=history
+
+# copy/paste
+alias xcopy="xsel -i -b"
+alias xpaste="parcellite"
