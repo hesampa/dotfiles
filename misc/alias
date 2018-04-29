@@ -35,6 +35,7 @@ alias fn='find -L -iname'
 alias fr='find -L -regex'
 alias fp="find -L -path"
 alias fd='find -L -type d -iname'
+alias countfiles="find -type f | wc -l"
 
 # latex report
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
@@ -114,6 +115,7 @@ alias rename="perl-rename"
 
 # history
 alias his=history
+alias hisgrep='history | grep'
 
 # copy/paste
 alias xcopy="xsel -i -b"
