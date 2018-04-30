@@ -37,4 +37,5 @@
         (sh . t)))
 
 ;; autosave
-(setq backup-directory-alist `(("." . "~/.emacs/saves")))
+(setq backup-directory-alist `((".*" . ,"~/.emacs/saves")))
+(setq auto-save-file-name-transforms `((".*" ,"~/.emacs/backup" t)))
