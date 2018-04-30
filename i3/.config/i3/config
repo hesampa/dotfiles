@@ -12,6 +12,10 @@ for_window [class=".*"] title_format " %class"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+
+
+
+
 # kill focused window
 bindsym $mod+d kill
 
@@ -22,11 +26,13 @@ bindsym $mod+r exec rofi -show run
 bindsym $mod+space exec alacritty
 bindsym $mod+Shift+space exec termite
 
-# change focus
+# focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+focus_follows_mouse no
+
 
 # switch workspace
 bindsym $mod+n workspace next

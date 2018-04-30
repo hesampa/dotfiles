@@ -14,6 +14,7 @@
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-unimpaired'
     Plug 'vimwiki/vimwiki',                     { 'on': 'VimwikiIndex' }
+    Plug 'wellle/targets.vim'
 
     call plug#end()
 
