@@ -43,7 +43,7 @@
     " ruler and statusline {{{2
         set laststatus=2            " always show statusline
         set number                  " show line numbers
-        set relativenumber
+        " set relativenumber        " might cause slow performance
         set ruler
         set rulerformat=%l:%c
         set showcmd                 " show commands in bottom right corner
