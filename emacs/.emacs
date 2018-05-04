@@ -18,15 +18,16 @@
 (blink-cursor-mode 0)
 (setq ring-bell-function 'ignore)
 
-;; daw in vim
-(defun hesam/kill-word (&optional arg)
-  (interactive "p")
-  (or arg (seq arg 1))
-  (save-excursion
-      (forward-char arg)
-      (backward-word arg)
-      (kill-word arg))))
-(global-set-key (kbd "C-c C-k") 'hesam/kill-word)
+
+;; ;; daw in vim
+;; (defun hesam/kill-word (&optional arg)
+;;   (interactive "p")
+;;   (or arg (seq arg 1))
+;;   (save-excursion
+;;       (forward-char arg)
+;;       (backward-word arg)
+;;       (kill-word arg))))
+;; (global-set-key (kbd "C-c C-k") 'hesam/kill-word)
 
 ;; magit
 (require 'magit)
