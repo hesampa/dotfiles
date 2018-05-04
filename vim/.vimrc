@@ -73,7 +73,7 @@
 " }}}
 
 " performance {{{1
-    set lazyredraw
+    " set lazyredraw
     set ttyfast
     set ttyscroll=3
 " }}}
