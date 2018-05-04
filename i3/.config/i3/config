@@ -12,16 +12,13 @@ for_window [class=".*"] title_format " %class"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
-
-
-
 # kill focused window
 bindsym $mod+d kill
 
 ## PROGRAMS
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+c exec chromium
+bindsym $mod+m exec emacs
 bindsym $mod+r exec rofi -show run
 bindsym $mod+space exec alacritty
 bindsym $mod+Shift+space exec termite

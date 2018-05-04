@@ -7,6 +7,27 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+;; appearence
+(require 'base16-theme)
+(load-theme 'base16-tomorrow-night t)
+(add-to-list 'default-frame-alist '(font . "Dina"))
+(scroll-bar-mode -1)
+(show-paren-mode t)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(blink-cursor-mode 0)
+(setq ring-bell-function 'ignore)
+
+;; daw in vim
+(defun hesam/kill-word (&optional arg)
+  (interactive "p")
+  (or arg (seq arg 1))
+  (save-excursion
+      (forward-char arg)
+      (backward-word arg)
+      (kill-word arg))))
+(global-set-key (kbd "C-c C-k") 'hesam/kill-word)
+
 ;; magit
 (require 'magit)
 
@@ -23,17 +44,6 @@
 (require 'linum-relative)
 (linum-relative-global-mode)
 
-;; appearence
-(require 'base16-theme)
-(load-theme 'base16-tomorrow-night t)
-(add-to-list 'default-frame-alist '(font . "Dina"))
-(scroll-bar-mode -1)
-(show-paren-mode t)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(blink-cursor-mode 0)
-(setq ring-bell-function 'ignore)
-
 (org-babel-do-load-languages
       'org-babel-load-languages
       '((python . t)
@@ -49,7 +59,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit python-mode linum-relative expand-region base16-theme))))
+    (exwm multi-line magit python-mode linum-relative expand-region base16-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
