@@ -23,6 +23,8 @@
 (menu-bar-mode -1)
 (blink-cursor-mode 0)
 (setq ring-bell-function 'ignore)
+(set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
+(global-hl-line-mode 1)
 #+END_SRC
 
 ;; ;; daw in vim
