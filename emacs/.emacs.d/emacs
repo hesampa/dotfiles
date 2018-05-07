@@ -1,4 +1,4 @@
-;; -*- mode: org -*-
+-*- mode: org -*-
 
 * APPERANCE
 #+BEGIN_SRC emacs-lisp
@@ -52,7 +52,7 @@
 #+END_SRC
 
 * LINUM
-#+BEGIN_SRC 
+#+BEGIN_SRC emacs-lisp
 (use-package linum-relative
     :ensure t)
 (linum-relative-global-mode)
@@ -63,20 +63,14 @@
 ;; autosave
 (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
 (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (hydra ace-window exwm multi-line magit python-mode linum-relative expand-region base16-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(use-package disable-mouse
+    :ensure t
+    :config 
+    (global-disable-mouse-mode t))
+(use-package ivy
+    :ensure t
+    :config
+    (ivy-mode t))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 #+END_SRC
