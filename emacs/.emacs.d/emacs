@@ -1,20 +1,9 @@
 ;; -*- mode: org -*-
 
-* PACKAGES
-;; melpa
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-#+BEGIN_SRC emacs-lisp
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-#+END_SRC
-
 * APPERANCE
 #+BEGIN_SRC emacs-lisp
-(require 'base16-theme)
+(use-package base16-theme
+    :ensure t)
 (load-theme 'base16-tomorrow-night t)
 (add-to-list 'default-frame-alist '(font . "Dina"))
 (scroll-bar-mode -1)
@@ -38,13 +27,15 @@
 ;; (global-set-key (kbd "C-c C-k") 'hesam/kill-word)
 
 * MAGIT
-#+BEGIN_SRC 
-(require 'magit)
+#+BEGIN_SRC emacs-lisp 
+(use-package magit
+    :ensure t)
 #+END_SRC
 
 * ORG MODE
 #+BEGIN_SRC emacs-lisp
-(require 'org)
+(use-package org
+    :ensure t)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (org-indent-mode 1)
 (org-babel-do-load-languages
@@ -55,13 +46,15 @@
 
 * EXPAND REGION
 #+BEGIN_SRC emacs-lisp
-(require 'expand-region)
+(use-package expand-region
+    :ensure t)
 (global-set-key (kbd "C-=") 'er/expand-region)
 #+END_SRC
 
 * LINUM
 #+BEGIN_SRC 
-(require 'linum-relative)
+(use-package linum-relative
+    :ensure t)
 (linum-relative-global-mode)
 #+END_SRC
 
