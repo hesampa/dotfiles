@@ -110,6 +110,9 @@
         noremap Q gqip
         noremap <silent><Leader>vw :VimwikiIndex<CR>
         noremap <silent><Leader>gt :GundoToggle<CR>
+        noremap <Leader>rc :e ~/.vimrc <CR>
+        noremap <Leader>r :set relativenumber!<CR>
+        noremap <Leader>so :so %<CR>
     " }}}
 
 " }}}
