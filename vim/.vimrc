@@ -62,7 +62,7 @@
     " timeout {{{2
         " timeout on keycodes, not on mappings
         set ttimeoutlen=0
-        set timeoutlen=1000
+        set timeoutlen=500
     "}}}
 
 " }}}
@@ -111,7 +111,7 @@
         noremap <silent><Leader>vw :VimwikiIndex<CR>
         noremap <silent><Leader>gt :GundoToggle<CR>
         noremap <Leader>rc :e ~/.vimrc <CR>
-        noremap <Leader>r :set relativenumber!<CR>
+        noremap <silent><Leader>r :set rnu!<CR>
         noremap <Leader>so :so %<CR>
     " }}}
 
