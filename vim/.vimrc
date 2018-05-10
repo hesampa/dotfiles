@@ -106,6 +106,7 @@
     " universal bindings {{{2
         noremap <silent><Leader>t :TagbarToggle<CR>
         noremap ; :
+        noremap <C-g> <C-[>
         noremap <silent><Leader>l :set hls!<CR>
         noremap Q gqip
         noremap <silent><Leader>vw :VimwikiIndex<CR>

@@ -73,4 +73,6 @@
     (ivy-mode t))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+(setq shell-file-name "bash")
+(setq shell-command-switch "-ic")
 #+END_SRC
