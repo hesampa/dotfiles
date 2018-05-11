@@ -11,3 +11,5 @@ fi
 
 # start i3 last
 exec i3
+# EXWM
+# exec emacs
