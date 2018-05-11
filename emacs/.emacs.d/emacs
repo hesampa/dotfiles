@@ -69,8 +69,9 @@
 * IVY
 #+BEGIN_SRC emacs-lisp
 (use-package ivy
-    :ensure t)
-(ivy-mode t)
+    :ensure t
+    :config 
+    (ivy-mode t))
 #+END_SRC
 * EXWM
 # #+BEGIN_SRC emacs-lisp
