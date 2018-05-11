@@ -65,10 +65,13 @@
 (use-package linum-relative
     :ensure t)
 (linum-relative-global-mode)
-(require 'ivy)
-(ivy-mode 1)
 #+END_SRC
-
+* IVY
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+    :ensure t)
+(ivy-mode t)
+#+END_SRC
 * EXWM
 # #+BEGIN_SRC emacs-lisp
 # (require 'exwm)
