@@ -171,6 +171,7 @@
     :ensure t
     :config
     (ivy-mode t))
+(ido-mode nil)
 (use-package ivy-hydra
     :ensure t)
 (put 'upcase-region 'disabled nil)
