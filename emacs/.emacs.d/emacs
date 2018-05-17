@@ -21,7 +21,7 @@
                                     (setq-local global-hl-line-mode
                                                 nil)))
 (use-package beacon
-   :ensure t 
+   :ensure t
    :config
    (beacon-mode t))
 
@@ -51,7 +51,7 @@
 #+END_SRC
 
 * MAGIT
-#+BEGIN_SRC emacs-lisp 
+#+BEGIN_SRC emacs-lisp
 (use-package magit
     :ensure t)
 #+END_SRC
@@ -83,7 +83,7 @@
 #+END_SRC
 
 * Hydra
-#+BEGIN_SRC 
+#+BEGIN_SRC
 (use-package hydra
     :ensure t)
 #+END_SRC
@@ -150,7 +150,7 @@
 (exwm-input-set-key (kbd "s-L") 'buf-move-right)
 (exwm-input-set-key (kbd "s-s") 'split-window-horizontally)
 (exwm-input-set-key (kbd "s-v") 'split-window-vertically)
-(exwm-input-set-key (kbd "s-d") 'delete-window)  
+(exwm-input-set-key (kbd "s-d") 'kill-buffer-and-window)
 (exwm-input-set-key (kbd "s-K") 'buf-move-up)
 (exwm-input-set-key (kbd "s-J") 'buf-move-down)
 (exwm-input-set-key (kbd "s-H") 'buf-move-left)
@@ -163,10 +163,6 @@
 ;; autosave
 (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
 (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
-(use-package disable-mouse
-    :ensure t
-    :config 
-    (global-disable-mouse-mode t))
 (use-package ivy
     :ensure t
     :config
