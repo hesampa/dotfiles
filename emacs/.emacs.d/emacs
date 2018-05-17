@@ -14,6 +14,10 @@
 (setq ring-bell-function 'ignore)
 (set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
 (global-hl-line-mode 1)
+(use-package beacon
+    :ensure t
+    :config
+    (beacon-mode t))
 #+END_SRC
 
 ;; ;; daw in vim
@@ -58,6 +62,43 @@
 (linum-relative-global-mode)
 #+END_SRC
 
+* Hydra
+#+BEGIN_SRC 
+(use-package hydra
+    :ensure t)
+#+END_SRC
+* ace-window
+#+BEGIN_SRC emacs-lisp
+(defun hydra-universal-argument (arg)
+  (interactive "P")
+  (setq prefix-arg (if (consp arg)
+                       (list (* 4 (car arg)))
+                     (if (eq arg '-)
+                         (list -4)
+                       '(4)))))
+
+(defhydra hydra-window (global-map "C-M-o")
+  "window"
+  ("h" windmove-left "left")
+  ("j" windmove-down "down")
+  ("k" windmove-up "up")
+  ("l" windmove-right "right")
+  ("a" ace-window "ace")
+  ("u" hydra-universal-argument "universal")
+  ("s" (lambda () (interactive) (ace-window 4)) "swap")
+  ("d" (lambda () (interactive) (ace-window 16)) "delete")
+  )
+
+(global-set-key (kbd "C-s-h") 'hydra-window/windmove-left)
+(global-set-key (kbd "C-s-j") 'hydra-window/windmove-down)
+(global-set-key (kbd "C-s-k") 'hydra-window/windmove-up)
+(global-set-key (kbd "C-s-l") 'hydra-window/windmove-right)
+#+END_SRC
+* BINDINGS
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 5)))
+(global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
+#+END_SRC
 * MISC
 #+BEGIN_SRC emacs-lisp
 ;; autosave
