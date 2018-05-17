@@ -26,9 +26,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("2c88b703cbe7ce802bf6f0bffe3edbb8d9ec68fc7557089d4eaa1e29f7529fe1" default)))
  '(package-selected-packages
    (quote
-    (dmenu ivy-hydra disable-mouse use-package magit linum-relative ivy hydra expand-region beacon base16-theme))))
+    (doom-themes dmenu ivy-hydra disable-mouse use-package magit linum-relative ivy hydra expand-region beacon base16-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
