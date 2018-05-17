@@ -25,6 +25,11 @@
    :config
    (beacon-mode t))
 
+
+(require 'powerline)
+(powerline-center-theme)
+
+
 #+END_SRC
 
 * FUNCTIONS
