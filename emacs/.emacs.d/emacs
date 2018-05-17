@@ -30,6 +30,11 @@
 (powerline-center-theme)
 
 
+(setq display-time-24hr-format t)
+(setq display-time-day-and-date t)
+(display-time)
+
+
 #+END_SRC
 
 * FUNCTIONS
