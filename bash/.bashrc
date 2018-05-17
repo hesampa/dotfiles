@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# CTRL-S causes freeze, disable it
+stty -ixon
+
 shopt -s histappend
 
 export LC_ALL=en_US.UTF-8
