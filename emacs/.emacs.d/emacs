@@ -110,7 +110,7 @@
 (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
 #+END_SRC
 * EXWM
-##+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (require 'exwm)
 (require 'exwm-config)
 (require 'exwm-systemtray)
@@ -134,7 +134,7 @@
 (exwm-input-set-key (kbd "s-L") 'buf-move-right)
 (exwm-input-set-key (kbd "s-r") 'dmenu)
 (exwm-input-set-key (kbd "s-f") 'exwm-reset)
-##+END_SRC
+#+END_SRC
 * MISC
 #+BEGIN_SRC emacs-lisp
 ;; autosave
