@@ -26,8 +26,10 @@
    (beacon-mode t))
 
 
-(require 'powerline)
-(powerline-center-theme)
+(use-package powerline
+    :ensure t
+    :config
+    (powerline-center-theme))
 
 
 (setq display-time-24hr-format t)
