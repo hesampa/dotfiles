@@ -10,6 +10,6 @@ if [ -f $HOME/.xbindkeysrc ]; then
 fi
 
 # start i3 last
-exec i3
+# exec i3
 # EXWM
-# exec emacs
+exec emacs
