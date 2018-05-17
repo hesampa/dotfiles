@@ -22,10 +22,7 @@
 ;; follow symlinks without prompt
 (setq vc-follow-symlinks t)
 
-(use-package org
-	     :ensure t
-	     :config
-	     (org-babel-load-file
-	       (expand-file-name "emacs"
-				 user-emacs-directory))
-	     )
+(require 'org)
+(org-babel-load-file
+ (expand-file-name "emacs"
+                   user-emacs-directory))
