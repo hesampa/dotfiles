@@ -20,6 +20,11 @@
 (add-hook 'term-mode-hook (lambda ()
                                     (setq-local global-hl-line-mode
                                                 nil)))
+(use-package beacon
+   :ensure t 
+   :config
+   (beacon-mode t))
+
 #+END_SRC
 
 * FUNCTIONS
@@ -143,6 +148,8 @@
     :ensure t
     :config
     (ivy-mode t))
+(use-package ivy-hydra
+    :ensure t)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (setq shell-file-name "bash")
