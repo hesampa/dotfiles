@@ -2,10 +2,10 @@
 
 * APPERANCE
 #+BEGIN_SRC emacs-lisp
-(use-package color-theme-sanityinc-tomorrow
-    :ensure 
+(use-package base16-theme
+    :ensure t
     :config
-    (color-theme-sanityinc-tomorrow-night))
+    (load-theme 'base16-tomorrow-night t))
 (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
 (scroll-bar-mode -1)
 (show-paren-mode t)
@@ -32,7 +32,7 @@
 (use-package powerline
     :ensure t
     :config
-    (powerline-center-theme))
+    (powerline-default-theme))
 
 
 (setq display-time-24hr-format t)
