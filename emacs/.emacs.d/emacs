@@ -166,10 +166,7 @@
   ("d" (lambda () (interactive) (ace-window 16)) "delete")
   )
 
-(global-set-key (kbd "C-s-h") 'hydra-window/windmove-left)
-(global-set-key (kbd "C-s-j") 'hydra-window/windmove-down)
-(global-set-key (kbd "C-s-k") 'hydra-window/windmove-up)
-(global-set-key (kbd "C-s-l") 'hydra-window/windmove-right)
+(global-set-key (kbd "s-o") (lambda () (interactive) (ace-window 4)))
 #+END_SRC
 * BINDINGS
 #+BEGIN_SRC emacs-lisp
