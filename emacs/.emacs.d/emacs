@@ -2,10 +2,11 @@
 
 * APPERANCE
 #+BEGIN_SRC emacs-lisp
-(use-package base16-theme
-    :ensure t)
-(load-theme 'base16-tomorrow-night t)
-(add-to-list 'default-frame-alist '(font . "Dina"))
+(use-package color-theme-sanityinc-tomorrow
+    :ensure 
+    :config
+    (color-theme-sanityinc-tomorrow-night))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
 (scroll-bar-mode -1)
 (show-paren-mode t)
 (tool-bar-mode -1)
@@ -14,12 +15,14 @@
 (setq ring-bell-function 'ignore)
 (set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
 (global-hl-line-mode 1)
+
 (add-hook 'ansi-term-mode-hook (lambda ()
                                     (setq-local global-hl-line-mode
                                                 nil)))
 (add-hook 'term-mode-hook (lambda ()
                                     (setq-local global-hl-line-mode
                                                 nil)))
+
 (use-package beacon
    :ensure t
    :config
@@ -81,8 +84,10 @@
 * LINUM
 #+BEGIN_SRC emacs-lisp
 (use-package linum-relative
-    :ensure t)
-(linum-relative-global-mode)
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook (lambda ()
+                                      (linum-relative-mode t))))
 #+END_SRC
 
 * Hydra
