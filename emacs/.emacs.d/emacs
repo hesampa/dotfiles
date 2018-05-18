@@ -44,18 +44,67 @@
 #+END_SRC
 
 * FUNCTIONS
+** Python
+*** Shell
 #+BEGIN_SRC emacs-lisp
-;; ;; daw in vim
-;; (defun hesam/kill-word (&optional arg)
-;;   (interactive "p")
-;;   (or arg (seq arg 1))
-;;   (save-excursion
-;;       (forward-char arg)
-;;       (backward-word arg)
-;;       (kill-word arg))))
-;; (global-set-key (kbd "C-c C-k") 'hesam/kill-word)
-#+END_SRC
+;; Run python and pop-up its shell.
+;; Kill process to solve the reload modules problem.
+(defun my-python-shell-run ()
+  (interactive)
+  (when (get-buffer-process "*Python*")
+     (set-process-query-on-exit-flag (get-buffer-process "*Python*") nil)
+     (kill-process (get-buffer-process "*Python*"))
+     ;; If you want to clean the buffer too.
+     ;;(kill-buffer "*Python*")
+     ;; Not so fast!
+     (sleep-for 0.5))
+  (run-python (python-shell-parse-command) nil nil)
+  (python-shell-send-buffer)
+  ;; Pop new window only if shell isnt visible
+  ;; in any frame.
+  (unless (get-buffer-window "*Python*" t) 
+    (python-shell-switch-to-shell)))
 
+(defun my-python-shell-run-region ()
+  (interactive)
+  (python-shell-send-region (region-beginning) (region-end))
+  (python-shell-switch-to-shell))
+
+(eval-after-load "python"
+  '(progn
+     (define-key python-mode-map (kbd "C-c C-c") 'my-python-shell-run)
+     (define-key python-mode-map (kbd "C-c C-r") 'my-python-shell-run-region)
+     (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)))
+#+END_SRC
+** Window
+#+BEGIN_SRC emacs-lisp
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+	     (next-win-buffer (window-buffer (next-window)))
+	     (this-win-edges (window-edges (selected-window)))
+	     (next-win-edges (window-edges (next-window)))
+	     (this-win-2nd (not (and (<= (car this-win-edges)
+					 (car next-win-edges))
+				     (<= (cadr this-win-edges)
+					 (cadr next-win-edges)))))
+	     (splitter
+	      (if (= (car this-win-edges)
+		     (car (window-edges (next-window))))
+		  'split-window-horizontally
+		'split-window-vertically)))
+	(delete-other-windows)
+	(let ((first-win (selected-window)))
+	  (funcall splitter)
+	  (if this-win-2nd (other-window 1))
+	  (set-window-buffer (selected-window) this-win-buffer)
+	  (set-window-buffer (next-window) next-win-buffer)
+	  (select-window first-win)
+	  (if this-win-2nd (other-window 1))))))
+
+(define-key ctl-x-4-map "t" 'toggle-window-split)
+#+END_SRC
 * MAGIT
 #+BEGIN_SRC emacs-lisp
 (use-package magit
