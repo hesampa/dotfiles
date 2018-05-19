@@ -1,5 +1,11 @@
 -*- mode: org -*-
 
+* modules
+** customize
+#+BEGIN_SRC emacs-lisp
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
+#+END_SRC
 * APPERANCE
 #+BEGIN_SRC emacs-lisp
 (use-package base16-theme
