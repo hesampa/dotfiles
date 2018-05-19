@@ -6,28 +6,35 @@
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file)
 #+END_SRC
-* APPERANCE
+* apperance
+** theme
 #+BEGIN_SRC emacs-lisp
-(use-package base16-theme
-    :ensure t
-    :config
-    (load-theme 'base16-tomorrow-night t))
-(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
-(scroll-bar-mode -1)
-(show-paren-mode t)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(setq ring-bell-function 'ignore)
-(set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
-
-
-(add-hook 'ansi-term-mode-hook (lambda ()
-                                    (setq-local global-hl-line-mode
-                                                nil)))
-(add-hook 'term-mode-hook (lambda ()
-                                    (setq-local global-hl-line-mode
-                                                nil)))
+  (use-package doom-themes
+       :ensure t
+       :config
+       (load-theme 'doom-one t)
+       (doom-themes-org-config))
 #+END_SRC
+** bar-mode
+#+BEGIN_SRC emacs-lisp
+ (scroll-bar-mode -1)
+ (show-paren-mode t)
+ (tool-bar-mode -1)
+ (menu-bar-mode -1)
+#+END_SRC
+ #+BEGIN_SRC emacs-lisp
+ (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+ (setq ring-bell-function 'ignore)
+ (set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
+
+
+ (add-hook 'ansi-term-mode-hook (lambda ()
+                                     (setq-local global-hl-line-mode
+                                                 nil)))
+ (add-hook 'term-mode-hook (lambda ()
+                                     (setq-local global-hl-line-mode
+                                                 nil)))
+ #+END_SRC
 ** cursor
 #+BEGIN_SRC emacs-lisp
 (use-package beacon
