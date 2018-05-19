@@ -58,7 +58,7 @@
     :ensure t
     :after spaceline
     :config
-    (setq spaceline-responsive nil
+    (setq spaceline-highlight-face-func 'spaceline-highlight-face-modified
 	  spaceline-all-the-icons-separator-type 'wave)
     (spaceline-all-the-icons-theme)
     (spaceline-toggle-all-the-icons-buffer-path-off)
