@@ -113,19 +113,25 @@
 (use-package magit
     :ensure t)
 #+END_SRC
-
 * ORG MODE
 #+BEGIN_SRC emacs-lisp
-(use-package org
-    :ensure t)
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(org-indent-mode 1)
-(org-babel-do-load-languages
-      'org-babel-load-languages
-      '((python . t)
-        (sh . t)))
+  (use-package org
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+    (org-indent-mode t)
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((python . t)
+       (sh . t))))
 #+END_SRC
-
+** org bullets
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+END_SRC
 * EXPAND REGION
 #+BEGIN_SRC emacs-lisp
 (use-package expand-region
