@@ -44,13 +44,19 @@
 (blink-cursor-mode 0)
 (global-hl-line-mode t)
 #+END_SRC
-** Modeline
+** modeline
 #+BEGIN_SRC emacs-lisp
-  (use-package spaceline
-      :ensure t
-      :requires spaceline-config
-      :config
-      (spaceline-spacemacs-theme))
+  (use-package all-the-icons
+    :ensure t)
+
+  (use-package spaceline-all-the-icons
+    :ensure t
+    :after spaceline
+    :config
+    (spaceline-all-the-icons-theme)
+    (spaceline-toggle-all-the-icons-buffer-position-on)
+    (spaceline-toggle-all-the-icons-buffer-path-off)
+    (spaceline-toggle-all-the-icons-projectile-off))
 #+END_SRC
 ** Display-time
 #+BEGIN_SRC emacs-lisp
