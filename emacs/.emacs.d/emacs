@@ -38,14 +38,14 @@
 (global-hl-line-mode t)
 #+END_SRC
 ** Mode line
-#+BEGIN_SRC 
+#+BEGIN_SRC emacs-lisp
 (use-package powerline
     :ensure t
     :config
     (powerline-default-theme))
 #+END_SRC
 ** Display-time
-#+BEGIN_SRC 
+#+BEGIN_SRC emacs-lisp
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (setq display-time-default-load-average nil)
