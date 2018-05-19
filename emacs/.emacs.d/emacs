@@ -65,7 +65,8 @@
     (spaceline-all-the-icons-theme)
     (spaceline-toggle-all-the-icons-buffer-path-off)
     (spaceline-toggle-all-the-icons-projectile-off)
-    (spaceline-toggle-all-the-icons-buffer-size-off))
+    (spaceline-toggle-all-the-icons-buffer-size-off)
+    (spaceline-toggle-all-the-icons-hud-off))
 #+END_SRC
 ** Display-time
 #+BEGIN_SRC emacs-lisp
