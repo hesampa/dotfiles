@@ -44,12 +44,13 @@
 (blink-cursor-mode 0)
 (global-hl-line-mode t)
 #+END_SRC
-** Mode line
+** Modeline
 #+BEGIN_SRC emacs-lisp
-(use-package powerline
-    :ensure t
-    :config
-    (powerline-default-theme))
+  (use-package spaceline
+      :ensure t
+      :requires spaceline-config
+      :config
+      (spaceline-spacemacs-theme))
 #+END_SRC
 ** Display-time
 #+BEGIN_SRC emacs-lisp
