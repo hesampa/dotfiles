@@ -155,27 +155,9 @@
 #+END_SRC
 * ace-window
 #+BEGIN_SRC emacs-lisp
-(defun hydra-universal-argument (arg)
-  (interactive "P")
-  (setq prefix-arg (if (consp arg)
-                       (list (* 4 (car arg)))
-                     (if (eq arg '-)
-                         (list -4)
-                       '(4)))))
-
-(defhydra hydra-window (global-map "C-M-o")
-  "window"
-  ("h" windmove-left "left")
-  ("j" windmove-down "down")
-  ("k" windmove-up "up")
-  ("l" windmove-right "right")
-  ("a" ace-window "ace")
-  ("u" hydra-universal-argument "universal")
-  ("s" (lambda () (interactive) (ace-window 4)) "swap")
-  ("d" (lambda () (interactive) (ace-window 16)) "delete")
-  )
-
-(global-set-key (kbd "s-o") (lambda () (interactive) (ace-window 4)))
+  (use-package ace-window
+    :ensure t
+    :bind ("s-o" . (lambda () (interactive) (ace-window 4))))
 #+END_SRC
 * BINDINGS
 #+BEGIN_SRC emacs-lisp
