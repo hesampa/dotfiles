@@ -11,10 +11,9 @@
 (show-paren-mode t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(blink-cursor-mode 0)
 (setq ring-bell-function 'ignore)
 (set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
-(global-hl-line-mode 1)
+
 
 (add-hook 'ansi-term-mode-hook (lambda ()
                                     (setq-local global-hl-line-mode
@@ -22,25 +21,29 @@
 (add-hook 'term-mode-hook (lambda ()
                                     (setq-local global-hl-line-mode
                                                 nil)))
-
+#+END_SRC
+** cursor
+#+BEGIN_SRC emacs-lisp
 (use-package beacon
    :ensure t
    :config
    (beacon-mode t))
-
-
+(blink-cursor-mode 0)
+(global-hl-line-mode t)
+#+END_SRC
+** Mode line
+#+BEGIN_SRC 
 (use-package powerline
     :ensure t
     :config
     (powerline-default-theme))
-
-
+#+END_SRC
+** Display-time
+#+BEGIN_SRC 
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (setq display-time-default-load-average nil)
 (display-time)
-
-
 #+END_SRC
 
 * FUNCTIONS
