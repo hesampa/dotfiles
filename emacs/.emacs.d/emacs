@@ -54,17 +54,33 @@
 #+END_SRC
 ** modeline
 #+BEGIN_SRC emacs-lisp
+  (use-package powerline
+    :if window-system
+    :config (setq-default powerline-default-separator 'nil))
+
+  (use-package spaceline
+    :after powerline
+    :ensure t
+    :config (setq spaceline-responsive nil))
+
   (use-package spaceline-all-the-icons
     :ensure t
     :after spaceline
     :config
     (setq spaceline-highlight-face-func 'spaceline-highlight-face-modified
-	  spaceline-all-the-icons-separator-type 'wave)
-    (spaceline-all-the-icons-theme)
+	  spaceline-all-the-icons-separator-type 'wave
+	  )
     (spaceline-toggle-all-the-icons-buffer-path-off)
     (spaceline-toggle-all-the-icons-projectile-off)
     (spaceline-toggle-all-the-icons-buffer-size-off)
-    (spaceline-toggle-all-the-icons-hud-off))
+    (spaceline-toggle-all-the-icons-hud-off)
+    (spaceline-all-the-icons--setup-git-ahead)
+    '(spaceline-highlight-face ((t (:background "SkyBlue2" :foreground "#3E3D31" :inherit (quote mode-line)))))
+    '(spaceline-modified ((t (:background "plum3" :foreground "#3E3D31" :inherit (quote mode-line)))))
+    '(spaceline-read-only ((t (:background "SkyBlue2" :foreground "#3E3D31" :inherit (quote mode-line)))))
+    '(spaceline-unmodified ((t (:background "SkyBlue2" :foreground "#3E3D31" :inherit (quote mode-line)))))
+    (spaceline-all-the-icons-theme)
+    )
 #+END_SRC
 ** Display-time
 #+BEGIN_SRC emacs-lisp
