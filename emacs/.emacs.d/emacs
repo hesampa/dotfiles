@@ -154,16 +154,23 @@
     :ensure t)
 #+END_SRC
 * ORG MODE
+** init
+ #+begin_SRC emacs-lisp
+   (use-package org
+     :ensure t
+     :config
+     (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+     (org-indent-mode t)
+     (setq org-src-window-setup 'current-window)
+   )
+ #+END_SRC
+** langs
 #+BEGIN_SRC emacs-lisp
-  (use-package org
-    :ensure t
-    :config
-    (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-    (org-indent-mode t)
-    (org-babel-do-load-languages
-     'org-babel-load-languages
-     '((python . t)
-       (sh . t))))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t)
+     (sh . t)))
+
 #+END_SRC
 ** org bullets
 #+BEGIN_SRC emacs-lisp
