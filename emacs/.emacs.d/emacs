@@ -52,6 +52,17 @@
 #+BEGIN_SRC emacs-lisp
   (global-subword-mode 1)
 #+END_SRC
+** editing
+*** deletion
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/kill-a-word (&optional args)
+    (interactive "p")
+    (forward-char 1)			;if at beg. of word
+    (backward-word 1)
+    (kill-word args)
+    )
+  (global-set-key (kbd "C-c d") 'hesam/kill-a-word)
+#+END_SRC
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
