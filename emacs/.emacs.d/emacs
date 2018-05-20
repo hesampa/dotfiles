@@ -47,16 +47,17 @@
      (define-key python-mode-map (kbd "C-c C-r") 'my-python-shell-run-region)
      (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)))
 #+END_SRC
-*** hooks
-#+BEGIN_SRC emacs-lisp
-  (add-hook 'python-mode-hook
-	    (lambda ()
-	      (smartparens-mode 1)))
-#+END_SRC
 ** motion
 *** subword
 #+BEGIN_SRC emacs-lisp
   (global-subword-mode 1)
+#+END_SRC
+** smartparens
+#+BEGIN_SRC emacs-lisp
+  (use-package smartparens
+    :ensure t
+    :config
+    (add-hook 'python-mode-hook #'smartparens-mode))
 #+END_SRC
 * apperance
 ** theme
