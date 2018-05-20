@@ -77,7 +77,7 @@
       :ensure t
       :diminish dashboard-mode
       :config
-      (setq dashboard-startup-banner "~/dotfiles/emacs/dashLogo.png")
+      (setq dashboard-startup-banner "~/dotfiles/emacs/.emacs.d/dashLogo.png")
       (dashboard-setup-startup-hook))
 #+END_SRC
 ** theme
