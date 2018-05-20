@@ -71,6 +71,15 @@
     (add-hook 'python-mode-hook #'smartparens-mode))
 #+END_SRC
 * apperance
+** dashboard
+#+BEGIN_SRC emacs-lisp
+  (use-package dashboard
+      :ensure t
+      :diminish dashboard-mode
+      :config
+      (setq dashboard-startup-banner "~/dotfiles/emacs/dashLogo.png")
+      (dashboard-setup-startup-hook))
+#+END_SRC
 ** theme
 #+BEGIN_SRC emacs-lisp
   (use-package doom-themes
