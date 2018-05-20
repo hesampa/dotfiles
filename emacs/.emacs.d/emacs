@@ -8,12 +8,13 @@
 #+END_SRC
 * minor modes
 ** elisp
-*** hooks
- #+BEGIN_SRC emacs-lisp
-   (add-hook 'emacs-lisp-mode-hook
-	     (lambda ()
-	       (enable-paredit-mode)))
- #+END_SRC
+*** paredit
+#+BEGIN_SRC emacs-lisp
+  (use-package paredit
+    :ensure t
+    :config
+    (add-hook 'emacs-lisp-mode-hook #'paredit-mode))
+#+END_SRC
 ** Python
 *** Shell
 #+BEGIN_SRC emacs-lisp
