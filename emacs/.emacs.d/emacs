@@ -71,6 +71,15 @@
     (add-hook 'python-mode-hook #'smartparens-mode))
 #+END_SRC
 * apperance
+** pretty-mode
+#+BEGIN_SRC emacs-lisp
+  (use-package pretty-mode
+    :ensure t
+    :config
+    (pretty-activate-groups
+     '(:sub-and-superscripts :greek :arithmetic-nary))
+    (add-hook 'python-mode-hook 'turn-on-pretty-mode))
+#+END_SRC
 ** dashboard
 #+BEGIN_SRC emacs-lisp
   (use-package dashboard
