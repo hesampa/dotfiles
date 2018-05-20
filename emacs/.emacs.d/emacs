@@ -33,7 +33,7 @@
   (python-shell-send-buffer)
   ;; Pop new window only if shell isnt visible
   ;; in any frame.
-  (unless (get-buffer-window "*Python*" t) 
+  (unless (get-buffer-window "*Python*" t)
     (python-shell-switch-to-shell)))
 
 (defun my-python-shell-run-region ()
@@ -318,4 +318,16 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :ensure t
     :config
     (which-key-mode))
+#+END_SRC
+* projectile
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+    (projectile-global-mode))
+
+  (use-package counsel-projectile
+    :ensure t
+    :config
+    (counsel-projectile-mode 1))
 #+END_SRC
