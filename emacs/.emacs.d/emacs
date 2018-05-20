@@ -75,10 +75,6 @@
     (spaceline-toggle-all-the-icons-buffer-size-off)
     (spaceline-toggle-all-the-icons-hud-off)
     (spaceline-all-the-icons--setup-git-ahead)
-    '(spaceline-highlight-face ((t (:background "SkyBlue2" :foreground "#3E3D31" :inherit (quote mode-line)))))
-    '(spaceline-modified ((t (:background "plum3" :foreground "#3E3D31" :inherit (quote mode-line)))))
-    '(spaceline-read-only ((t (:background "SkyBlue2" :foreground "#3E3D31" :inherit (quote mode-line)))))
-    '(spaceline-unmodified ((t (:background "SkyBlue2" :foreground "#3E3D31" :inherit (quote mode-line)))))
     (spaceline-all-the-icons-theme)
     )
 #+END_SRC
