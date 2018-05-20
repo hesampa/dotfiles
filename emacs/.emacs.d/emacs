@@ -309,8 +309,6 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :ensure t)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
-(setq shell-file-name "bash")
-(setq shell-command-switch "-ic")
 #+END_SRC
 * which-key
 #+BEGIN_SRC emacs-lisp
@@ -324,6 +322,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (use-package projectile
     :ensure t
     :config
+    (setq projectile-completion-system 'ivy)
     (projectile-global-mode))
 
   (use-package counsel-projectile
