@@ -350,14 +350,23 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 * ivy and friends
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
-      :ensure t
-      :config
-      (ivy-mode 1)
-      (counsel-mode 1))
+    :ensure t
+    :config
+    (ivy-mode 1)
+    (counsel-mode 1)
+    (setq ivy-re-builders-alist
+	  '((ivy-switch-buffer . ivy--regex-plus)
+	    (t . ivy--regex-fuzzy))
+	  ivy-initial-inputs-alist nil))
 
   (use-package ivy-hydra
     :ensure t)
 
+  (use-package flx
+    :ensure t)
+
+  (use-package smex
+    :ensure t)
 
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
