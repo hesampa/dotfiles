@@ -357,7 +357,8 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (ivy-mode 1)
     (counsel-mode 1)
     (setq ivy-re-builders-alist
-	  '(t . ivy--regex-fuzzy)
+	  '((ivy-switch-buffer . ivy--regex-fuzzy)
+	    (t . ivy--regex-fuzzy))
 	  ivy-initial-inputs-alist nil
 	  ivy-use-virtual-buffers t
 	  ivy-count-format "%d/%d "))
