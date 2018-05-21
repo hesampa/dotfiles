@@ -351,6 +351,8 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
     :ensure t
+    :init
+    (ido-mode 'buffer)
     :config
     (ivy-mode 1)
     (counsel-mode 1)
