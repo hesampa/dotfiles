@@ -352,14 +352,16 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (use-package ivy
     :ensure t
     :init
-    (ido-mode 'buffer)
+    (ido-mode nil)
     :config
     (ivy-mode 1)
     (counsel-mode 1)
     (setq ivy-re-builders-alist
 	  '((ivy-switch-buffer . ivy--regex-plus)
 	    (t . ivy--regex-fuzzy))
-	  ivy-initial-inputs-alist nil))
+	  ivy-initial-inputs-alist nil
+	  ivy-use-virtual-buffers t
+	  ivy-count-format "%d/%d "))
 
   (use-package ivy-hydra
     :ensure t)
