@@ -346,15 +346,21 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 ;; autosave
 (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
 (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
-(use-package ivy
-    :ensure t
-    :config
-    (ivy-mode t))
-(ido-mode nil)
-(use-package ivy-hydra
+#+END_SRC
+* ivy and friends
+#+BEGIN_SRC emacs-lisp
+  (use-package ivy
+      :ensure t
+      :config
+      (ivy-mode 1)
+      (counsel-mode 1))
+
+  (use-package ivy-hydra
     :ensure t)
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
+
+
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
 #+END_SRC
 * which-key
 #+BEGIN_SRC emacs-lisp
