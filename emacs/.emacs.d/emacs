@@ -296,8 +296,12 @@
 #+END_SRC
 * bindings
 #+BEGIN_SRC emacs-lisp
-(global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 5)))
-(global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
+  (global-set-key (kbd "M-n") (lambda () (interactive) (scroll-up 5)))
+  (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
+
+  ;; disable suspend
+  (global-unset-key (kbd "C-z"))
+  (global-unset-key (kbd "C-x C-z"))
 #+END_SRC
 * exwm
 #+BEGIN_SRC emacs-lisp
@@ -345,9 +349,9 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
-;; autosave
-(setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
-(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
+  ;; autosave
+  (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
+  (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
 #+END_SRC
 * ivy and friends
 #+BEGIN_SRC emacs-lisp
@@ -355,15 +359,16 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :ensure t
     :init
     (ido-mode nil)
+    (setq find-file-wildcards 1)
     :config
     (ivy-mode 1)
     (counsel-mode 1)
     (setq ivy-re-builders-alist
-	  '((ivy-switch-buffer . ivy--regex-fuzzy)
-	    (t . ivy--regex-fuzzy))
-	  ivy-initial-inputs-alist nil
-	  ivy-use-virtual-buffers t
-	  ivy-count-format "%d/%d "))
+          '((ivy-switch-buffer . ivy--regex-fuzzy)
+            (t . ivy--regex-fuzzy))
+          ivy-initial-inputs-alist nil
+          ivy-use-virtual-buffers t
+          ivy-count-format "%d/%d "))
 
   (use-package ivy-hydra
     :ensure t)
