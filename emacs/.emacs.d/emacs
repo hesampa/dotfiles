@@ -402,3 +402,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :config
     (counsel-projectile-mode 1))
 #+END_SRC
+* disabled
+#+BEGIN_SRC emacs-lisp
+  (put 'suspend-frame 'disabled t)
+#+END_SRC
