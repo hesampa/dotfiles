@@ -251,7 +251,7 @@
      :ensure t
      :config
      (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-     (org-indent-mode t)
+     (org-indent-mode 1)
      (setq org-src-window-setup 'current-window)
    )
  #+END_SRC
