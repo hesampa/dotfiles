@@ -303,6 +303,8 @@
 #+BEGIN_SRC emacs-lisp
   (use-package exwm
       :ensure t)
+  (use-package dmenu
+    :ensure t)
   (require 'exwm-config)
   (require 'exwm-systemtray)
   (exwm-config-default)
