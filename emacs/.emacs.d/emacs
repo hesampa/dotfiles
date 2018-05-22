@@ -307,6 +307,7 @@
   (global-unset-key (kbd "C-x C-z"))
 #+END_SRC
 * exwm
+** init
 #+BEGIN_SRC emacs-lisp
   (use-package exwm
       :ensure t)
@@ -331,6 +332,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (exwm-randr-enable)
 #+END_SRC
 ** binds
+*** window
 #+BEGIN_SRC emacs-lisp
 (exwm-input-set-key (kbd "s-h") 'windmove-left)
 (exwm-input-set-key (kbd "s-j") 'windmove-down)
@@ -347,8 +349,16 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 (exwm-input-set-key (kbd "s-J") 'buf-move-down)
 (exwm-input-set-key (kbd "s-H") 'buf-move-left)
 (exwm-input-set-key (kbd "s-L") 'buf-move-right)
-(exwm-input-set-key (kbd "s-r") 'dmenu)
 (exwm-input-set-key (kbd "s-f") 'exwm-reset)
+#+END_SRC
+*** applications
+#+BEGIN_SRC emacs-lisp
+  (exwm-input-set-key (kbd "s-c")
+                      (lambda () (interactive) (start-process "" nil "chromium")))
+  (exwm-input-set-key (kbd "s-a")
+                      (lambda () (interactive) (start-process "" nil "alacritty")))
+  (exwm-input-set-key (kbd "s-r") 'dmenu)
+
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
