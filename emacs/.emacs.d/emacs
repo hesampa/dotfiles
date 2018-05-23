@@ -50,6 +50,14 @@
          (define-key python-mode-map (kbd "C-c C-r") 'my-python-shell-run-region)
          (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)))
 #+END_SRC
+*** before-save-hook
+#+BEGIN_SRC emacs-lisp
+  (use-package py-autopep8
+    :ensure t)
+  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+  (add-hook 'c-mode-hook
+                  (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
+#+END_SRC
 ** motion
 *** subword
 #+BEGIN_SRC emacs-lisp
