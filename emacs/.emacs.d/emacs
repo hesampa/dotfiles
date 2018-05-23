@@ -15,12 +15,19 @@
     :config
     (add-hook 'emacs-lisp-mode-hook #'paredit-mode))
 #+END_SRC
+** prog
+*** hooks
+#+BEGIN_SRC emacs-lisp
+  (use-package ws-butler
+    :ensure t)
+  (add-hook 'prog-mode-hook #'ws-butler-mode)
+#+END_SRC
 ** Python
 *** Shell
 #+BEGIN_SRC emacs-lisp
     ;; ignore readline warning
     (setq python-shell-completion-native-enable nil)
-    
+
     ;; Run python and pop-up its shell.
     ;; Kill process to solve the reload modules problem.
     (defun my-python-shell-run ()
