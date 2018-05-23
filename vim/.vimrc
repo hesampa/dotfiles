@@ -128,7 +128,7 @@
 
     set t_Co=16
     set background=light
-    colorscheme base16-onedark
+    " colorscheme base16-onedark
 
     hi ColorColumn ctermfg=3 ctermbg=0
     hi IncSearch ctermbg=14 ctermfg=0
