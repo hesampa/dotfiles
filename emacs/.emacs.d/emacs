@@ -95,11 +95,11 @@
     (pretty-deactivate-groups
      '(:logic :sets))
     (pretty-activate-groups
-     '(:sub-and-superscripts :greek :arithmetic-nary))
+     '(:greek :arithmetic-nary))
     (add-hook 'python-mode-hook 'turn-on-pretty-mode))
 
   ;; (set-fontset-font "fontset-default" '(#x1d4d0 . #x1d4e2) "Symbola")
-  (set-fontset-font "fontset-default" 'unicode' "Symbola")
+  (set-fontset-font "fontset-default" 'unicode' "Source Code Pro")
   (global-prettify-symbols-mode 1)
 
   (add-hook
