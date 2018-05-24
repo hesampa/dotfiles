@@ -7,6 +7,10 @@
   (load custom-file)
 #+END_SRC
 * minor modes
+** winner-mode
+#+BEGIN_SRC emacs-lisp
+  (winner-mode 1)
+#+END_SRC
 ** elisp
 *** paredit
 #+BEGIN_SRC emacs-lisp
