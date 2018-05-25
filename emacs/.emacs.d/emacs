@@ -78,6 +78,13 @@
   (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 #+END_SRC
 ** motion
+*** avy
+#+BEGIN_SRC emacs-lisp
+  (use-package avy
+    :ensure t
+    :bind ("C-'" . 'avy-goto-char-2)
+    ("M-g f" . 'avy-goto-line))
+#+END_SRC
 *** subword
 #+BEGIN_SRC emacs-lisp
   (global-subword-mode 1)
