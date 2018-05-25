@@ -338,15 +338,6 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 #+END_SRC
 
-* linum
-#+BEGIN_SRC emacs-lisp
-(use-package linum-relative
-    :ensure t
-    :config
-    (add-hook 'python-mode-hook (lambda ()
-                                      (linum-relative-mode t))))
-#+END_SRC
-
 * hydra
 #+BEGIN_SRC
 (use-package hydra
