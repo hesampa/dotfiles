@@ -9,6 +9,8 @@ if [ -f $HOME/.xbindkeysrc ]; then
     xbindkeys -p
 fi
 
+# Start dropbox
+sleep 45 && /usr/bin/dropbox &
 # start i3 last
 # exec i3
 # EXWM

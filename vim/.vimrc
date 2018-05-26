@@ -8,6 +8,7 @@
     Plug 'godlygeek/tabular',                   { 'on':  'Tab' }
     Plug 'majutsushi/tagbar',                   { 'on': 'TagbarToggle'}
     Plug 'raimondi/delimitmate'
+    Plug 'rakr/vim-one'
     Plug 'sjl/gundo.vim',                       { 'on':  'GundoToggle' }
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-repeat'
@@ -124,10 +125,10 @@
 "}}}
 
 " colors and highlight {{{1
-    syntax off
+    " syntax off
 
     set t_Co=16
-    colorscheme base16-onedark
+    colorscheme one
     set background=dark
 
     hi ColorColumn ctermfg=3 ctermbg=0
