@@ -164,8 +164,6 @@
 
   ;; (set-fontset-font "fontset-default" '(#x1d4d0 . #x1d4e2) "Symbola")
   (set-fontset-font "fontset-default" 'unicode' "Source Code Pro")
-  (set-fontset-font "fontset-default" '(#x2200 . #x2209) "Symbola")
-  (set-fontset-font "fontset-default" '(#x1d53d . #x1d54b) "Symbola")
   (global-prettify-symbols-mode 1)
 
   (add-hook
