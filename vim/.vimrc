@@ -128,7 +128,7 @@
     " syntax off
 
     set t_Co=16
-    colorscheme one
+    colorscheme default
     set background=dark
 
     hi ColorColumn ctermfg=3 ctermbg=0
