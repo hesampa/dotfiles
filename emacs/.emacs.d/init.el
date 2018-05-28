@@ -18,5 +18,5 @@
 
 (require 'org)
 (org-babel-load-file
- (expand-file-name "emacs"
+ (expand-file-name "conf.org"
                    user-emacs-directory))

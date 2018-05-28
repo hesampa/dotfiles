@@ -1,5 +1,3 @@
--*- mode: org -*-
-
 * calender
 #+BEGIN_SRC emacs-lisp
   ;; start with Mon
