@@ -146,6 +146,12 @@
     )
   (global-set-key (kbd "C-c d") 'hesam/kill-a-word)
 #+END_SRC
+*** transpose
+#+BEGIN_SRC emacs-lisp
+  (use-package transpose-mark
+    :ensure t
+    :bind ("C-x m" . 'transpose-mark-region))
+#+END_SRC
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
@@ -289,35 +295,12 @@
 (display-time)
 #+END_SRC
 
-* functions
-** Window
+* Display
+** Frame
 #+BEGIN_SRC emacs-lisp
-(defun toggle-window-split ()
-  (interactive)
-  (if (= (count-windows) 2)
-      (let* ((this-win-buffer (window-buffer))
-	     (next-win-buffer (window-buffer (next-window)))
-	     (this-win-edges (window-edges (selected-window)))
-	     (next-win-edges (window-edges (next-window)))
-	     (this-win-2nd (not (and (<= (car this-win-edges)
-					 (car next-win-edges))
-				     (<= (cadr this-win-edges)
-					 (cadr next-win-edges)))))
-	     (splitter
-	      (if (= (car this-win-edges)
-		     (car (window-edges (next-window))))
-		  'split-window-horizontally
-		'split-window-vertically)))
-	(delete-other-windows)
-	(let ((first-win (selected-window)))
-	  (funcall splitter)
-	  (if this-win-2nd (other-window 1))
-	  (set-window-buffer (selected-window) this-win-buffer)
-	  (set-window-buffer (next-window) next-win-buffer)
-	  (select-window first-win)
-	  (if this-win-2nd (other-window 1))))))
-
-(define-key ctl-x-4-map "t" 'toggle-window-split)
+  (use-package transpose-frame
+    :ensure t
+    :bind ("C-x 4 t" . 'flop-frame))
 #+END_SRC
 * magit
 #+BEGIN_SRC emacs-lisp
