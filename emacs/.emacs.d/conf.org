@@ -333,7 +333,10 @@
      :config
      (setq org-src-window-setup 'current-window
            org-startup-indented t
-           org-agenda-files '("~/Dropbox/org/agenda")))
+           org-agenda-files '("~/Dropbox/org/agenda")
+           org-log-into-drawer t
+           org-log-reschedule 'time
+           org-log-done 'time))
  #+END_SRC
 ** langs
 #+BEGIN_SRC emacs-lisp
