@@ -185,7 +185,7 @@
              ;; Base Types
              ("int" .      #x2124)
              ("float" .    #x211d)
-             ("str" .      #x1d54a)
+             ;; ("str" .      #x1d54a)
              ;; ("True" .     #x1d54b)
              ;; ("False" .    #x1d53d)
              ;; Mypy
