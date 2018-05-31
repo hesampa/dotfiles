@@ -489,3 +489,12 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :config
     (global-undo-tree-mode 1))
 #+END_SRC
+* company
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :bind
+    ("C-x C-n" . 'company-complete)
+    :config
+    (add-hook 'after-init-hook 'global-company-mode))
+#+END_SRC
