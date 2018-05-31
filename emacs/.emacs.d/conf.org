@@ -55,37 +55,42 @@
 ** Python
 *** Shell
 #+BEGIN_SRC emacs-lisp
-    ;; ignore readline warning
-    (setq python-shell-completion-native-enable nil)
+  ;; ignore readline warning
+  (setq python-shell-completion-native-enable nil)
 
-    ;; Run python and pop-up its shell.
-    ;; Kill process to solve the reload modules problem.
-    (defun my-python-shell-run ()
-      (interactive)
-      (when (get-buffer-process "*Python*")
-         (set-process-query-on-exit-flag (get-buffer-process "*Python*") nil)
-         (kill-process (get-buffer-process "*Python*"))
-         ;; If you want to clean the buffer too.
-         ;;(kill-buffer "*Python*")
-         ;; Not so fast!
-         (sleep-for 0.5))
-      (run-python (python-shell-parse-command) nil nil)
-      (python-shell-send-buffer)
-      ;; Pop new window only if shell isnt visible
-      ;; in any frame.
-      (unless (get-buffer-window "*Python*" t)
-        (python-shell-switch-to-shell)))
+  ;; Run python and pop-up its shell.
+  ;; Kill process to solve the reload modules problem.
+  (defun my-python-shell-run ()
+    (interactive)
+    (when (get-buffer-process "*Python*")
+       (set-process-query-on-exit-flag (get-buffer-process "*Python*") nil)
+       (kill-process (get-buffer-process "*Python*"))
+       ;; If you want to clean the buffer too.
+       ;;(kill-buffer "*Python*")
+       ;; Not so fast!
+       (sleep-for 0.5))
+    (run-python (python-shell-parse-command) nil nil)
+    (python-shell-send-buffer)
+    ;; Pop new window only if shell isnt visible
+    ;; in any frame.
+    (unless (get-buffer-window "*Python*" t)
+      (python-shell-switch-to-shell)))
 
-    (defun my-python-shell-run-region ()
-      (interactive)
-      (python-shell-send-region (region-beginning) (region-end))
-      (python-shell-switch-to-shell))
+  (defun my-python-shell-run-region ()
+    (interactive)
+    (python-shell-send-region (region-beginning) (region-end))
+    (python-shell-switch-to-shell))
 
-    (eval-after-load "python"
-      '(progn
-         (define-key python-mode-map (kbd "C-c C-c") 'my-python-shell-run)
-         (define-key python-mode-map (kbd "C-c C-r") 'my-python-shell-run-region)
-         (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)))
+  (eval-after-load "python"
+    '(progn
+       (define-key python-mode-map (kbd "C-c C-c") 'my-python-shell-run)
+       (define-key python-mode-map (kbd "C-c C-r") 'my-python-shell-run-region)
+       (define-key python-mode-map (kbd "C-h f") 'python-eldoc-at-point)))
+
+  (add-hook 'inferior-python-mode-hook
+            (lambda ()
+              (setq comint-move-point-for-output t)))
+
 #+END_SRC
 *** before-save-hook
 #+BEGIN_SRC emacs-lisp
@@ -141,6 +146,12 @@
     )
   (global-set-key (kbd "C-c d") 'hesam/kill-a-word)
 #+END_SRC
+*** transpose
+#+BEGIN_SRC emacs-lisp
+  (use-package transpose-mark
+    :ensure t
+    :bind ("C-x m" . 'transpose-mark-region))
+#+END_SRC
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
@@ -161,7 +172,7 @@
     (add-hook 'python-mode-hook 'turn-on-pretty-mode))
 
   ;; (set-fontset-font "fontset-default" '(#x1d4d0 . #x1d4e2) "Symbola")
-  (set-fontset-font "fontset-default" 'unicode' "Source Code Pro")
+  (set-fontset-font "fontset-default" 'unicode "Source Code Pro")
   (global-prettify-symbols-mode 1)
 
   (add-hook
@@ -180,9 +191,9 @@
              ;; Base Types
              ("int" .      #x2124)
              ("float" .    #x211d)
-             ("str" .      #x1d54a)
-             ("True" .     #x1d54b)
-             ("False" .    #x1d53d)
+             ;; ("str" .      #x1d54a)
+             ;; ("True" .     #x1d54b)
+             ;; ("False" .    #x1d53d)
              ;; Mypy
              ;; ("Dict" .     #x1d507)
              ;; ("List" .     #x2112)
@@ -284,35 +295,12 @@
 (display-time)
 #+END_SRC
 
-* functions
-** Window
+* Display
+** Frame
 #+BEGIN_SRC emacs-lisp
-(defun toggle-window-split ()
-  (interactive)
-  (if (= (count-windows) 2)
-      (let* ((this-win-buffer (window-buffer))
-	     (next-win-buffer (window-buffer (next-window)))
-	     (this-win-edges (window-edges (selected-window)))
-	     (next-win-edges (window-edges (next-window)))
-	     (this-win-2nd (not (and (<= (car this-win-edges)
-					 (car next-win-edges))
-				     (<= (cadr this-win-edges)
-					 (cadr next-win-edges)))))
-	     (splitter
-	      (if (= (car this-win-edges)
-		     (car (window-edges (next-window))))
-		  'split-window-horizontally
-		'split-window-vertically)))
-	(delete-other-windows)
-	(let ((first-win (selected-window)))
-	  (funcall splitter)
-	  (if this-win-2nd (other-window 1))
-	  (set-window-buffer (selected-window) this-win-buffer)
-	  (set-window-buffer (next-window) next-win-buffer)
-	  (select-window first-win)
-	  (if this-win-2nd (other-window 1))))))
-
-(define-key ctl-x-4-map "t" 'toggle-window-split)
+  (use-package transpose-frame
+    :ensure t
+    :bind ("C-x 4 t" . 'flop-frame))
 #+END_SRC
 * magit
 #+BEGIN_SRC emacs-lisp
