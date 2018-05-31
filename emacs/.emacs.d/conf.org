@@ -326,7 +326,7 @@
            org-log-done 'time
            org-directory "~/Dropbox/org"
            org-agenda-files '("~/Dropbox/org/agenda")
-           org-default-notes-file (concat org-agenda-files "/current.org")))
+           org-default-notes-file (concat org-directory "agenda/current.org")))
 
  #+END_SRC
 ** langs
@@ -334,8 +334,7 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
-     (sh . t)))
-
+     (shell . t)))
 #+END_SRC
 ** org bullets
 #+BEGIN_SRC emacs-lisp
