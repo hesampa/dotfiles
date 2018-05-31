@@ -321,10 +321,13 @@
      :config
      (setq org-src-window-setup 'current-window
            org-startup-indented t
-           org-agenda-files '("~/Dropbox/org/agenda")
            org-log-into-drawer t
            org-log-reschedule 'time
-           org-log-done 'time))
+           org-log-done 'time
+           org-directory "~/Dropbox/org"
+           org-agenda-files '("~/Dropbox/org/agenda")
+           org-default-notes-file (concat org-agenda-files "/current.org")))
+
  #+END_SRC
 ** langs
 #+BEGIN_SRC emacs-lisp
