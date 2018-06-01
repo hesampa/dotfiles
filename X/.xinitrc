@@ -10,7 +10,7 @@ if [ -f $HOME/.xbindkeysrc ]; then
 fi
 
 # Start dropbox
-sleep 5 && /usr/bin/dropbox &
+sleep 15 && /usr/bin/dropbox &
 # start i3 last
 # exec i3
 # EXWM
