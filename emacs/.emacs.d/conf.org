@@ -172,7 +172,7 @@
     (add-hook 'python-mode-hook 'turn-on-pretty-mode))
 
   ;; (set-fontset-font "fontset-default" '(#x1d4d0 . #x1d4e2) "Symbola")
-  (set-fontset-font "fontset-default" 'unicode "Source Code Pro")
+  (set-fontset-font "fontset-default" '(#x0192 . #x27fc) "DejaVu Sans Mono")
   (global-prettify-symbols-mode 1)
 
   (add-hook
@@ -191,9 +191,9 @@
              ;; Base Types
              ("int" .      #x2124)
              ("float" .    #x211d)
-             ;; ("str" .      #x1d54a)
-             ;; ("True" .     #x1d54b)
-             ;; ("False" .    #x1d53d)
+             ("str" .      #x1d54a)
+             ("True" .     #x1d54b)
+             ("False" .    #x1d53d)
              ;; Mypy
              ;; ("Dict" .     #x1d507)
              ;; ("List" .     #x2112)
