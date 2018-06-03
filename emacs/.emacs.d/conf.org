@@ -15,6 +15,15 @@
   ;; 24-clock
   (setq calendar-time-display-form
         '(24-hours ":" minutes))
+
+  ;; show week numbers
+  (setq calendar-intermonth-text
+        '(propertize
+          (format "W%2d"
+                  (car
+                   (calendar-iso-from-absolute
+                    (calendar-absolute-from-gregorian (list month day year)))))
+          'font-lock-face 'calendar-iso-week-face))
 #+END_SRC
 * modules
 ** customize
@@ -369,6 +378,13 @@
   ;; disable suspend
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-z"))
+
+  ;; toggle layout
+  (defun hesam/keybr-toggle-layout ()
+    (interactive)
+    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us"))
+
+  (global-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
 * exwm
 ** init
