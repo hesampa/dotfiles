@@ -4,6 +4,7 @@ xset s off -dpms # disable screen blanking
 setxkbmap -option altwin:prtsc_rwin
 setxkbmap -option altwin:meta_alt
 setxkbmap -option ctrl:nocaps
+setxkbmap us
 
 if [ -f $HOME/.xbindkeysrc ]; then
     xbindkeys -p
