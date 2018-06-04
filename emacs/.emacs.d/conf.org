@@ -378,13 +378,6 @@
   ;; disable suspend
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-z"))
-
-  ;; toggle layout
-  (defun hesam/keybr-toggle-layout ()
-    (interactive)
-    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us"))
-
-  (global-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
 * exwm
 ** init
@@ -438,7 +431,12 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (exwm-input-set-key (kbd "s-a")
                       (lambda () (interactive) (start-process "" nil "alacritty")))
   (exwm-input-set-key (kbd "s-r") 'dmenu)
-
+  
+  ;; toggle layout
+  (defun hesam/keybr-toggle-layout ()
+    (interactive)
+    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us"))
+  (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
