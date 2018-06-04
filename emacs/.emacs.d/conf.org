@@ -255,11 +255,16 @@
 
 
    (add-hook 'ansi-term-mode-hook (lambda ()
-                                    (setq-local global-hl-line-mode
-                                                nil)))
-   (add-hook 'term-mode-hook (lambda ()
-                               (setq-local global-hl-line-mode
-                                           nil)))
+                                    (setq-local global-hl-line-mode nil)
+                                    (setq buffer-face-mode-face
+                                                '(:family "Source Code Pro" :height 100)
+                                                (buffer-face-mode))))
+
+
+   (add-hook 'dired-mode-hook (lambda ()
+                                (setq-local buffer-face-mode-face
+                                            '(:family "Source Code Pro" :height 100))
+                                (buffer-face-mode)))
  #+END_SRC
 ** cursor
 #+BEGIN_SRC emacs-lisp
