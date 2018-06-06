@@ -454,32 +454,35 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 #+END_SRC
 * ivy and friends
 #+BEGIN_SRC emacs-lisp
-  (use-package ivy
-    :ensure t
-    :init
-    (ido-mode nil)
-    (setq find-file-wildcards 1)
-    :config
-    (ivy-mode 1)
-    (counsel-mode 1)
-    (setq ivy-re-builders-alist
-          '((ivy-switch-buffer . ivy--regex-fuzzy)
-            (t . ivy--regex-fuzzy))
-          ivy-initial-inputs-alist nil
-          ivy-use-virtual-buffers t
-          ivy-count-format "%d/%d "))
+   (use-package ivy
+     :ensure t
+     :init
+     (ido-mode nil)
+     :bind
+     ("C-x C-f" . 'counsel-find-file)
+     ("M-x" . 'counsel-M-x)
+     :config
+     (ivy-mode 1)
+     (counsel-mode 1)
+     (setq ivy-re-builders-alist
+           '((ivy-switch-buffer . ivy--regex-fuzzy)
+             (t . ivy--regex-fuzzy))
+           enable-recursive-minibuffers t
+           ivy-initial-inputs-alist nil
+           ivy-use-virtual-buffers t
+           ivy-count-format "%d/%d "))
 
-  (use-package ivy-hydra
-    :ensure t)
+   (use-package ivy-hydra
+     :ensure t)
 
-  (use-package flx
-    :ensure t)
+   (use-package flx
+     :ensure t)
 
-  (use-package smex
-    :ensure t)
+   (use-package smex
+     :ensure t)
 
-  (put 'upcase-region 'disabled nil)
-  (put 'downcase-region 'disabled nil)
+   (put 'upcase-region 'disabled nil)
+   (put 'downcase-region 'disabled nil)
 #+END_SRC
 * which-key
 #+BEGIN_SRC emacs-lisp
