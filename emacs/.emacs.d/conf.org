@@ -173,6 +173,13 @@
     :config
     (add-hook 'python-mode-hook #'smartparens-mode))
 #+END_SRC
+** dired
+#+BEGIN_SRC emacs-lisp
+  (use-package dired-rsync
+    :ensure t
+    :config
+    (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
+#+END_SRC
 * apperance
 ** pretty-mode
 #+BEGIN_SRC emacs-lisp
