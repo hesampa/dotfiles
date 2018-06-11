@@ -161,6 +161,11 @@
     :ensure t
     :bind ("C-x m" . 'transpose-mark-region))
 #+END_SRC
+*** sudo-edit
+#+BEGIN_SRC emacs-lisp
+  (use-package sudo-edit
+    :ensure t)
+#+END_SRC
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
