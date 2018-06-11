@@ -4,13 +4,14 @@ xset s off -dpms # disable screen blanking
 setxkbmap -option altwin:prtsc_rwin
 setxkbmap -option altwin:meta_alt
 setxkbmap -option ctrl:nocaps
+setxkbmap us
 
 if [ -f $HOME/.xbindkeysrc ]; then
     xbindkeys -p
 fi
 
 # Start dropbox
-sleep 15 && /usr/bin/dropbox &
+sleep 10 && /usr/bin/dropbox &
 # start i3 last
 # exec i3
 # EXWM
