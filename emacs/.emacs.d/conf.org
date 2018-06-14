@@ -255,28 +255,38 @@
 #+END_SRC
 ** fonts
  #+BEGIN_SRC emacs-lisp
-   ;; (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
    (set-face-attribute 'default nil
                        :family "Source Code Pro"
-                       :height 130
+                       :height 100
                        :weight 'normal
                        :width 'normal)
+
+
+   (defun hesam/font-per-display ()
+     (interactive)
+     (if window-system
+         (progn
+           (if (> (nth 3 (car (cdr (frame-monitor-attributes (selected-frame))))) 3000)
+               (set-frame-parameter (selected-frame) 'font "Source Code Pro 15")
+             (set-frame-parameter (selected-frame) 'font "Source Code Pro 10")))))
+
+   ;; (push 'hesam/font-per-display after-make-frame-functions)
 
    (setq ring-bell-function 'ignore)
    ;; (set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
 
 
-   (add-hook 'ansi-term-mode-hook (lambda ()
-                                    (setq-local global-hl-line-mode nil)
-                                    (setq buffer-face-mode-face
-                                                '(:family "Source Code Pro" :height 100)
-                                                (buffer-face-mode))))
+   ;; (add-hook 'ansi-term-mode-hook (lambda ()
+   ;;                                  (setq-local global-hl-line-mode nil)
+   ;;                                  (setq buffer-face-mode-face
+   ;;                                              '(:family "Source Code Pro" :height 100)
+   ;;                                              (buffer-face-mode))))
 
 
-   (add-hook 'dired-mode-hook (lambda ()
-                                (setq-local buffer-face-mode-face
-                                            '(:family "Source Code Pro" :height 100))
-                                (buffer-face-mode)))
+   ;; (add-hook 'dired-mode-hook (lambda ()
+   ;;                              (setq-local buffer-face-mode-face
+   ;;                                          '(:family "Source Code Pro" :height 100))
+   ;;                              (buffer-face-mode)))
  #+END_SRC
 ** cursor
 #+BEGIN_SRC emacs-lisp
@@ -423,10 +433,11 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (require 'exwm-randr)
   (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
   (add-hook 'exwm-randr-screen-change-hook
-	    (lambda ()
-	      (start-process-shell-command
-	       "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
+            (lambda ()
+              (start-process-shell-command
+               "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
   (exwm-randr-enable)
+  ;; (push 'hesam/font-per-display after-make-frame-functions)
 #+END_SRC
 ** binds
 *** window
