@@ -10,7 +10,7 @@ stty -ixon
 
 shopt -s histappend
 
-export EDITOR=vim
+export EDITOR=emacsclient
 export LC_ALL=en_US.UTF-8
 export PATH=$PATH:$HOME/.local/bin/
 export RANGER_LOAD_DEFAULT_RC=FALSE

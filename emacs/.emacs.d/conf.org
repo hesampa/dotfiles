@@ -475,6 +475,8 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
+  ;; emacs server
+  (server-start)
   ;; autosave
   (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
   (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
