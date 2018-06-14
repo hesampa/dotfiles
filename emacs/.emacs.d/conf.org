@@ -1,3 +1,68 @@
+* exwm
+** init
+#+BEGIN_SRC emacs-lisp
+  (use-package exwm
+    :ensure t
+    :config
+    (exwm-enable))
+
+  (use-package dmenu
+    :ensure t)
+
+  ;; (require 'exwm-config)
+  ;; (require 'exwm-systemtray)
+  ;; (exwm-config-default)
+  ;; (exwm-systemtray-enable)
+  ;; (setq exwm-systemtray-height 16)
+#+END_SRC
+** xrandr
+xrandr --output DP2 --mode 2560x1440 --right-of eDP1;
+xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
+#+BEGIN_SRC emacs-lisp
+  (require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
+  (add-hook 'exwm-randr-screen-change-hook
+            (lambda ()
+              (start-process-shell-command
+               "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
+  (exwm-randr-enable)
+  ;; (push 'hesam/font-per-display after-make-frame-functions)
+#+END_SRC
+** binds
+*** window
+#+BEGIN_SRC emacs-lisp
+(exwm-input-set-key (kbd "s-h") 'windmove-left)
+(exwm-input-set-key (kbd "s-j") 'windmove-down)
+(exwm-input-set-key (kbd "s-k") 'windmove-up)
+(exwm-input-set-key (kbd "s-l") 'windmove-right)
+(exwm-input-set-key (kbd "s-K") 'buf-move-up)
+(exwm-input-set-key (kbd "s-J") 'buf-move-down)
+(exwm-input-set-key (kbd "s-H") 'buf-move-left)
+(exwm-input-set-key (kbd "s-L") 'buf-move-right)
+(exwm-input-set-key (kbd "s-s") 'split-window-horizontally)
+(exwm-input-set-key (kbd "s-v") 'split-window-vertically)
+(exwm-input-set-key (kbd "s-d") 'kill-buffer-and-window)
+(exwm-input-set-key (kbd "s-K") 'buf-move-up)
+(exwm-input-set-key (kbd "s-J") 'buf-move-down)
+(exwm-input-set-key (kbd "s-H") 'buf-move-left)
+(exwm-input-set-key (kbd "s-L") 'buf-move-right)
+(exwm-input-set-key (kbd "s-f") 'exwm-reset)
+#+END_SRC
+*** applications
+#+BEGIN_SRC emacs-lisp
+  (exwm-input-set-key (kbd "s-c")
+                      (lambda () (interactive) (start-process "" nil "chromium")))
+  (exwm-input-set-key (kbd "s-a")
+                      (lambda () (interactive) (start-process "" nil "alacritty")))
+  (exwm-input-set-key (kbd "s-r") 'dmenu)
+  
+  ;; toggle layout
+  (defun hesam/keybr-toggle-layout ()
+    (interactive)
+    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us"))
+  (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
+#+END_SRC
+
 * calender
 #+BEGIN_SRC emacs-lisp
   ;; start with Mon
@@ -412,66 +477,6 @@
   ;; disable suspend
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-z"))
-#+END_SRC
-* exwm
-** init
-#+BEGIN_SRC emacs-lisp
-  (use-package exwm
-      :ensure t)
-  (use-package dmenu
-    :ensure t)
-  (require 'exwm-config)
-  (require 'exwm-systemtray)
-  (exwm-config-default)
-  (exwm-systemtray-enable)
-  (setq exwm-systemtray-height 16)
-#+END_SRC
-** xrandr
-xrandr --output DP2 --mode 2560x1440 --right-of eDP1;
-xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
-#+BEGIN_SRC emacs-lisp
-  (require 'exwm-randr)
-  (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
-  (add-hook 'exwm-randr-screen-change-hook
-            (lambda ()
-              (start-process-shell-command
-               "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
-  (exwm-randr-enable)
-  ;; (push 'hesam/font-per-display after-make-frame-functions)
-#+END_SRC
-** binds
-*** window
-#+BEGIN_SRC emacs-lisp
-(exwm-input-set-key (kbd "s-h") 'windmove-left)
-(exwm-input-set-key (kbd "s-j") 'windmove-down)
-(exwm-input-set-key (kbd "s-k") 'windmove-up)
-(exwm-input-set-key (kbd "s-l") 'windmove-right)
-(exwm-input-set-key (kbd "s-K") 'buf-move-up)
-(exwm-input-set-key (kbd "s-J") 'buf-move-down)
-(exwm-input-set-key (kbd "s-H") 'buf-move-left)
-(exwm-input-set-key (kbd "s-L") 'buf-move-right)
-(exwm-input-set-key (kbd "s-s") 'split-window-horizontally)
-(exwm-input-set-key (kbd "s-v") 'split-window-vertically)
-(exwm-input-set-key (kbd "s-d") 'kill-buffer-and-window)
-(exwm-input-set-key (kbd "s-K") 'buf-move-up)
-(exwm-input-set-key (kbd "s-J") 'buf-move-down)
-(exwm-input-set-key (kbd "s-H") 'buf-move-left)
-(exwm-input-set-key (kbd "s-L") 'buf-move-right)
-(exwm-input-set-key (kbd "s-f") 'exwm-reset)
-#+END_SRC
-*** applications
-#+BEGIN_SRC emacs-lisp
-  (exwm-input-set-key (kbd "s-c")
-                      (lambda () (interactive) (start-process "" nil "chromium")))
-  (exwm-input-set-key (kbd "s-a")
-                      (lambda () (interactive) (start-process "" nil "alacritty")))
-  (exwm-input-set-key (kbd "s-r") 'dmenu)
-  
-  ;; toggle layout
-  (defun hesam/keybr-toggle-layout ()
-    (interactive)
-    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us"))
-  (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
