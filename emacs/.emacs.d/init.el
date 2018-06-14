@@ -15,6 +15,7 @@
 
 ;; follow symlinks without prompt
 (setq vc-follow-symlinks t)
+(ido-mode -1)
 
 (require 'org)
 (org-babel-load-file

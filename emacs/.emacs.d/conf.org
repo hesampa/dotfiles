@@ -490,8 +490,6 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
 #+BEGIN_SRC emacs-lisp
    (use-package ivy
      :ensure t
-     :init
-     (ido-mode nil)
      :bind
      ("C-x C-f" . 'counsel-find-file)
      ("M-x" . 'counsel-M-x)
