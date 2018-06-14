@@ -1,17 +1,16 @@
+
 * exwm
 ** init
 #+BEGIN_SRC emacs-lisp
   (use-package exwm
-    :ensure t
-    :config
-    (exwm-enable))
+    :ensure t)
 
   (use-package dmenu
     :ensure t)
 
-  ;; (require 'exwm-config)
+  (require 'exwm-config)
+  (exwm-config-default)
   ;; (require 'exwm-systemtray)
-  ;; (exwm-config-default)
   ;; (exwm-systemtray-enable)
   ;; (setq exwm-systemtray-height 16)
 #+END_SRC
