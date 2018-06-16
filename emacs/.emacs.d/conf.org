@@ -243,6 +243,13 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :config
     (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
 #+END_SRC
+** visual fill mode
+#+BEGIN_SRC emacs-lisp
+  (use-package visual-fill-column
+    :ensure t)
+  (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+  (setq fill-column 80)
+#+END_SRC
 * apperance
 ** pretty-mode
 #+BEGIN_SRC emacs-lisp
