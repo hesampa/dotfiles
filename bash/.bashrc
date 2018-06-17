@@ -2,33 +2,10 @@
 # ~/.bashrc
 #
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 # CTRL-S causes freeze, disable it
 stty -ixon
 
-shopt -s histappend
-
-export EDITOR=emacsclient
-export LC_ALL=en_US.UTF-8
-export PATH=$PATH:$HOME/.local/bin/
-export RANGER_LOAD_DEFAULT_RC=FALSE
-export SUDO_EDITOR=vim
-export TERM=screen-256color
-export VISUAL=vim
-
-
-LS_COLORS=$LS_COLORS:'ex=1;32:ln=0;35:di=1;34:ow=1;34'
-export LS_COLORS
-
 export PS1="\[\033[38;5;7m\][\h:\[$(tput sgr0)\]\[\033[38;5;1m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-
-alias ls='ls --color=auto'
-
-#
-# bash-it
-#
 
 if [ -d $HOME/.bash_it ]; then
 
@@ -84,7 +61,7 @@ if [ -d $HOME/.bash_it ]; then
     source "$BASH_IT"/bash_it.sh
 fi
 
-# fasd
+
 if [ -e /bin/fasd ]; then
     eval "$(fasd --init auto)"
 fi
@@ -94,7 +71,7 @@ if [ -e /bin/thefuck ]; then
 fi
 
 if [ -d $dotfiles ]; then
-    source $dotfiles/misc/alias
+    source $dotfiles/bash/.bash_aliases
 fi
 
 export GREP_COLOR="1;31"
