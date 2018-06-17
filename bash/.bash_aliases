@@ -41,6 +41,10 @@ alias countfiles="find -type f | wc -l"
 alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
 alias crep="latexmk -pvc -pdf -outdir=./outfiles"
 
+# emacs
+alias ec='emacsclient'
+alias ce='emacsclient'
+
 # vim
 alias vi="vim"
 alias view="vim -R"
