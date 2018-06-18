@@ -2,10 +2,15 @@
 # ~/.bashrc
 #
 
-# CTRL-S causes freeze, disable it
-stty -ixon
-
 export PS1="\[\033[38;5;7m\][\h:\[$(tput sgr0)\]\[\033[38;5;1m\]\w\[$(tput sgr0)\]\[\033[38;5;7m\]]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+shopt -s histappend
+if [ -d $dotfiles ]; then
+    source $dotfiles/bash/.bash_aliases
+fi
+
+HISTCONTROL=ignoreboth
+HISTSIZE=9999
 
 if [ -d $HOME/.bash_it ]; then
 
@@ -68,10 +73,6 @@ fi
 
 if [ -e /bin/thefuck ]; then
     eval $(thefuck --alias)
-fi
-
-if [ -d $dotfiles ]; then
-    source $dotfiles/bash/.bash_aliases
 fi
 
 export GREP_COLOR="1;31"
