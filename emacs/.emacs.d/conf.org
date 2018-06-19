@@ -256,7 +256,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :ensure t
     :config (global-hungry-delete-mode))
 #+END_SRC
-* apperance
+* appearance
 ** pretty-mode
 #+BEGIN_SRC emacs-lisp
   (use-package pretty-mode
