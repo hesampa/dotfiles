@@ -399,14 +399,21 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (spaceline-all-the-icons-theme)
     )
 #+END_SRC
-** Display-time
+** display-time
 #+BEGIN_SRC emacs-lisp
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (setq display-time-default-load-average nil)
 (display-time)
 #+END_SRC
+** rainbow delimiters
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-delimiters
+    :ensure t
+    :config
+    (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+#+END_SRC
 * Display
 ** Frame
 #+BEGIN_SRC emacs-lisp
