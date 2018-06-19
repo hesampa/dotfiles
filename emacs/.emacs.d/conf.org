@@ -537,6 +537,10 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (use-package smex
     :ensure t)
 
+  (use-package swiper
+    :ensure t
+    :bind ("C-s" . 'swiper))
+
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
 #+END_SRC
