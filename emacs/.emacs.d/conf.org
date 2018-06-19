@@ -250,6 +250,12 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
   (setq fill-column 80)
 #+END_SRC
+** hungry deletion
+#+BEGIN_SRC emacs-lisp
+  (use-package hungry-delete
+    :ensure t
+    :config (global-hungry-delete-mode))
+#+END_SRC
 * apperance
 ** pretty-mode
 #+BEGIN_SRC emacs-lisp
