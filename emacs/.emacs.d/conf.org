@@ -585,3 +585,11 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     :config
     (add-hook 'after-init-hook 'global-company-mode))
 #+END_SRC
+* sr-speedbar
+#+BEGIN_SRC emacs-lisp
+  (use-package sr-speedbar
+    :ensure t
+    :config
+    (setq speedbar-use-images nil)
+    )
+#+END_SRC
