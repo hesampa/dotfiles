@@ -11,7 +11,8 @@ if [ -d $dotfiles ]; then
 fi
 
 # disable freeze C-s
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
+
 
 HISTCONTROL=ignoreboth
 HISTSIZE=9999
