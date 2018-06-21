@@ -12,6 +12,9 @@
   ;; (require 'exwm-systemtray)
   ;; (exwm-systemtray-enable)
   ;; (setq exwm-systemtray-height 16)
+
+  (setq exwm-workspace-show-all-buffers t)
+  (setq exwm-layout-show-all-buffers t)
 #+END_SRC
 ** xrandr
 xrandr --output DP2 --mode 2560x1440 --right-of eDP1;
