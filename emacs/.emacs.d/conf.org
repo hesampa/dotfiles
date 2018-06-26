@@ -244,11 +244,22 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (add-hook 'python-mode-hook #'smartparens-mode))
 #+END_SRC
 ** dired
+*** dired-rsync
 #+BEGIN_SRC emacs-lisp
   (use-package dired-rsync
     :ensure t
     :config
     (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
+#+END_SRC
+*** dired-do-eshell
+[[https://emacs.stackexchange.com/questions/30855/how-to-grep-marked-files-in-the-dired-mode-of-emacs][Stackoverflow]]
+#+BEGIN_SRC emacs-lisp
+  (defun dired-do-eshell-command (command)
+    "Run an Eshell command on the marked files."
+    (interactive "sEshell command: ")
+    (let ((files (dired-get-marked-files t)))
+      (eshell-command
+       (format "%s %s" command (mapconcat #'identity files " ")))))
 #+END_SRC
 ** visual fill mode
 #+BEGIN_SRC emacs-lisp
