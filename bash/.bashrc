@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PS1="[\h:\W]"
+export PS1="[\h][\W]$ "
 export dotfiles=$HOME/dotfiles
 
 shopt -s histappend
