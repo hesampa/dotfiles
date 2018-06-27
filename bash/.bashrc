@@ -5,6 +5,11 @@
 export PS1="[\t][\h][\W]$ "
 export dotfiles=$HOME/dotfiles
 
+if [ -e $HOME/.profile ]; then
+    source $HOME/.profile
+fi
+
+
 shopt -s histappend
 if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
@@ -12,7 +17,6 @@ fi
 
 # disable freeze C-s
 [[ $- == *i* ]] && stty -ixon
-
 
 HISTCONTROL=ignoreboth
 HISTSIZE=9999
@@ -24,7 +28,9 @@ if [ -d $HOME/.bash_it ]; then
 
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
-    export BASH_IT_THEME='zork'
+    if [ "$THEME" != "dumb" ]; then
+	export BASH_IT_THEME='zork'
+    fi
 
     # (Advanced): Change this to the name of your remote repo if you
     # cloned bash-it with a remote other than origin such as `bash-it`.
@@ -76,8 +82,8 @@ if [ -e /bin/fasd ]; then
     eval "$(fasd --init auto)"
 fi
 
-if [ -e /bin/thefuck ]; then
-    eval $(thefuck --alias)
-fi
+# if [ -e /bin/thefuck ]; then
+#     eval $(thefuck --alias)
+# fi
 
 export GREP_COLOR="1;31"
