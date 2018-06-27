@@ -33,7 +33,7 @@ if [ -d $HOME/.bash_it ]; then
     fi
 
     # (Advanced): Change this to the name of your remote repo if you
-    # cloned bash-it with a remote other than origin such as `bash-it`.
+    # cloned bash-it with a remote otherh than origin such as `bash-it`.
     # export BASH_IT_REMOTE='bash-it'
 
     # Your place for hosting Git repos. I use this for private repos.
@@ -48,7 +48,8 @@ if [ -d $HOME/.bash_it ]; then
     # Set this to the command you use for todo.txt-cli
     # export TODO="t"
 
-    # Set this to false to turn off version control status checking within the prompt for all themes
+    # Set this to false to turn off version control status checking within the
+    # prompt for all themes
     export SCM_CHECK=true
 
     # Set Xterm/screen/Tmux title with only a short hostname.
@@ -78,12 +79,8 @@ if [ -d $HOME/.bash_it ]; then
 fi
 
 
-if [ -e /bin/fasd ]; then
+if command -v fasd &> /dev/null; then
     eval "$(fasd --init auto)"
 fi
-
-# if [ -e /bin/thefuck ]; then
-#     eval $(thefuck --alias)
-# fi
 
 export GREP_COLOR="1;31"
