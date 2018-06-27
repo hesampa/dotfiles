@@ -508,10 +508,10 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
 
   ;; completion suggestions
-  (global-set-key (kbd "C-c C-n") 'hippie-expand)
+  (global-set-key (kbd "C-c C-h") 'hippie-expand)
 
   ;; ibuffer
-  (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
   ;; disable suspend
