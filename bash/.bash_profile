@@ -11,10 +11,6 @@ export dotfiles=$HOME/dotfiles
 export PS1="[\t][\h][\W]$ "
 export GREP_COLOR="1;31"
 
-if command -v fasd &> /dev/null; then
-    eval "$(fasd --init auto)"
-fi
-
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
       exec startx
 fi
