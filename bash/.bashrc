@@ -2,15 +2,18 @@
 # ~/.bashrc
 #
 
-export PS1="[\t][\h][\W]$ "
-export dotfiles=$HOME/dotfiles
+# env
+EDITOR=emacsclient
+SUDO_EDITOR=emacsclient
+VISUAL=emacsclient
 
-if [ -e $HOME/.profile ]; then
-    source $HOME/.profile
-fi
-
-
+# history
+HISTCONTROL=ignoreboth
+HISTSIZE=9999
 shopt -s histappend
+
+# alias
+alias ls='ls --color=auto'
 if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
 fi
@@ -18,9 +21,7 @@ fi
 # disable freeze C-s
 [[ $- == *i* ]] && stty -ixon
 
-HISTCONTROL=ignoreboth
-HISTSIZE=9999
-
+# bash_it
 if [ -d $HOME/.bash_it ]; then
 
     # Path to the bash it configuration
@@ -28,7 +29,7 @@ if [ -d $HOME/.bash_it ]; then
 
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
-    if [ "$THEME" != "dumb" ]; then
+    if [ "$TERM" != "dumb" ]; then
 	export BASH_IT_THEME='zork'
     fi
 
@@ -78,9 +79,6 @@ if [ -d $HOME/.bash_it ]; then
     source "$BASH_IT"/bash_it.sh
 fi
 
-
 if command -v fasd &> /dev/null; then
     eval "$(fasd --init auto)"
 fi
-
-export GREP_COLOR="1;31"
