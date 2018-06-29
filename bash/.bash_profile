@@ -13,6 +13,7 @@ export GREP_COLOR="1;31"
 
 [[ $- == *i* ]] && stty -ixon
 
+alias ls='ls --color=auto'
 if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
 fi
