@@ -11,6 +11,12 @@ export dotfiles=$HOME/dotfiles
 export PS1="[\t][\h][\W]$ "
 export GREP_COLOR="1;31"
 
+[[ $- == *i* ]] && stty -ixon
+
+if [ -d $dotfiles ]; then
+    source $dotfiles/bash/.bash_aliases
+fi
+
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
       exec startx
 fi
