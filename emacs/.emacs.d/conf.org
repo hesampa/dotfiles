@@ -64,7 +64,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
 
-* calender
+* calendar
 #+BEGIN_SRC emacs-lisp
   ;; start with Mon
   (setq calendar-week-start-day 1)
@@ -432,7 +432,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 #+END_SRC
-* Display
+* display
 ** Frame
 #+BEGIN_SRC emacs-lisp
   (use-package transpose-frame
