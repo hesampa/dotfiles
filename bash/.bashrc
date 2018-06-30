@@ -13,7 +13,6 @@ HISTSIZE=9999
 shopt -s histappend
 
 # alias
-alias ls='ls --color=auto'
 if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
 fi
