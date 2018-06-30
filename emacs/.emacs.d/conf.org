@@ -508,10 +508,10 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (global-set-key (kbd "M-p") (lambda () (interactive) (scroll-down 5)))
 
   ;; completion suggestions
-  (global-set-key (kbd "C-c C-n") 'hippie-expand)
+  (global-set-key (kbd "C-c C-h") 'hippie-expand)
 
   ;; ibuffer
-  (global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
   ;; disable suspend
@@ -531,15 +531,21 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (use-package ivy
     :ensure t
     :init
-    (ido-mode nil)
+    (ido-mode 0)
     :bind
     ("C-x C-f" . 'counsel-find-file)
     ("M-x" . 'counsel-M-x)
+    ("C-c g" . 'counsel-git)
+    ("C-c j" . 'counsel-git-grep)
+    ("C-c k" . 'counsel-ag)
+    ("C-x l" . 'counsel-locate)
+    ("C-S-o" . 'counsel-rhythmbox)
     :config
     (ivy-mode 1)
     (counsel-mode 1)
     (setq ivy-re-builders-alist
           '((ivy-switch-buffer . ivy--regex-fuzzy)
+            (swiper . ivy--regex)
             (t . ivy--regex-fuzzy))
           enable-recursive-minibuffers t
           ivy-initial-inputs-alist nil

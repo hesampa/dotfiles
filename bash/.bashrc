@@ -2,15 +2,18 @@
 # ~/.bashrc
 #
 
-export PS1="[\t][\h][\W]$ "
-export dotfiles=$HOME/dotfiles
+# env
+EDITOR=emacsclient
+SUDO_EDITOR=emacsclient
+VISUAL=emacsclient
 
-if [ -e $HOME/.profile ]; then
-    source $HOME/.profile
-fi
-
-
+# history
+HISTCONTROL=ignoreboth
+HISTSIZE=9999
 shopt -s histappend
+
+# alias
+alias ls='ls --color=auto'
 if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
 fi
@@ -18,9 +21,7 @@ fi
 # disable freeze C-s
 [[ $- == *i* ]] && stty -ixon
 
-HISTCONTROL=ignoreboth
-HISTSIZE=9999
-
+# bash_it
 if [ -d $HOME/.bash_it ]; then
 
     # Path to the bash it configuration
@@ -28,12 +29,12 @@ if [ -d $HOME/.bash_it ]; then
 
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
-    if [ "$THEME" != "dumb" ]; then
+    if [ "$TERM" != "dumb" ]; then
 	export BASH_IT_THEME='zork'
     fi
 
     # (Advanced): Change this to the name of your remote repo if you
-    # cloned bash-it with a remote other than origin such as `bash-it`.
+    # cloned bash-it with a remote otherh than origin such as `bash-it`.
     # export BASH_IT_REMOTE='bash-it'
 
     # Your place for hosting Git repos. I use this for private repos.
@@ -48,7 +49,8 @@ if [ -d $HOME/.bash_it ]; then
     # Set this to the command you use for todo.txt-cli
     # export TODO="t"
 
-    # Set this to false to turn off version control status checking within the prompt for all themes
+    # Set this to false to turn off version control status checking within the
+    # prompt for all themes
     export SCM_CHECK=true
 
     # Set Xterm/screen/Tmux title with only a short hostname.
@@ -77,13 +79,6 @@ if [ -d $HOME/.bash_it ]; then
     source "$BASH_IT"/bash_it.sh
 fi
 
-
-if [ -e /bin/fasd ]; then
+if command -v fasd &> /dev/null; then
     eval "$(fasd --init auto)"
 fi
-
-# if [ -e /bin/thefuck ]; then
-#     eval $(thefuck --alias)
-# fi
-
-export GREP_COLOR="1;31"

@@ -21,6 +21,9 @@ alias stmux="tmux source-file ~/dotfiles/tmux/.tmux.conf"
 alias szshenv="source ~/dotfiles/zsh/.zshenv"
 alias szsh="source ~/dotfiles/zsh/.zshrc"
 
+# dtach
+alias dta='dtach -A'
+
 # git
 alias ga="git add"
 alias gagc="git add .; git commit"
