@@ -63,7 +63,15 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us"))
   (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
-
+* emms
+#+BEGIN_SRC emacs-lisp
+  (use-package emms
+    :ensure t
+    :requires
+    (emms-player-simple emms-source-file emms-source-playlist)
+    :config
+    (setq emms-player-list '(emms-player-mpv)))
+#+END_SRC
 * calendar
 #+BEGIN_SRC emacs-lisp
   ;; start with Mon
