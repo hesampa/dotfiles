@@ -67,6 +67,7 @@ alias py3="python3"
 alias t="tmux -u"
 
 # ls
+alias ls='ls --color=auto'
 alias ll="ls -1"
 alias lla="ll -a"
 alias lsgrep="ls | grep -P"
