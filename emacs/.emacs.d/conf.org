@@ -617,3 +617,10 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (setq speedbar-use-images nil)
     )
 #+END_SRC
+* pdf-tools
+#+BEGIN_SRC emacs-lisp
+  (use-package pdf-tools
+    :ensure t
+    :config
+    (pdf-tools-install))
+#+END_SRC
