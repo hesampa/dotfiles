@@ -440,6 +440,13 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 #+END_SRC
+** ellipsis
+#+BEGIN_SRC emacs-lisp
+  (set-display-table-slot standard-display-table
+                          'selective-display (string-to-vector " [+]"))
+
+
+#+END_SRC
 * display
 ** Frame
 #+BEGIN_SRC emacs-lisp
@@ -481,16 +488,21 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
    '((python . t)
      (shell . t)))
 #+END_SRC
-** org bullets
+** hooks
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook #'flyspell-mode)
+#+END_SRC
+** appearance
+*** org bullets
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 #+END_SRC
-** hooks
+*** misc
 #+BEGIN_SRC emacs-lisp
-  (add-hook 'org-mode-hook #'flyspell-mode)
+  (setq org-ellipsis " ▼")
 #+END_SRC
 * expand region
 #+BEGIN_SRC emacs-lisp
