@@ -56,7 +56,7 @@ xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
   (exwm-input-set-key (kbd "s-a")
                       (lambda () (interactive) (start-process "" nil "alacritty")))
   (exwm-input-set-key (kbd "s-r") 'dmenu)
-  (exwm-input-set-key (kbd "s-t") 'ansi-term)
+  (exwm-input-set-key (kbd "s-u") 'ansi-term)
 
   ;; toggle layout
   (defun hesam/keybr-toggle-layout ()
