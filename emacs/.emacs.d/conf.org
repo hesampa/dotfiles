@@ -9,25 +9,26 @@
 
   (require 'exwm-config)
   (exwm-config-default)
-  ;; (require 'exwm-systemtray)
-  ;; (exwm-systemtray-enable)
-  ;; (setq exwm-systemtray-height 16)
+  (require 'exwm-systemtray)
+  (exwm-systemtray-enable)
+  (setq exwm-systemtray-height 16)
 
   (setq exwm-workspace-show-all-buffers t)
   (setq exwm-layout-show-all-buffers t)
 #+END_SRC
 ** xrandr
-xrandr --output DP2 --mode 2560x1440 --right-of eDP1;
-xrandr --output HDMI1 --mode 2560x1440 --left-of eDP1
+*** Olivia
 #+BEGIN_SRC emacs-lisp
-  (require 'exwm-randr)
-  (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
-  (add-hook 'exwm-randr-screen-change-hook
-            (lambda ()
-              (start-process-shell-command
-               "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
-  (exwm-randr-enable)
   ;; (push 'hesam/font-per-display after-make-frame-functions)
+  (if (string-equal system-name "olivia")
+      (progn
+        (require 'exwm-randr)
+        (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
+        (add-hook 'exwm-randr-screen-change-hook
+                  (lambda ()
+                    (start-process-shell-command
+                     "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
+        (exwm-randr-enable)))
 #+END_SRC
 ** binds
 *** window
