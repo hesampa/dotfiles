@@ -289,6 +289,20 @@ Also use primary clipboard in X
     :ensure t
     :config (global-hungry-delete-mode))
 #+END_SRC
+** search
+*** visual-regexp
+#+BEGIN_SRC emacs-lisp
+  (use-package visual-regexp-steroids
+    :ensure t
+    :bind
+    ;; ("C-c m" . vr/mc-mark)
+    ("C-r"   . vr/isearch-backward) 
+    ("C-M-r"   . vr/isearch-backward)
+    ("C-M-s"   . vr/isearch-forward)
+    :config
+    (use-package visual-regexp
+      :ensure t))
+#+END_SRC
 * appearance
 ** pretty-mode
 #+BEGIN_SRC emacs-lisp
