@@ -23,6 +23,7 @@ pacman -S mpv
 pacman -S noto-emoji-fonts
 pacman -S noto-fonts
 pacman -S openssh
+pacman -S pdfgrep
 pacman -S perl-rename
 pacman -S pulseaudio
 pacman -S python2
