@@ -10,9 +10,13 @@ if [ -f $HOME/.xbindkeysrc ]; then
     xbindkeys -p
 fi
 
-# Start dropbox
-sleep 10 && /usr/bin/dropbox &
-# start i3 last
-# exec i3
-# EXWM
+if command -v dropbox &> /dev/null; then
+    sleep 10 && /usr/bin/dropbox &
+fi
+
+if command -v keepassxc &> /dev/null; then
+    sleep 10 && /usr/bin/keepassxc &
+fi
+
+# emacs with EXWM
 exec emacs
