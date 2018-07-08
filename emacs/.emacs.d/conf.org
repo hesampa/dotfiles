@@ -276,6 +276,32 @@ Also use primary clipboard in X
       (eshell-command
        (format "%s %s" command (mapconcat #'identity files " ")))))
 #+END_SRC
+*** openwith
+#+BEGIN_SRC emacs-lisp
+  (use-package openwith
+    :ensure t
+    :config
+    (setq openwith-associations
+          (list
+           (list (openwith-make-extension-regexp
+                  '("mpg" "mpeg" "mp3" "mp4"
+                    "avi" "wmv" "wav" "mov" "flv"
+                    "ogm" "ogg" "mkv" "rar"))
+                 "mpv"
+                 '(file))
+           (list (openwith-make-extension-regexp
+                  '("xbm" "pbm" "pgm" "ppm" "pnm"
+                    "png" "gif" "bmp" "tif" "jpeg" "jpg"))
+                 "feh"
+                 '(file))
+           (list (openwith-make-extension-regexp
+                  '("doc" "xls" "ppt" "odt" "ods" "odg" "odp"))
+                 "libreoffice"
+                 '(file))))
+    (openwith-mode 1))
+
+
+#+END_SRC
 ** visual fill mode
 #+BEGIN_SRC emacs-lisp
   (use-package visual-fill-column
@@ -681,3 +707,4 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (add-hook 'pdf-view-mode-hook (lambda () (setq-local beacon-mode nil)))
 #+END_SRC
+
