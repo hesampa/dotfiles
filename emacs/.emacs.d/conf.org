@@ -292,16 +292,16 @@ Also use primary clipboard in X
 ** search
 *** visual-regexp
 #+BEGIN_SRC emacs-lisp
-  (use-package visual-regexp-steroids
-    :ensure t
-    :bind
-    ;; ("C-c m" . vr/mc-mark)
-    ("C-r"   . vr/isearch-backward) 
-    ("C-M-r"   . vr/isearch-backward)
-    ("C-M-s"   . vr/isearch-forward)
-    :config
-    (use-package visual-regexp
-      :ensure t))
+;; (use-package visual-regexp-steroids
+  ;;   :ensure t
+  ;;   :bind
+  ;;   ;; ("C-c m" . vr/mc-mark)
+  ;;   ("C-r"   . vr/isearch-backward) 
+  ;;   ("C-M-r"   . vr/isearch-backward)
+  ;;   ("C-M-s"   . vr/isearch-forward)
+  ;;   :config
+  ;;   (use-package visual-regexp
+  ;;     :ensure t))
 #+END_SRC
 * appearance
 ** pretty-mode
@@ -363,11 +363,16 @@ Also use primary clipboard in X
 #+END_SRC
 ** theme
 #+BEGIN_SRC emacs-lisp
-  (use-package doom-themes
+  ;; (use-package doom-themes
+  ;;   :ensure t
+  ;;   :config
+  ;;   (load-theme 'doom-one t)
+  ;;   (doom-themes-org-config))
+
+  (use-package gruvbox-theme
     :ensure t
     :config
-    (load-theme 'doom-one t)
-    (doom-themes-org-config))
+    (load-theme 'gruvbox t))
 #+END_SRC
 ** bar-mode
 #+BEGIN_SRC emacs-lisp
@@ -435,9 +440,7 @@ Also use primary clipboard in X
     :ensure t
     :after spaceline
     :config
-    (setq spaceline-highlight-face-func 'spaceline-highlight-face-modified
-	  spaceline-all-the-icons-separator-type 'wave
-	  )
+    (setq spaceline-all-the-icons-separator-type 'none)
     (spaceline-toggle-all-the-icons-buffer-path-off)
     (spaceline-toggle-all-the-icons-projectile-off)
     (spaceline-toggle-all-the-icons-buffer-size-off)
@@ -533,7 +536,7 @@ Also use primary clipboard in X
 #+END_SRC
 
 * hydra
-#+BEGIN_SRC
+#+BEGIN_SRC emacs-lisp
 (use-package hydra
     :ensure t)
 #+END_SRC
