@@ -69,10 +69,8 @@
 #+BEGIN_SRC emacs-lisp
   (use-package emms
     :ensure t
-    :requires
-    (emms-player-simple emms-source-file emms-source-playlist)
     :config
-    (setq emms-player-list '(emms-player-mpv)))
+    (emms-all))
 #+END_SRC
 * calendar
 #+BEGIN_SRC emacs-lisp
