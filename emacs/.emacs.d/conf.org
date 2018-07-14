@@ -700,4 +700,3 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (setq pdf-view-midnight-colors '("#abb2c0" . "#282c34")) ; dark-one theme
 #+END_SRC
-
