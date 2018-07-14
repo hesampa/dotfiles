@@ -327,6 +327,14 @@ Also use primary clipboard in X
   ;;   (use-package visual-regexp
   ;;     :ensure t))
 #+END_SRC
+
+*** anzu
+#+BEGIN_SRC emacs-lisp
+  (use-package anzu
+    :ensure t)
+  (global-set-key [remap query-replace] 'anzu-query-replace)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+#+END_SRC
 * appearance
 ** pretty-mode
 #+BEGIN_SRC emacs-lisp
