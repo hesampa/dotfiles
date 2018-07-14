@@ -448,13 +448,15 @@ Also use primary clipboard in X
 #+BEGIN_SRC emacs-lisp
   (use-package doom-modeline
     :ensure t
+    :config
+    (setq doom-modeline-buffer-file-name-style 'file-name)
     :defer t
     :hook (after-init . doom-modeline-init))
 #+END_SRC
 ** display-time
 #+BEGIN_SRC emacs-lisp
 (setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
+(setq display-time-day-and-date nil)
 (setq display-time-default-load-average nil)
 (display-time)
 #+END_SRC
