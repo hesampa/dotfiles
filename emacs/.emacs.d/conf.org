@@ -392,11 +392,6 @@ Also use primary clipboard in X
     :config
     (load-theme 'doom-one t)
     (doom-themes-org-config))
-
-  (use-package doom-modeline
-    :ensure t
-    :defer t
-    :hook (after-init . doom-modeline-init))
 #+END_SRC
 ** bar-mode
 #+BEGIN_SRC emacs-lisp
@@ -451,27 +446,10 @@ Also use primary clipboard in X
 #+END_SRC
 ** modeline
 #+BEGIN_SRC emacs-lisp
-  ;; (use-package powerline
-  ;;   :if window-system
-  ;;   :config (setq-default powerline-default-separator 'nil))
-
-  ;; (use-package spaceline
-  ;;   :after powerline
-  ;;   :ensure t
-  ;;   :config (setq spaceline-responsive nil))
-
-  ;; (use-package spaceline-all-the-icons
-  ;;   :ensure t
-  ;;   :after spaceline
-  ;;   :config
-  ;;   (setq spaceline-all-the-icons-separator-type 'none)
-  ;;   (spaceline-toggle-all-the-icons-buffer-path-off)
-  ;;   (spaceline-toggle-all-the-icons-projectile-off)
-  ;;   (spaceline-toggle-all-the-icons-buffer-size-off)
-  ;;   (spaceline-toggle-all-the-icons-hud-off)
-  ;;   (spaceline-all-the-icons--setup-git-ahead)
-  ;;   (spaceline-all-the-icons-theme)
-  ;;   )
+  (use-package doom-modeline
+    :ensure t
+    :defer t
+    :hook (after-init . doom-modeline-init))
 #+END_SRC
 ** display-time
 #+BEGIN_SRC emacs-lisp
