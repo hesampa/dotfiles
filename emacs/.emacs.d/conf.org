@@ -419,13 +419,16 @@ Also use primary clipboard in X
 
    (defun hesam/font-per-display ()
      (interactive)
-     (if window-system
+     (if window-system			; check X-window
          (progn
            (if (> (nth 3 (car (cdr (frame-monitor-attributes (selected-frame))))) 3000)
                (set-frame-parameter (selected-frame) 'font "Source Code Pro 15")
              (set-frame-parameter (selected-frame) 'font "Source Code Pro 10")))))
 
+   ;; TODO: loop over display-attributes, check if frame is in frames list. If so,
+   ;; check dim of monitor and set font accordingly. Use
    ;; (push 'hesam/font-per-display after-make-frame-functions)
+   ;; to run the function every time a new frame is connected
 
    (setq ring-bell-function 'ignore)
    ;; (set-fontset-font "fontset-default" 'unicode' "DejaVu Sans Mono")
