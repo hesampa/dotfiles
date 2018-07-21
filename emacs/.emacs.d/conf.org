@@ -703,3 +703,28 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (setq pdf-view-midnight-colors '("#abb2c0" . "#282c34")) ; dark-one theme
 #+END_SRC
+* nov
+** setup
+#+BEGIN_SRC emacs-lisp
+  (use-package nov
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+#+END_SRC
+** font
+#+BEGIN_SRC emacs-lisp
+  (defun my-nov-font-setup ()
+    (face-remap-add-relative 'variable-pitch :family "Source Sans Pro Light"
+                             :height 220))
+  (add-hook 'nov-mode-hook 'my-nov-font-setup)
+#+END_SRC
+** rendering
+#+BEGIN_SRC emacs-lisp
+  (defun nov/centertext ()
+    ;; hook for adding visual mode to nov
+    (setq-local visual-fill-column-center-text t)
+    (setq-local visual-fill-column-width 120))
+  (add-hook 'nov-mode-hook 'nov/centertext)
+  (add-hook 'nov-mode-hook 'visual-line-mode) ; has hook to fill-column
+  (setq nov-text-width most-positive-fixnum)
+#+END_SRC
