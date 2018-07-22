@@ -1,5 +1,5 @@
 * exwm
-** init
+** setup
 #+BEGIN_SRC emacs-lisp
   (use-package exwm
     :ensure t)
@@ -9,12 +9,17 @@
 
   (require 'exwm-config)
   (exwm-config-default)
+
+  ;; systemtray
   (require 'exwm-systemtray)
   (exwm-systemtray-enable)
   (setq exwm-systemtray-height 16)
 
-  (setq exwm-workspace-show-all-buffers t)
-  (setq exwm-layout-show-all-buffers t)
+  ;; workspace
+  (setq exwm-workspace-show-all-buffers t ; show buffers on other workspaces
+        exwm-layout-show-all-buffers t	; switch to buffers on other workspaces	
+        exwm-workspace-number 1		; initial workspace number
+        )
 #+END_SRC
 ** xrandr
 *** Olivia
