@@ -90,9 +90,9 @@ alias m='f -e mpv' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 
 # redshift
-alias night='redshift -O 2800 -b 0.5'
-alias dark='redshift -O 2000 -b 0.2'
 alias day='redshift -x'
+alias night='day; redshift -O 2800 -b 0.5'
+alias dark='day; redshift -O 2000 -b 0.2'
 
 # keybr
 alias se='setxkbmap se'
