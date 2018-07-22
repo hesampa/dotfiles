@@ -1,20 +1,20 @@
 # config files
-alias alice="vim ~/dotfiles/misc/alias"
-alias bashenv="vim ~/dotfiles/bash/.bash_profile"
-alias bashrc="vim ~/dotfiles/bash/.bashrc"
-alias i3rc="vim ~/dotfiles/i3/.config/i3/config"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias sshrc="vim ~/.ssh/config"
-alias termiterc="vim ~/dotfiles/termite/.config/termite/config"
-alias tmuxrc="vim ~/dotfiles/tmux/.tmux.conf"
-alias xinitrc="vim ~/dotfiles/xinit/.xinitrc"
-alias alarc="vim ~/dotfiles/alacritty/.config/alacritty/alacritty.yml"
-alias vimrc="vim ~/dotfiles/vim/.vimrc"
-alias zshenv="vim ~/dotfiles/zsh/.zshenv"
-alias zshrc="vim ~/dotfiles/zsh/.zshrc"
+alias alice="$EDITOR ~/dotfiles/bash/.bash_aliases"
+alias bashenv="$EDITOR ~/dotfiles/bash/.bash_profile"
+alias bashrc="$EDITOR ~/dotfiles/bash/.bashrc"
+alias i3rc="$EDITOR ~/dotfiles/i3/.config/i3/config"
+alias nvimrc="n$EDITOR ~/.config/nvim/init.vim"
+alias sshrc="$EDITOR ~/.ssh/config"
+alias termiterc="$EDITOR ~/dotfiles/termite/.config/termite/config"
+alias tmuxrc="$EDITOR ~/dotfiles/tmux/.tmux.conf"
+alias xinitrc="$EDITOR ~/dotfiles/xinit/.xinitrc"
+alias alarc="$EDITOR ~/dotfiles/alacritty/.config/alacritty/alacritty.yml"
+alias vimrc="$EDITOR ~/dotfiles/vim/.vimrc"
+alias zshenv="$EDITOR ~/dotfiles/zsh/.zshenv"
+alias zshrc="$EDITOR ~/dotfiles/zsh/.zshrc"
 
 # source
-alias salice="source ~/dotfiles/misc/alias"
+alias salice="source ~/dotfiles/bash/.bash_aliases"
 alias sbashprofile="source ~/dotfiles/bash/.bash_profile"
 alias sbashrc="source ~/dotfiles/bash/.bashrc"
 alias stmux="tmux source-file ~/dotfiles/tmux/.tmux.conf"
@@ -41,7 +41,7 @@ alias fd='find -L -type d -iname'
 alias countfiles="find -type f | wc -l"
 
 # latex report
-alias larep="cd $ladir; vim ./sections/*.tex main.tex ./refs/*.bib"
+alias larep="cd $ladir; $EDITOR ./sections/*.tex main.tex ./refs/*.bib"
 alias crep="latexmk -pvc -pdf -outdir=./outfiles"
 
 # emacs
