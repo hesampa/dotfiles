@@ -730,11 +730,20 @@ We disable beacon-mode since it causes blinking.
 * nov
 ** setup
 #+BEGIN_SRC emacs-lisp
-    (use-package nov
-      :ensure t
-      :config
-      (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-      (define-key nov-mode-map (kbd "d") 'define-word-at-point))
+  (use-package nov
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+    (define-key nov-mode-map (kbd "C-s") 'isearch-forward)
+    (define-key nov-mode-map (kbd "d") 'define-word-at-point)
+    (define-key nov-mode-map (kbd "D") 'define-word)
+    (define-key nov-mode-map (kbd "n") 'scroll-up)
+    (define-key nov-mode-map (kbd "p") 'scroll-down)
+    (define-key nov-mode-map (kbd "l") 'recenter-top-bottom)
+    (define-key nov-mode-map (kbd "f") 'forward-word)
+    (define-key nov-mode-map (kbd "b") 'backward-word)
+    (define-key nov-mode-map (kbd "N") 'nov-next-document)
+    (define-key nov-mode-map (kbd "P") 'nov-previous-document))
 #+END_SRC
 ** font
 #+BEGIN_SRC emacs-lisp
