@@ -767,3 +767,20 @@ We disable beacon-mode since it causes blinking.
   (use-package define-word
     :ensure t)
 #+END_SRC
+* redshift
+#+BEGIN_SRC emacs-lisp
+    (defun hesam/day ()
+      (interactive)
+      (shell-command "redshift -x")
+      (message nil))
+
+    (defun hesam/night ()
+      (interactive)
+      (shell-command "redshift -x; redshift -O 2800 -b 0.5")
+      (message nil))
+
+    (defun hesam/dark ()
+      (interactive)
+      (shell-command "redshift -x; redshift -O 2000 -b 0.2")
+      (message nil))
+#+END_SRC
