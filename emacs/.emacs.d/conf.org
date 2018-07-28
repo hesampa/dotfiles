@@ -475,12 +475,15 @@ Also use primary clipboard in X
  #+END_SRC
 ** cursor
 #+BEGIN_SRC emacs-lisp
-(use-package beacon
-   :ensure t
-   :config
-   (beacon-mode t))
-(blink-cursor-mode 0)
-(global-hl-line-mode t)
+  (use-package beacon
+     :ensure t)
+
+  (defun hesam/cursor ()
+    (beacon-mode t)
+    (blink-cursor-mode 0)
+    (hl-line-mode t))
+
+  (add-hook 'prog-mode-hook 'hesam/cursor)
 #+END_SRC
 ** modeline
 #+BEGIN_SRC emacs-lisp
