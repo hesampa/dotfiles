@@ -700,8 +700,7 @@ Also use primary clipboard in X
   (use-package sr-speedbar
     :ensure t
     :config
-    (setq speedbar-use-images nil)
-    )
+    (setq speedbar-use-images nil))
 #+END_SRC
 * pdf-tools
 ** init
