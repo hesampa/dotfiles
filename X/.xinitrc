@@ -11,11 +11,11 @@ if [ -f $HOME/.xbindkeysrc ]; then
 fi
 
 if command -v dropbox &> /dev/null; then
-    sleep 15 && /usr/bin/dropbox &
+    sleep 30 && /usr/bin/dropbox &
 fi
 
 if command -v keepassxc &> /dev/null; then
-    sleep 15 && /usr/bin/keepassxc &
+    sleep 30 && /usr/bin/keepassxc &
 fi
 
 # emacs with EXWM
