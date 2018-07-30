@@ -444,7 +444,19 @@ Also use primary clipboard in X
                        :width 'normal)
 
 
+   (defun hesam/font-monitors ()
+     (if window-system			; check X-window
+         (progn
+           (dolist (elem (frame-list))	; for all frames
+             (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2000)
+                 (set-frame-parameter elem 'font "Source Code Pro 15")
+               (set-frame-parameter elem 'font "Source Code Pro 10"))))))
+
+   (add-hook 'exwm-randr-screen-change-hook 'hesam/font-monitors)
+
    (defun hesam/font-per-display ()
+     "Will change the font according to the dimensions of the monitor of focused
+    frame"
      (interactive)
      (if window-system			; check X-window
          (progn
