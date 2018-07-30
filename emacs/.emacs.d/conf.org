@@ -18,13 +18,12 @@
   ;; workspace
   (setq exwm-workspace-show-all-buffers t ; show buffers on other workspaces
         exwm-layout-show-all-buffers t	; switch to buffers on other workspaces	
-        exwm-workspace-number 1		; initial workspace number
+        ;; exwm-workspace-number 1		; initial workspace number
         )
 #+END_SRC
 ** xrandr
 *** Olivia
 #+BEGIN_SRC emacs-lisp
-  ;; (push 'hesam/font-per-display after-make-frame-functions)
   (if (string-equal system-name "olivia")
       (progn
         (require 'exwm-randr)
