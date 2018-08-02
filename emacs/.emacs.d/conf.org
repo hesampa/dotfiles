@@ -437,9 +437,7 @@ Also use primary clipboard in X
 ** fonts
  #+BEGIN_SRC emacs-lisp
    (set-face-attribute 'default nil :family "Source Code Pro")
-   (set-face-attribute 'fixed-pitch nil 
-                       :family "Source Code Pro"
-                       :height 0.7)
+   (set-face-attribute 'fixed-pitch nil :family "Source Code Pro")
    (set-face-attribute 'variable-pitch nil
                        :family "ETBembo"
                        :height 1.7)
@@ -793,7 +791,8 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (defun my-nov-font-setup ()
     (face-remap-add-relative 'variable-pitch :family "ETBembo"
-                             :height 220))
+                             :height 200
+                             :weight 'normal))
   (add-hook 'nov-mode-hook 'my-nov-font-setup)
 #+END_SRC
 ** rendering
@@ -802,10 +801,10 @@ We disable beacon-mode since it causes blinking.
     ;; hook for adding visual mode to nov
     (setq-local visual-fill-column-center-text t)
     (setq-local visual-fill-column-width 120))
-  ;; (add-hook 'nov-mode-hook 'nov/centertext)
-  ;; (add-hook 'nov-mode-hook 'visual-line-mode) ; has hook to fill-column
+  (setq nov-text-width 9999999)
+  (add-hook 'nov-mode-hook 'nov/centertext)
+  (add-hook 'nov-mode-hook 'visual-line-mode) ; has hook to fill-column
   (add-hook 'nov-mode-hook 'variable-pitch-mode) ; has hook to fill-column
-  (setq nov-text-width 9999)
 #+END_SRC
 * define-word
 #+BEGIN_SRC emacs-lisp
@@ -836,6 +835,11 @@ We disable beacon-mode since it causes blinking.
     (setq-local org-hide-leading-stars t)
     (setq-local org-bullets-bullet-list '(" "))
     (setq olivetti-body-width 0.8)
+
+    (face-remap-add-relative 'org-indent nil
+                        :inherit '(org-hide fixed-pitch)
+                        :height 0.1)
+
     (olivetti-mode)
     (variable-pitch-mode)
     (org-restart-font-lock))
