@@ -504,7 +504,7 @@ Also use primary clipboard in X
     (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 #+END_SRC
-** ellipsis
+** hideshow ellipsis
 #+BEGIN_SRC emacs-lisp
   (set-display-table-slot standard-display-table
                           'selective-display (string-to-vector " [+]"))
