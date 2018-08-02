@@ -451,7 +451,7 @@ Also use primary clipboard in X
          (progn
            (dolist (elem (frame-list))	; for all frames
              (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2000)
-                 (set-face-attribute 'default elem :height 150)
+                 (set-face-attribute 'default elem :height 160)
                (set-face-attribute 'default elem :height 110))))))
 
    (add-hook 'exwm-randr-screen-change-hook 'hesam/font-monitors)
@@ -463,7 +463,7 @@ Also use primary clipboard in X
      (if (display-graphic-p) 			; check X-window
          (progn
            (if (> (nth 3 (car (cdr (frame-monitor-attributes (selected-frame))))) 2000)
-               (set-face-attribute 'default (selected-frame) :height 150)
+               (set-face-attribute 'default (selected-frame) :height 160)
              (set-face-attribute 'default (selected-frame) :height 110)))))
 
    (setq ring-bell-function 'ignore)
