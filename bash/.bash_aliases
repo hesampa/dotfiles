@@ -130,3 +130,6 @@ alias hisg='history | grep'
 # copy/paste
 alias xcopy="xsel -i -b"
 alias xpaste="parcellite"
+
+# tlp
+fullcharge='sudo tlp fullcharge BAT0'
