@@ -705,8 +705,10 @@ Also use primary clipboard in X
 #+BEGIN_SRC emacs-lisp
   (use-package projectile
     :ensure t
+    :init
+    (setq projectile-keymap-prefix (kbd "C-c p")
+          projectile-completion-system 'ivy)
     :config
-    (setq projectile-completion-system 'ivy)
     (projectile-global-mode))
 
   (use-package counsel-projectile
