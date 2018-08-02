@@ -442,7 +442,7 @@ Also use primary clipboard in X
                        :height 0.7)
    (set-face-attribute 'variable-pitch nil
                        :family "ETBembo"
-                       :height 1.5)
+                       :height 1.7)
 
    (defun hesam/font-monitors ()
      "Loops through every frame and adjusts font size according to dimensions
@@ -593,19 +593,19 @@ Also use primary clipboard in X
   ;;        'org-document-info-keyword))
 
   (set-face-attribute 'org-level-1 nil
-                      :height 1.5)
+                      :height 1.7)
 
   (set-face-attribute 'org-level-2 nil
-                      :height 1.35)
+                      :height 1.5)
 
   (set-face-attribute 'org-level-3 nil
                       :height 1.3)
 
   (set-face-attribute 'org-level-4 nil
-                      :height 1.25)
+                      :height 1.2)
 
   (set-face-attribute 'org-level-5 nil
-                      :height 1.2)
+                      :height 1.1)
 #+END_SRC
 
 * expand region
@@ -826,4 +826,20 @@ We disable beacon-mode since it causes blinking.
       (interactive)
       (shell-command "redshift -x; redshift -O 2000 -b 0.2")
       (message nil))
+#+END_SRC
+* prose
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/prose ()
+    (interactive)
+    (setq-local org-hide-leading-stars t)
+    (setq-local org-bullets-bullet-list '(" "))
+    (setq olivetti-body-width 0.8)
+    (olivetti-mode)
+    (variable-pitch-mode)
+    (org-restart-font-lock))
+#+END_SRC
+* olivetti
+#+BEGIN_SRC emacs-lisp
+  (use-package olivetti
+    :ensure t)
 #+END_SRC
