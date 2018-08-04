@@ -832,20 +832,24 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (defun hesam/prose ()
     (interactive)
-    (setq-local org-hide-leading-stars t)
-    (setq-local org-bullets-bullet-list '(" "))
-    (setq olivetti-body-width 0.8)
-
+    ;; (setq org-hide-leading-stars nil)
+    ;; (setq-local org-bullets-bullet-list '(" "))
     (face-remap-add-relative 'org-indent nil
-                        :inherit '(org-hide fixed-pitch)
-                        :height 0.1)
-
+                             :inherit '(org-hide fixed-pitch)
+                             :height 0.1)
+    (setq olivetti-body-width 0.8)
     (olivetti-mode)
-    (variable-pitch-mode)
-    (org-restart-font-lock))
+    (org-restart-font-lock)
+    (org-indent-mode)
+    (variable-pitch-mode))
 #+END_SRC
 * olivetti
 #+BEGIN_SRC emacs-lisp
   (use-package olivetti
     :ensure t)
+#+END_SRC
+* programs
+#+BEGIN_SRC emacs-lisp
+  (call-process-shell-command "dropbox &" nil 0)
+  (call-process-shell-command "unclutter --timeout 1 &" nil 0)
 #+END_SRC

@@ -10,9 +10,9 @@ if [ -f $HOME/.xbindkeysrc ]; then
     xbindkeys -p
 fi
 
-if command -v dropbox &> /dev/null; then
-    sleep 30 && /usr/bin/dropbox &
-fi
+# if command -v dropbox &> /dev/null; then
+#     sleep 30 && /usr/bin/dropbox &
+# fi
 
 if command -v keepassxc &> /dev/null; then
     sleep 30 && /usr/bin/keepassxc &
