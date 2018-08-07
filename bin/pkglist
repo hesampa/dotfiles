@@ -30,8 +30,14 @@ perl-rename
 pulseaudio
 python
 python-pip
+autopep8
 python2
+python-numpy
+python-scipy
+python-matplotlib
 python2-pip
+python2-matplotlib
+python2-autopep8
 redshift
 ripgrep
 rsync
