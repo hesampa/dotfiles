@@ -436,11 +436,15 @@ Also use primary clipboard in X
 #+END_SRC
 ** fonts
  #+BEGIN_SRC emacs-lisp
-   (set-face-attribute 'default nil :family "Source Code Pro")
-   (set-face-attribute 'fixed-pitch nil :family "Source Code Pro")
+   (set-face-attribute 'default nil :family "Hack")
+   (set-face-attribute 'fixed-pitch nil :family "Hack")
    (set-face-attribute 'variable-pitch nil
                        :family "ETBembo"
                        :height 1.7)
+
+
+   (setq hesam-default-hires-height 170)
+   (setq hesam-default-lowres-height 120)
 
    (defun hesam/font-monitors ()
      "Loops through every frame and adjusts font size according to dimensions
@@ -449,8 +453,8 @@ Also use primary clipboard in X
          (progn
            (dolist (elem (frame-list))	; for all frames
              (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2000)
-                 (set-face-attribute 'default elem :height 160)
-               (set-face-attribute 'default elem :height 110))))))
+                 (set-face-attribute 'default elem :height hesam-default-hires-height)
+               (set-face-attribute 'default elem :height hesam-default-lowres-height))))))
 
    (add-hook 'exwm-randr-screen-change-hook 'hesam/font-monitors)
 
@@ -461,8 +465,8 @@ Also use primary clipboard in X
      (if (display-graphic-p) 			; check X-window
          (progn
            (if (> (nth 3 (car (cdr (frame-monitor-attributes (selected-frame))))) 2000)
-               (set-face-attribute 'default (selected-frame) :height 160)
-             (set-face-attribute 'default (selected-frame) :height 110)))))
+               (set-face-attribute 'default (selected-frame) :height hesam-default-hires-height)
+             (set-face-attribute 'default (selected-frame) :height hesam-default-lowres-height)))))
 
    (setq ring-bell-function 'ignore)
  #+END_SRC
