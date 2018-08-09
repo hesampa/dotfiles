@@ -439,7 +439,7 @@ Also use primary clipboard in X
    (set-face-attribute 'default nil :family "Hack")
    (set-face-attribute 'fixed-pitch nil :family "Hack")
    (set-face-attribute 'variable-pitch nil
-                       :family "ETBembo"
+                       :family "Linux Biolinum"
                        :height 1.7)
 
 
@@ -794,7 +794,7 @@ We disable beacon-mode since it causes blinking.
 ** font
 #+BEGIN_SRC emacs-lisp
   (defun my-nov-font-setup ()
-    (face-remap-add-relative 'variable-pitch :family "ETBembo"
+    (face-remap-add-relative 'variable-pitch :family "Linux Biolinum"
                              :height 200
                              :weight 'normal))
   (add-hook 'nov-mode-hook 'my-nov-font-setup)
