@@ -856,3 +856,7 @@ We disable beacon-mode since it causes blinking.
   (call-process-shell-command "dropbox &" nil 0)
   (call-process-shell-command "unclutter --timeout 1 &" nil 0)
 #+END_SRC
+* text-mode
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'text-mode-hook #'flyspell-mode)
+#+END_SRC
