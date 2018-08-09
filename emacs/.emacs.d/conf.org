@@ -439,7 +439,7 @@ Also use primary clipboard in X
    (set-face-attribute 'default nil :family "Hack")
    (set-face-attribute 'fixed-pitch nil :family "Hack")
    (set-face-attribute 'variable-pitch nil
-                       :family "Linux Biolinum"
+                       :family "Libre Baskerville"
                        :height 1.7)
 
 
@@ -794,9 +794,10 @@ We disable beacon-mode since it causes blinking.
 ** font
 #+BEGIN_SRC emacs-lisp
   (defun my-nov-font-setup ()
-    (face-remap-add-relative 'variable-pitch :family "Vollkorn"
-                             :height 200
-                             :weight 'normal))
+    (face-remap-add-relative 'variable-pitch :family "Libre Baskerville"
+                             :height 180
+                             :weight 'normal)
+    (setq line-spacing 1.1))
   (add-hook 'nov-mode-hook 'my-nov-font-setup)
 #+END_SRC
 ** rendering
@@ -836,7 +837,8 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (defun hesam/prose ()
     (interactive)
-    (setq org-hide-leading-stars nil)
+    (setq org-hide-leading-stars nil
+          line-spacing 1.1)
     (face-remap-add-relative 'org-indent nil
                              :inherit '(org-hide fixed-pitch)
                              :height 0.1)
