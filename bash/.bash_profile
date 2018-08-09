@@ -15,6 +15,11 @@ if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
 fi
 
+if [ -f $HOME/.profile ]; then
+    source $HOME/.profile
+fi
+
+
 if command -v fasd &> /dev/null; then
     eval "$(fasd --init auto)"
 fi

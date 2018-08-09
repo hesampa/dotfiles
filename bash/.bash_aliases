@@ -133,3 +133,7 @@ alias xpaste="parcellite"
 
 # tlp
 fullcharge='sudo tlp fullcharge BAT0'
+
+# anacoda
+alias aa='source activate'
+alias ad='source deactivate'
