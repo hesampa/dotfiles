@@ -790,7 +790,7 @@ We disable beacon-mode since it causes blinking.
 ** font
 #+BEGIN_SRC emacs-lisp
   (defun my-nov-font-setup ()
-    (face-remap-add-relative 'variable-pitch :family "ETBembo"
+    (face-remap-add-relative 'variable-pitch :family "Vollkorn"
                              :height 200
                              :weight 'normal))
   (add-hook 'nov-mode-hook 'my-nov-font-setup)
