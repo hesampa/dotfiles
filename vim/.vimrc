@@ -43,7 +43,7 @@
 
     " ruler and statusline {{{2
         set laststatus=2            " always show statusline
-        set number                  " show line numbers
+        " set number                  " show line numbers
         " set relativenumber        " might cause slow performance
         set ruler
         set rulerformat=%l:%c
@@ -127,8 +127,8 @@
 " colors and highlight {{{1
     " syntax off
 
-    set t_Co=16
-    colorscheme default
+    set t_Co=8
+    colorscheme base16-onedark
     set background=dark
 
     hi ColorColumn ctermfg=3 ctermbg=0
