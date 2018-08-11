@@ -29,7 +29,7 @@ if [ -d $HOME/.bash_it ]; then
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
     if [ "$TERM" != "dumb" ]; then
-	export BASH_IT_THEME='zork'
+	export BASH_IT_THEME='/home/hesam/dotfiles/misc/zork.theme.bash'
     fi
 
     # (Advanced): Change this to the name of your remote repo if you
