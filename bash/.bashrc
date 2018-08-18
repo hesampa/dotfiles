@@ -4,8 +4,14 @@
 
 # env
 EDITOR=emacsclient
+GREP_COLOR="1;31"
+LC_ALL=en_US.UTF-8
+LS_COLRS=$LS_COLORS:'ex=1;32:ln=0;35:di=1;34:ow=1;34'
+PATH=$PATH:$HOME/.local/bin/
 SUDO_EDITOR=emacsclient
+TERM=screen-256color
 VISUAL=emacsclient
+dotfiles=$HOME/dotfiles
 
 # history
 HISTCONTROL=ignoreboth
@@ -15,6 +21,10 @@ shopt -s histappend
 # alias
 if [ -d $dotfiles ]; then
     source $dotfiles/bash/.bash_aliases
+fi
+
+if [ -f $HOME/.profile ]; then
+    source $HOME/.profile
 fi
 
 # disable freeze C-s
