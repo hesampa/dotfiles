@@ -14,9 +14,9 @@ fi
 #     sleep 30 && /usr/bin/dropbox &
 # fi
 
-if command -v keepassxc &> /dev/null; then
-    sleep 30 && /usr/bin/keepassxc &
-fi
+# if command -v keepassxc &> /dev/null; then
+#     sleep 30 && /usr/bin/keepassxc &
+# fi
 
 # emacs with EXWM
 exec emacs

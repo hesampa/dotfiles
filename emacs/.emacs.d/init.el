@@ -5,10 +5,11 @@
 (add-to-list 'package-archives
              '("org" . "http://orgmode.org/elpa/") t)
 
+;; use-package
+(setq use-package-always-ensure t)
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-
 (dolist (package '(use-package))
    (unless (package-installed-p package)
        (package-install package)))
@@ -17,6 +18,7 @@
 (setq vc-follow-symlinks t)
 (ido-mode -1)
 
+;; load emacs settings
 (require 'org)
 (org-babel-load-file
  (expand-file-name "conf.org"
