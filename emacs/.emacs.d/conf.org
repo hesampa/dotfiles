@@ -862,3 +862,7 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (add-hook 'text-mode-hook #'flyspell-mode)
 #+END_SRC
+* eyebrowse
+#+BEGIN_SRC emacs-lisp
+  (use-package eyebrowse)
+#+END_SRC
