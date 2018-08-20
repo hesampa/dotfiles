@@ -82,15 +82,15 @@ prompt() {
     # nice prompt
     case "`id -u`" in
         0) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[${green}\t][$my_ps_root][$my_ps_host_root]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)
-└─■ "
+└─${bold_green}$ ${normal}"
         ;;
         *) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[${green}\t][$my_ps_user][$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)
-└─■ "
+└─${bold_green}$ ${normal}"
         ;;
     esac
 }
 
-PS2="└─▪ "
+PS2="└─${bold_green}$ ${normal}"
 
 
 
