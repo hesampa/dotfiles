@@ -864,5 +864,13 @@ We disable beacon-mode since it causes blinking.
 #+END_SRC
 * eyebrowse
 #+BEGIN_SRC emacs-lisp
-  (use-package eyebrowse)
+  (use-package eyebrowse
+    :config
+    (eyebrowse-mode t))
+#+END_SRC
+* shx
+#+BEGIN_SRC emacs-lisp
+  (use-package shx
+    :init
+    (add-hook 'shell-mode-hook  #'shx-mode))
 #+END_SRC
