@@ -444,7 +444,7 @@ Also use primary clipboard in X
 
 
    (setq hesam-default-hires-height 170)
-   (setq hesam-default-lowres-height 110)
+   (setq hesam-default-lowres-height 120)
 
    (defun hesam/font-monitors ()
      "Loops through every frame and adjusts font size according to dimensions
@@ -452,11 +452,11 @@ Also use primary clipboard in X
      (if (display-graphic-p)			; check X-window
          (progn
            (dolist (elem (frame-list))	; for all frames
-             (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2560)
+             (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2000)
                  (set-face-attribute 'default elem :height hesam-default-hires-height)
                (set-face-attribute 'default elem :height hesam-default-lowres-height))))))
 
-   ;; (add-hook 'exwm-randr-refresh-hook 'hesam/font-monitors)
+   (add-hook 'exwm-randr-screen-change-hook 'hesam/font-monitors)
 
    (defun hesam/font-per-display ()
      "Will change the font according to the dimensions of the monitor of focused
