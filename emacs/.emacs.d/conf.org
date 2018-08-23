@@ -874,3 +874,15 @@ We disable beacon-mode since it causes blinking.
     :init
     (add-hook 'shell-mode-hook  #'shx-mode))
 #+END_SRC
+* bash-completion
+#+BEGIN_SRC emacs-lisp
+  (use-package bash-completion
+    :config
+    (bash-completion-setup))
+#+END_SRC
+* shell
+** completion
+Consider completions other than for binaries.
+#+BEGIN_SRC emacs-lisp
+  (setq shell-completion-execonly nil)
+#+END_SRC
