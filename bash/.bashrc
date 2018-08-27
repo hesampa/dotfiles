@@ -13,6 +13,8 @@ TERM=screen-256color
 VISUAL=emacsclient
 dotfiles=$HOME/dotfiles
 
+export PS1="[\t][\h][\w]$ "
+
 # history
 HISTCONTROL=ignoreboth
 HISTSIZE=9999
