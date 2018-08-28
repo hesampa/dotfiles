@@ -649,7 +649,7 @@ Also use primary clipboard in X
 * misc
 #+BEGIN_SRC emacs-lisp
   ;; emacs server
-  (server-start)
+  ;; (server-start)
   ;; autosave
   (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
   (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
