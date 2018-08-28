@@ -13,7 +13,9 @@ TERM=screen-256color
 VISUAL=emacsclient
 dotfiles=$HOME/dotfiles
 
-export PS1="[\t][\h][\w]$ "
+# prompt
+PROMPT_DIRTRIM=0
+export PS1="[\h][\w]\n >>> "
 
 # history
 HISTCONTROL=ignoreboth
