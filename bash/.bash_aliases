@@ -45,8 +45,9 @@ alias larep="cd $ladir; $EDITOR ./sections/*.tex main.tex ./refs/*.bib"
 alias crep="latexmk -pvc -pdf -outdir=./outfiles"
 
 # emacs
-alias ec='emacsclient'
-alias ce='emacsclient'
+alias ec='emacsclient -n'
+alias ce='emacsclient -n'
+alias magit="emacsclient -n -e '(magit-status)'"
 
 # vim
 alias vi="vim"
