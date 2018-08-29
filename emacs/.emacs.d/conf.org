@@ -435,7 +435,7 @@ Also use primary clipboard in X
    (set-face-attribute 'fixed-pitch nil :family "Hack")
    (set-face-attribute 'variable-pitch nil
                        :family "Libre Baskerville"
-                       :height 1.7)
+                       :height 1.3)
 
 
    (setq hesam-default-hires-height 170)
@@ -791,22 +791,12 @@ We disable beacon-mode since it causes blinking.
 ** font
 #+BEGIN_SRC emacs-lisp
   (defun my-nov-font-setup ()
-    (face-remap-add-relative 'variable-pitch :family "Libre Baskerville"
-                             :height 180
-                             :weight 'normal)
-    (setq line-spacing 1.1))
+    (setq olivetti-body-width 0.5
+          nov-text-width 99999999)
+    (olivetti-mode))
+
   (add-hook 'nov-mode-hook 'my-nov-font-setup)
-#+END_SRC
-** rendering
-#+BEGIN_SRC emacs-lisp
-  (defun nov/centertext ()
-    ;; hook for adding visual mode to nov
-    (setq-local visual-fill-column-center-text t)
-    (setq-local visual-fill-column-width 120))
-  (setq nov-text-width 9999999)
-  (add-hook 'nov-mode-hook 'nov/centertext)
-  (add-hook 'nov-mode-hook 'visual-line-mode) ; has hook to fill-column
-  (add-hook 'nov-mode-hook 'variable-pitch-mode) ; has hook to fill-column
+  (add-hook 'nov-mode-hook 'variable-pitch-mode)
 #+END_SRC
 * define-word
 #+BEGIN_SRC emacs-lisp
