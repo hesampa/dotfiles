@@ -14,8 +14,8 @@ VISUAL=emacsclient
 dotfiles=$HOME/dotfiles
 
 # prompt
-PROMPT_DIRTRIM=0
-export PS1="[\h][\w]\n >>> "
+PROMPT_DIRTRIM=2
+export PS1="[\h][\w]$ "
 
 # history
 HISTCONTROL=ignoreboth
