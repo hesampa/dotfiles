@@ -15,7 +15,7 @@ dotfiles=$HOME/dotfiles
 
 # prompt
 PROMPT_DIRTRIM=2
-export PS1="[\h][\w]$ "
+export PS1="[\t][\h][\w]$ "
 
 # history
 HISTCONTROL=ignoreboth
@@ -42,9 +42,9 @@ if [ -d $HOME/.bash_it ]; then
 
     # Lock and Load a custom theme file
     # location /.bash_it/themes/
-    # if [ "$TERM" != "dumb" ]; then
-    # 	export BASH_IT_THEME=$dotfiles/misc/zork.theme.bash
-    # fi
+    if [ "$TERM" != "dumb" ]; then
+    	export BASH_IT_THEME=$dotfiles/misc/zork.theme.bash
+    fi
 
     # (Advanced): Change this to the name of your remote repo if you
     # cloned bash-it with a remote otherh than origin such as `bash-it`.
