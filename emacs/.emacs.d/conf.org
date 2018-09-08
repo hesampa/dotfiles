@@ -249,10 +249,6 @@
     (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
   (global-set-key (kbd "C-c C-k") 'copy-line)
 #+END_SRC
-Also use primary clipboard in X
-#+BEGIN_SRC emacs-lisp
-  (setq x-select-enable-primary t)
-#+END_SRC
 *** deletion
 #+BEGIN_SRC emacs-lisp
   (defun hesam/kill-a-word (&optional args)
