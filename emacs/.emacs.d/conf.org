@@ -796,7 +796,7 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
     (defun my-nov-font-setup ()
       (setq nov-text-width 99999999
-            olivetti-text-width 0.5)
+            olivetti-body-width 0.55)
       (visual-line-mode nil)
       (olivetti-mode))
 
