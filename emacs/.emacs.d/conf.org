@@ -60,8 +60,10 @@
                       (lambda () (interactive) (start-process "" nil "chromium")))
   (exwm-input-set-key (kbd "s-a")
                       (lambda () (interactive) (start-process "" nil "alacritty")))
-  (exwm-input-set-key (kbd "s-r") 'dmenu)
+  (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
   (exwm-input-set-key (kbd "s-u") 'ansi-term)
+  (exwm-input-set-key (kbd "s-SPC") 'shell)
+
 
   ;; toggle layout
   (defun hesam/keybr-toggle-layout ()
