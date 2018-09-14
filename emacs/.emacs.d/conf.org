@@ -724,6 +724,7 @@
     (global-undo-tree-mode 1))
 #+END_SRC
 * company
+General completion system.
 #+BEGIN_SRC emacs-lisp
   (use-package company
     :ensure t
@@ -731,6 +732,13 @@
     ("C-x C-n" . 'company-complete)
     :config
     (add-hook 'after-init-hook 'global-company-mode))
+#+END_SRC
+** company-shell
+Specific module for shell scripting.
+#+BEGIN_SRC emacs-lisp
+  (use-package company-shell
+    :config
+    (add-to-list 'company-backends 'company-shell))
 #+END_SRC
 * sr-speedbar
 #+BEGIN_SRC emacs-lisp
@@ -857,12 +865,6 @@ We disable beacon-mode since it causes blinking.
   (use-package shx
     :init
     (add-hook 'shell-mode-hook  #'shx-mode))
-#+END_SRC
-* bash-completion
-#+BEGIN_SRC emacs-lisp
-  (use-package bash-completion
-    :config
-    (bash-completion-setup))
 #+END_SRC
 * shell
 ** completion
