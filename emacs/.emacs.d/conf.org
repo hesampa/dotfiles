@@ -707,7 +707,8 @@
     :ensure t
     :init
     (setq projectile-keymap-prefix (kbd "C-c p")
-          projectile-completion-system 'ivy)
+          projectile-completion-system 'ivy
+          projectile-enable-caching t)
     :config
     (projectile-global-mode))
 
