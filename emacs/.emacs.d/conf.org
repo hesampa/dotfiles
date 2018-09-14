@@ -444,6 +444,7 @@
    (defun hesam/font-monitors ()
      "Loops through every frame and adjusts font size according to dimensions
            of the monitor it is attached to"
+     (interactive)
      (if (display-graphic-p)			; check X-window
          (progn
            (dolist (elem (frame-list))	; for all frames
