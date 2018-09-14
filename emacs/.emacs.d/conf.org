@@ -64,12 +64,11 @@
   (exwm-input-set-key (kbd "s-u") 'ansi-term)
   (exwm-input-set-key (kbd "s-SPC") 'shell)
 
-
   ;; toggle layout
   (defun hesam/keybr-toggle-layout ()
     (interactive)
+    (shell-command "source ~/Dropbox/keys.sh")
     (let ((default-directory "~"))
-      (message default-directory)
       (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us")
       (message nil)				; suppress shell-cmd msg
       ;; echo new layout in use
@@ -307,11 +306,6 @@
                     "avi" "wmv" "wav" "mov" "flv"
                     "ogm" "ogg" "mkv" "rar"))
                  "mpv"
-                 '(file))
-           (list (openwith-make-extension-regexp
-                  '("xbm" "pbm" "pgm" "ppm" "pnm"
-                    "png" "gif" "bmp" "tif" "jpeg" "jpg"))
-                 "feh"
                  '(file))
            (list (openwith-make-extension-regexp
                   '("doc" "xls" "ppt" "odt" "ods" "odg" "odp"))
