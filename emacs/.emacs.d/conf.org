@@ -464,15 +464,12 @@
  #+END_SRC
 ** cursor
 #+BEGIN_SRC emacs-lisp
-  (use-package beacon
-     :ensure t)
-
   (defun hesam/cursor ()
-    (beacon-mode t)
     (blink-cursor-mode 0)
     (hl-line-mode t))
 
   (add-hook 'prog-mode-hook 'hesam/cursor)
+  (add-hook 'shell-mode-hook 'hesam/cursor)
 #+END_SRC
 ** modeline
 #+BEGIN_SRC emacs-lisp
