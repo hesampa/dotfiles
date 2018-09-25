@@ -865,3 +865,7 @@ Consider completions other than for binaries.
 #+BEGIN_SRC emacs-lisp
   (setq shell-completion-execonly nil)
 #+END_SRC
+* tramp
+#+BEGIN_SRC emacs-lisp
+  (setq tramp-histfile-override nil)	; set histfile to local default
+#+END_SRC

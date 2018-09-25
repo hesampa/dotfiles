@@ -5,6 +5,7 @@
 # env
 EDITOR=emacsclient
 GREP_COLOR="1;31"
+HISTFILE=~/.bash_history
 LC_ALL=en_US.UTF-8
 LS_COLRS=$LS_COLORS:'ex=1;32:ln=0;35:di=1;34:ow=1;34'
 PATH=$PATH:$HOME/.local/bin/
