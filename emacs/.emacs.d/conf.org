@@ -865,3 +865,8 @@ Consider completions other than for binaries.
 #+BEGIN_SRC emacs-lisp
   (setq tramp-histfile-override nil)	; set histfile to local default
 #+END_SRC
+* narrow
+Enable region narrowing.
+#+BEGIN_SRC emacs-lisp
+(put 'narrow-to-region 'disabled nil)
+#+END_SRC
