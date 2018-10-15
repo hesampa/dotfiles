@@ -644,7 +644,7 @@
     :init
     (ido-mode 0)
     :bind
-    ;; ("C-x C-f" . 'counsel-find-file)
+    ("C-x C-f" . 'counsel-find-file)
     ("M-x" . 'counsel-M-x)
     ("C-c g" . 'counsel-git)
     ("C-c j" . 'counsel-git-grep)
@@ -659,8 +659,8 @@
             (swiper . ivy--regex)
             (t . ivy--regex-fuzzy))
           ivy-initial-inputs-alist nil
-          ;; enable-recursive-minibuffers t
-          ;; ivy-use-virtual-buffers t
+          enable-recursive-minibuffers t
+          ivy-use-virtual-buffers t
           ivy-count-format "%d/%d "))
 
   ;; (use-package ivy-hydra
