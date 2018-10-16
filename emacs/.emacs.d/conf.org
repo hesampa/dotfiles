@@ -474,12 +474,14 @@
  #+END_SRC
 ** cursor
 #+BEGIN_SRC emacs-lisp
-  (defun hesam/cursor ()
-    (blink-cursor-mode 0)
-    (hl-line-mode t))
+  (blink-cursor-mode 0)
+  ;; (defun hesam/cursor ()
+  ;;   (blink-cursor-mode 0)
+  ;;   (hl-line-mode t)
+  ;;   )
 
-  (add-hook 'prog-mode-hook 'hesam/cursor)
-  (add-hook 'shell-mode-hook 'hesam/cursor)
+  ;; (add-hook 'prog-mode-hook 'hesam/cursor)
+  ;; (add-hook 'shell-mode-hook 'hesam/cursor)
 #+END_SRC
 ** modeline
 #+BEGIN_SRC emacs-lisp
@@ -654,7 +656,7 @@
     :init
     (ido-mode 0)
     :bind
-    ;; ("C-x C-f" . 'counsel-find-file)
+    ("C-x C-f" . 'counsel-find-file)
     ("M-x" . 'counsel-M-x)
     ("C-c g" . 'counsel-git)
     ("C-c j" . 'counsel-git-grep)
@@ -669,8 +671,8 @@
             (swiper . ivy--regex)
             (t . ivy--regex-fuzzy))
           ivy-initial-inputs-alist nil
-          ;; enable-recursive-minibuffers t
-          ;; ivy-use-virtual-buffers t
+          enable-recursive-minibuffers t
+          ivy-use-virtual-buffers t
           ivy-count-format "%d/%d "))
 
   ;; (use-package ivy-hydra
@@ -876,4 +878,9 @@ Consider completions other than for binaries.
 * tramp
 #+BEGIN_SRC emacs-lisp
   (setq tramp-histfile-override nil)	; set histfile to local default
+#+END_SRC
+* narrow
+Enable region narrowing.
+#+BEGIN_SRC emacs-lisp
+(put 'narrow-to-region 'disabled nil)
 #+END_SRC

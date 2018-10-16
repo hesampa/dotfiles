@@ -1,5 +1,5 @@
 xset s off -dpms # disable screen blanking
-xset r rate 150 60
+xset r rate 180 60
 
 # setxkbmap -option altwin:swap_alt_win
 setxkbmap -option altwin:prtsc_rwin
