@@ -294,6 +294,16 @@
       (eshell-command
        (format "%s %s" command (mapconcat #'identity files " ")))))
 #+END_SRC
+*** dired-open-
+[[http://stackoverflow.com/a/1110487/311660][Stackoverflow]] thread.
+#+BEGIN_SRC emacs-lisp
+  (defun my-dired-find-file (&optional arg)
+    "Open each of the marked files, or the file under the point, or when prefix arg, the next N files "
+    (interactive "P")
+    (mapc 'find-file (dired-get-marked-files nil arg)))
+
+  (define-key dired-mode-map "F" 'my-dired-find-file)
+#+END_SRC
 *** openwith
 #+BEGIN_SRC emacs-lisp
   (use-package openwith
@@ -746,7 +756,9 @@ Specific module for shell scripting.
   (use-package pdf-tools
     :ensure t
     :config
-    (pdf-tools-install))
+    (pdf-tools-install)
+    (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+    (define-key pdf-view-mode-map (kbd "C-r") 'isearch-backward))
 #+END_SRC
 ** auxtex
 #+BEGIN_SRC emacs-lisp
