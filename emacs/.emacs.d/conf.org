@@ -884,3 +884,7 @@ Enable region narrowing.
 #+BEGIN_SRC emacs-lisp
 (put 'narrow-to-region 'disabled nil)
 #+END_SRC
+* history
+#+BEGIN_SRC emacs-lisp
+  (savehist-mode 1)
+#+END_SRC
