@@ -488,7 +488,7 @@
   (use-package doom-modeline
     :ensure t
     :config
-    (setq doom-modeline-buffer-file-name-style 'file-name)
+    (setq doom-modeline-buffer-file-name-style 'truncate-upto-root)
     :defer t
     :hook (after-init . doom-modeline-init))
 #+END_SRC
@@ -707,6 +707,7 @@
     :init
     (setq projectile-keymap-prefix (kbd "C-c p")
           projectile-completion-system 'ivy
+          projectile-indexing-method 'alien
           projectile-enable-caching nil)
     :config
     (projectile-global-mode))
