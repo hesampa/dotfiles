@@ -889,3 +889,17 @@ Enable region narrowing.
 #+BEGIN_SRC emacs-lisp
   (savehist-mode 1)
 #+END_SRC
+* purpose
+Dedicate windows to only display certain types of buffers.
+#+BEGIN_SRC emacs-lisp
+  (use-package window-purpose
+    :config
+    (add-to-list 'purpose-user-mode-purposes '(python-mode . py))
+    (add-to-list 'purpose-user-mode-purposes '(org-mode . org))
+    (add-to-list 'purpose-user-mode-purposes '(shell-mode . shell))
+    (add-to-list 'purpose-user-regexp-purposes '("Org" . org))
+    (add-to-list 'purpose-user-name-purposes '("Chromium" . chrome))
+    (purpose-compile-user-configuration)
+    (purpose-mode t))
+#+END_SRC
+
