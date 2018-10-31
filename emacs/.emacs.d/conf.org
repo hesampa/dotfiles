@@ -488,7 +488,7 @@
   (use-package doom-modeline
     :ensure t
     :config
-    (setq doom-modeline-buffer-file-name-style 'truncate-upto-root)
+    (setq doom-modeline-buffer-file-name-style 'file-name)
     :defer t
     :hook (after-init . doom-modeline-init))
 #+END_SRC
