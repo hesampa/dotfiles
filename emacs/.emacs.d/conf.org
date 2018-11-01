@@ -159,8 +159,9 @@
     :ensure t)
   (add-hook 'prog-mode-hook #'ws-butler-mode)
 #+END_SRC
-*** hide-show
+*** hideshow
 #+BEGIN_SRC emacs-lisp
+  (setq hs-allow-nesting t)
   (add-hook 'prog-mode-hook 'hs-minor-mode)
   (eval-after-load 'prog-mode
     '(define-key prog-mode-map (kbd "C-<return>") 'hs-toggle-hiding))
