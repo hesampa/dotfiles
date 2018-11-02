@@ -274,7 +274,7 @@
 ** smartparens
 #+BEGIN_SRC emacs-lisp
   (use-package smartparens
-    :ensure t
+    :requires 'smartparens-config
     :config
     (add-hook 'python-mode-hook #'smartparens-mode))
 #+END_SRC
@@ -642,6 +642,11 @@
   ;; disable suspend
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-z"))
+#+END_SRC
+** python
+#+BEGIN_SRC emacs-lisp
+  (define-key python-mode-map (kbd "M-n") 'python-nav-forward-defun)
+  (define-key python-mode-map (kbd "M-p") 'python-nav-backward-defun)
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
