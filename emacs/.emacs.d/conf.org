@@ -645,8 +645,10 @@
 #+END_SRC
 ** python
 #+BEGIN_SRC emacs-lisp
-  (define-key python-mode-map (kbd "M-n") 'python-nav-forward-defun)
-  (define-key python-mode-map (kbd "M-p") 'python-nav-backward-defun)
+  (eval-after-load "python"
+      '(progn
+         (define-key python-mode-map (kbd "M-n") 'python-nav-forward-defun)
+         (define-key python-mode-map (kbd "M-p") 'python-nav-backward-defun)))
 #+END_SRC
 * misc
 #+BEGIN_SRC emacs-lisp
