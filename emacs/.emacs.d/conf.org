@@ -124,10 +124,10 @@
           'font-lock-face 'calendar-iso-week-face))
 #+END_SRC
 * modules
-** customize
+** external files
 #+BEGIN_SRC emacs-lisp
-  (setq custom-file "~/.emacs.d/custom.el")
-  (load custom-file)
+  (load "~/.emacs.d/custom.el")
+  (load "~/.emacs.d/macros.el")
 #+END_SRC
 * minor modes
 ** winner-mode
