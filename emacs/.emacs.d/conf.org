@@ -922,3 +922,18 @@ Dedicate windows to only display certain types of buffers.
     (auto-package-update-at-time "12:00")
     (auto-package-update-maybe))
 #+END_SRC
+* ediff
+EXWM does not like the default option when using =ediff=,
+ therefore we change it per the [[https://github.com/ch11ng/exwm/wiki][wiki]].
+#+BEGIN_SRC emacs-lisp
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+#+END_SRC
+* objed
+#+BEGIN_SRC emacs-lisp
+  (use-package objed
+    :init
+    (objed-mode t)
+    :config
+    (global-set-key (kbd "M-n") 'objed-next-identifier)
+    (global-set-key (kbd "M-p") 'objed-prev-identifier))
+#+END_SRC
