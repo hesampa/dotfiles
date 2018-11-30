@@ -126,7 +126,8 @@
 * modules
 ** external files
 #+BEGIN_SRC emacs-lisp
-  (load "~/.emacs.d/custom.el")
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
   (load "~/.emacs.d/macros.el")
 #+END_SRC
 * minor modes
