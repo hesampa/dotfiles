@@ -19,6 +19,7 @@ PROMPT_DIRTRIM=2
 export PS1="[\t][\h][\w]$ "
 
 # history
+HISTFILE=~/.bash_history
 HISTCONTROL=ignoreboth
 HISTSIZE=9999
 shopt -s histappend
