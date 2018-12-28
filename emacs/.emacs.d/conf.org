@@ -457,7 +457,8 @@
            (dolist (elem (frame-list))	; for all frames
              (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2000)
                  (set-face-attribute 'default elem :height hesam-default-hires-height)
-               (set-face-attribute 'default elem :height hesam-default-lowres-height))))))
+               (set-face-attribute 'default elem :height hesam-default-lowres-height)))))
+     (exwm-randr-refresh))
 
    (add-hook 'exwm-randr-screen-change-hook 'hesam/font-monitors)
 
