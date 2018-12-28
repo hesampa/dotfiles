@@ -797,10 +797,13 @@ We disable beacon-mode since it causes blinking.
 ** setup
 #+BEGIN_SRC emacs-lisp
   (use-package nov
-    :ensure t
     :config
     (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
     (define-key nov-mode-map (kbd "C-s") 'isearch-forward)
+    (define-key nov-mode-map (kbd "C-r") 'isearch-backward)
+    (define-key nov-mode-map (kbd "g") 'keyboard-quit)
+    (define-key nov-mode-map (kbd "s") 'isearch-forward)
+    (define-key nov-mode-map (kbd "r") 'isearch-backward)
     (define-key nov-mode-map (kbd "d") 'define-word-at-point)
     (define-key nov-mode-map (kbd "D") 'define-word)
     (define-key nov-mode-map (kbd "n") 'scroll-up)
@@ -811,16 +814,18 @@ We disable beacon-mode since it causes blinking.
     (define-key nov-mode-map (kbd "N") 'nov-next-document)
     (define-key nov-mode-map (kbd "P") 'nov-previous-document))
 #+END_SRC
-** font
+** rendering
 #+BEGIN_SRC emacs-lisp
-    (defun my-nov-font-setup ()
-      (setq nov-text-width 99999999
-            olivetti-body-width 0.55)
-      (visual-line-mode nil)
-      (olivetti-mode))
+  (defun my-nov-font-setup ()
+    (setq nov-text-width most-positive-fixnum
+          visual-fill-column-center-text t
+          olivetti-body-width 0.6)
+    (visual-line-mode)
+    (visual-fill-column-mode)
+    (variable-pitch-mode)
+    (olivetti-mode))
 
-    (add-hook 'nov-mode-hook 'variable-pitch-mode)
-    (add-hook 'nov-mode-hook 'my-nov-font-setup)
+  (add-hook 'nov-mode-hook 'my-nov-font-setup)
 #+END_SRC
 * define-word
 #+BEGIN_SRC emacs-lisp
