@@ -675,7 +675,7 @@
     (setq projectile-keymap-prefix (kbd "C-c p")
           projectile-completion-system 'ivy
           projectile-indexing-method 'alien
-          projectile-enable-caching nil)
+          projectile-enable-caching t)
     :config
     (projectile-global-mode))
 
