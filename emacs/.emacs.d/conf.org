@@ -612,13 +612,9 @@
   ;;        (define-key python-mode-map (kbd "M-n") 'python-nav-forward-defun)
   ;;        (define-key python-mode-map (kbd "M-p") 'python-nav-backward-defun)))
 #+END_SRC
-* misc
+* server
 #+BEGIN_SRC emacs-lisp
-  ;; emacs server
   (server-start)
-  ;; autosave
-  (setq backup-directory-alist `((".*" . ,"~/.emacs.d/saves")))
-  (setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backup" t)))
 #+END_SRC
 * ivy and friends
 #+BEGIN_SRC emacs-lisp
