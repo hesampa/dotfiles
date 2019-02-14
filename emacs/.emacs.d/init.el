@@ -6,20 +6,17 @@
              '("org" . "http://orgmode.org/elpa/") t)
 
 ;; use-package
-(setq use-package-always-ensure t)
+;; install unless it is installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(dolist (package '(use-package))
-   (unless (package-installed-p package)
-       (package-install package)))
+(setq use-package-always-ensure t)
 
 ;; follow symlinks without prompt
 (setq vc-follow-symlinks t)
-(ido-mode -1)
 
 ;; load emacs settings
+(ido-mode -1)				; ivy-mode instead
 (require 'org)
 (org-babel-load-file
- (expand-file-name "conf.org"
-                   user-emacs-directory))
+ (expand-file-name "conf.org" user-emacs-directory))
