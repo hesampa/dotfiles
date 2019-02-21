@@ -847,9 +847,21 @@ Consider completions other than for binaries.
 #+BEGIN_SRC emacs-lisp
   (setq shell-completion-execonly nil)
 #+END_SRC
-* tramp
+** history
+Persistent bash history across sessions, from [[https://emacs.stackexchange.com/questions/9925/persistent-shell-command-history][stackexchange]].
 #+BEGIN_SRC emacs-lisp
-  (setq tramp-histfile-override nil)	; set histfile to local default
+  (setenv "HISTFILE" "~/.bash_history")
+  (defun turn-on-comint-history (history-file)
+            (setq comint-input-ring-file-name history-file)
+            (comint-read-input-ring 'silent))
+  (add-hook 'shell-mode-hook
+            (lambda ()
+              (turn-on-comint-history (getenv "HISTFILE"))))
+  (add-hook 'kill-buffer-hook #'comint-write-input-ring)
+  (add-hook 'kill-emacs-hook
+            (lambda ()
+              (--each (buffer-list)
+                (with-current-buffer it (comint-write-input-ring)))))
 #+END_SRC
 * narrow
 Enable region narrowing.
