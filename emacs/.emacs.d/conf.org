@@ -451,8 +451,9 @@
 #+BEGIN_SRC emacs-lisp
   (use-package doom-modeline
     :ensure t
-    :config
-    (setq doom-modeline-buffer-file-name-style 'file-name)
+    :init
+    (setq doom-modeline-buffer-file-name-style 'file-name
+          doom-modeline-mu4e nil)
     :defer t
     :hook (after-init . doom-modeline-init))
 #+END_SRC
