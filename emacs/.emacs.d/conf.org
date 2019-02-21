@@ -123,13 +123,6 @@
                     (calendar-absolute-from-gregorian (list month day year)))))
           'font-lock-face 'calendar-iso-week-face))
 #+END_SRC
-* modules
-** external files
-#+BEGIN_SRC emacs-lisp
-  (setq custom-file "~/.emacs.d/custom.el")
-  (load custom-file)
-  (load "~/.emacs.d/macros.el")
-#+END_SRC
 * minor modes
 ** winner-mode
 #+BEGIN_SRC emacs-lisp
@@ -908,4 +901,12 @@ EXWM does not like the default option when using =ediff=,
     :config
     (global-set-key (kbd "M-n") 'objed-next-identifier)
     (global-set-key (kbd "M-p") 'objed-prev-identifier))
+#+END_SRC
+* modules
+** external files
+#+BEGIN_SRC emacs-lisp
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
+  (load "~/.emacs.d/macros.el")
+  (load "~/.emacs.d/local.el")
 #+END_SRC
