@@ -809,8 +809,7 @@ We disable beacon-mode since it causes blinking.
 #+BEGIN_SRC emacs-lisp
   (defun hesam/prose ()
     (interactive)
-    (setq org-hide-leading-stars nil
-          line-spacing 1.1)
+    (setq org-hide-leading-stars nil)
     (face-remap-add-relative 'org-indent nil
                              :inherit '(org-hide fixed-pitch)
                              :height 0.1)
