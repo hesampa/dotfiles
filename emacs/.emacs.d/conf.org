@@ -28,7 +28,7 @@
       (progn
         (require 'exwm-randr)
         (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
-        (add-hook 'exwm-randr-screen-change-hook
+        (add-hook 'exwm-randr-refresh-hook
                   (lambda ()
                     (start-process-shell-command
                      "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
