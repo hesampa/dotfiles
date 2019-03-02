@@ -133,7 +133,7 @@ alias xcopy="xsel -i -b"
 alias xpaste="parcellite"
 
 # tlp
-fullcharge='sudo tlp fullcharge BAT0'
+alias fullcharge='sudo tlp fullcharge BAT0'
 
 # anacoda
 alias aa='source activate'
