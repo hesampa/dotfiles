@@ -362,22 +362,9 @@
              ))))
 
 #+END_SRC
-** dashboard
-#+BEGIN_SRC emacs-lisp
-  (use-package dashboard
-    :ensure t
-    :diminish dashboard-mode
-    :config
-    (setq dashboard-startup-banner "~/dotfiles/emacs/.emacs.d/dashLogo.png")
-    (setq dashboard-items '((agenda . 5)
-			    (projects . 5)
-			    (recents  . 5)))
-    (dashboard-setup-startup-hook))
-#+END_SRC
 ** theme
 #+BEGIN_SRC emacs-lisp
   (use-package doom-themes
-    :ensure t
     :config
     (load-theme 'doom-one t)
     (doom-themes-org-config))
