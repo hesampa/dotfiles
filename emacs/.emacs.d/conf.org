@@ -434,7 +434,7 @@
     :init
     (setq doom-modeline-buffer-file-name-style 'file-name
           doom-modeline-mu4e nil
-          doom-modeline-python-executable nil)
+          doom-modeline-env-version nil)
     :defer t
     :hook (after-init . doom-modeline-init))
 #+END_SRC
