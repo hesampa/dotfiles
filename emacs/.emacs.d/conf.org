@@ -672,11 +672,11 @@
 #+END_SRC
 * undo-tree
 #+BEGIN_SRC emacs-lisp
-  (use-package undo-tree
-    :ensure t
-    :bind ("M-/" . 'undo-tree-redo)
-    :config
-    (global-undo-tree-mode 1))
+  ;; (use-package undo-tree
+  ;;   :ensure t
+  ;;   :bind ("M-/" . 'undo-tree-redo)
+  ;;   :config
+  ;;   (global-undo-tree-mode 1))
 #+END_SRC
 * company
 General completion system.
