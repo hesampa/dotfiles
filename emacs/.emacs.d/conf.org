@@ -601,7 +601,6 @@
 * ivy and friends
 #+BEGIN_SRC emacs-lisp
   (use-package ivy
-    :ensure t
     :init
     (ido-mode 0)
     :bind
@@ -624,8 +623,9 @@
           ivy-use-virtual-buffers t
           ivy-count-format "%d/%d "))
 
-  ;; (use-package ivy-hydra
-  ;;   :ensure t)
+  (use-package ivy-explorer
+    :config
+    (ivy-explorer-mode))
 
   (use-package flx
     :ensure t)
