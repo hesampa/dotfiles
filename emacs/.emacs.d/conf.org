@@ -898,3 +898,11 @@ EXWM does not like the default option when using =ediff=,
   (load "~/.emacs.d/macros.el")
   (load "~/.emacs.d/local.el")
 #+END_SRC
+* flyspell
+** flyspell-correct-popup
+#+BEGIN_SRC emacs-lisp
+  (use-package flyspell-correct-popup
+    :bind ("C-M-;" . flyspell-correct-wrapper)
+    :init
+    (setq flyspell-correct-interface #'flyspell-correct-popup))
+#+END_SRC
