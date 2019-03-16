@@ -1,0 +1,8 @@
+* Emacs
+=mkdir -p ~/.emacs.d; touch ~/.emacs.d/custom.el; touch ~/.emacs.d/macros.el=.
+* vim
+Install vim-plug =curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim; vim +Plug
+* GNU Stow
+Install GNU Stow and link packages, e.g. `stow bash`. Alternatively, run
+`./stowit.sh` to link all packages in this folder (except bin and misc).
+
