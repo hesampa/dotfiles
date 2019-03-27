@@ -1,3 +1,20 @@
+* general
+#+BEGIN_SRC emacs-lisp
+  (use-package general
+    :init
+    (general-auto-unbind-keys))
+#+END_SRC
+** s-SPC
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer leader-super-spc
+    :prefix "s-SPC")
+
+  (leader-super-spc
+    "s" 'shell)
+
+  (leader-super-spc
+    "p" 'macro/projectile)
+#+END_SRC
 * exwm
 ** setup
 #+BEGIN_SRC emacs-lisp
@@ -58,11 +75,9 @@
 #+BEGIN_SRC emacs-lisp
   (exwm-input-set-key (kbd "s-c")
                       (lambda () (interactive) (start-process "" nil "chromium")))
-  (exwm-input-set-key (kbd "s-a")
-                      (lambda () (interactive) (start-process "" nil "alacritty")))
   (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
   (exwm-input-set-key (kbd "s-u") 'ansi-term)
-  (exwm-input-set-key (kbd "s-SPC") 'shell)
+  (push ?\s-\  exwm-input-prefix-keys)
 
   ;; toggle layout
   (defun hesam/keybr-toggle-layout ()
@@ -501,7 +516,8 @@
 #+END_SRC
 ** hooks
 #+BEGIN_SRC emacs-lisp
-  ;; (add-hook 'org-mode-hook #'flyspell-mode)
+  (add-hook 'org-mode-hook #'flyspell-mode)
+  (add-hook 'org-mode-hook #'visual-line-mode)
 #+END_SRC
 ** appearance
 *** org bullets
@@ -895,7 +911,7 @@ EXWM does not like the default option when using =ediff=,
 #+BEGIN_SRC emacs-lisp
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file)
-  (load "~/.emacs.d/macros.el")
+  (load "~/dotfiles/emacs/.emacs.d/macros.el")
   (load "~/.emacs.d/local.el")
 #+END_SRC
 * flyspell
@@ -905,4 +921,8 @@ EXWM does not like the default option when using =ediff=,
     :bind ("C-M-;" . flyspell-correct-wrapper)
     :init
     (setq flyspell-correct-interface #'flyspell-correct-popup))
+#+END_SRC
+* auto-revert
+#+BEGIN_SRC emacs-lisp
+  (auto-revert-mode)
 #+END_SRC
