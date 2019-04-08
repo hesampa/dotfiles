@@ -639,21 +639,15 @@
           ivy-use-virtual-buffers t
           ivy-count-format "%d/%d "))
 
-  (use-package ivy-explorer
-    :config
-    (ivy-explorer-mode))
+  ;; (use-package ivy-explorer
+  ;;   :config
+  ;;   (ivy-explorer-mode))
 
-  (use-package flx
-    :ensure t)
+  (use-package flx)
 
-  (use-package smex
-    :ensure t)
+  (use-package smex)
 
-  (use-package swiper
-    :ensure t
-    :bind
-    ("C-s" . 'swiper)
-    ("C-r" . 'swiper))
+  (use-package swiper)
 
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
@@ -672,8 +666,7 @@
     :init
     (setq projectile-keymap-prefix (kbd "C-c p")
           projectile-completion-system 'ivy
-          projectile-indexing-method 'alien
-          projectile-enable-caching t)
+          projectile-indexing-method 'alien)
     :config
     (projectile-global-mode))
 
@@ -925,4 +918,10 @@ EXWM does not like the default option when using =ediff=,
 * auto-revert
 #+BEGIN_SRC emacs-lisp
   (auto-revert-mode)
+#+END_SRC
+* Regexp
+#+BEGIN_SRC emacs-lisp
+  (general-def
+    "C-s" 'isearch-forward-regexp
+    "C-r" 'isearch-backward-regexp)
 #+END_SRC
