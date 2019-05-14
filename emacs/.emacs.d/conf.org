@@ -436,7 +436,6 @@
   (blink-cursor-mode 0)
   (defun hesam/cursor ()
     (hl-line-mode t))
-
   (add-hook 'prog-mode-hook 'hesam/cursor)
   (add-hook 'shell-mode-hook 'hesam/cursor)
 #+END_SRC
@@ -490,21 +489,26 @@
 ** init
  #+begin_SRC emacs-lisp
    (use-package org
-     :ensure t
-     :bind
-     ("C-c l" . 'org-store-link)
-     ("C-c c" . 'org-capture)
-     ("C-c a" . 'org-agenda)
-     ("C-c b" . 'org-iswitchb)
-     :config
-     (setq org-src-window-setup 'current-window
-           org-log-into-drawer t
-           org-log-reschedule 'time
-           org-log-done 'time
-           org-directory "~/Dropbox/org"
-           org-agenda-files '("~/Dropbox/org/agenda")
-           org-default-notes-file (concat org-directory "/agenda/current.org")))
- #+END_SRC
+     :general
+     ("C-c l" 'org-store-link)
+     ("C-c c" 'org-capture)
+     ("C-c a" 'org-agenda)
+     ("C-c b" 'org-iswitchb)
+     (:keymaps 'org-mode-map
+               "C-c C-w C-r" 'org-refile)
+     :init
+     (setq org-src-window-setup 'current-window)
+     (setq org-directory '("~/Dropbox/org")))
+      #+END_SRC
+** templates
+#+BEGIN_SRC emacs-lisp
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+                                 (file+headline "~/Dropbox/org/agenda/inbox.org" "Tasks")
+                                 "* TODO %i%?")
+                                ("T" "Tickler" entry
+                                 (file+headline "~/Dropbox/org/agenda/tickler.org" "Tickler")
+                                 "* %i%? \n %U")))
+#+END_SRC
 ** langs
 #+BEGIN_SRC emacs-lisp
   (org-babel-do-load-languages
@@ -512,10 +516,29 @@
    '((python . t)
      (shell . t)))
 #+END_SRC
+** agenda
+*** files & keywords
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-files '("~/Dropbox/org/agenda")
+        org-default-notes-file "~/Dropbox/org/notes.org")
+
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+  (setq org-refile-targets '(("~/Dropbox/org/agenda/gtd.org" :maxlevel . 3)
+                             ("~/Dropbox/org/agenda/someday.org" :level . 1)
+                             ("~/Dropbox/org/agenda/tickler.org" :maxlevel . 2)))
+
+#+END_SRC
+*** view
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-start-on-weekday nil
+        org-agenda-skip-deadline-if-done t
+        org-agenda-skip-scheduled-if-done t
+        org-agenda-show-all-dates t)
+#+END_SRC
 ** hooks
 #+BEGIN_SRC emacs-lisp
   (add-hook 'org-mode-hook #'flyspell-mode)
-  (add-hook 'org-mode-hook #'visual-line-mode)
 #+END_SRC
 ** appearance
 *** org bullets
@@ -570,7 +593,6 @@
   ;; (set-face-attribute 'org-level-5 nil
   ;;                     :height 1.1)
 #+END_SRC
-
 * expand region
 #+BEGIN_SRC emacs-lisp
 (use-package expand-region
