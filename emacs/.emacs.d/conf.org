@@ -498,7 +498,6 @@
      ("C-c l" 'org-store-link)
      ("C-c c" 'org-capture)
      ("C-c a" 'org-agenda)
-     ("C-c b" 'org-iswitchb)
      (:keymaps 'org-mode-map
                "C-c C-w C-r" 'org-refile)
      :init
@@ -538,15 +537,21 @@
 #+BEGIN_SRC emacs-lisp
   (defun hesam/inbox ()
        (interactive)
-       (find-file (concat org-directory "/agenda/inbox.org")))
+       (find-file-other-window (concat org-directory "/agenda/inbox.org")))
 
   (defun hesam/gtd ()
        (interactive)
-       (find-file (concat org-directory "/agenda/gtd.org")))
+       (find-file-other-frame (concat org-directory "/agenda/gtd.org")))
 
   (leader-super-agenda
     "i" 'hesam/inbox
-    "g" 'hesam/gtd)
+    "g" 'hesam/gtd
+    "c" 'org-capture
+    "a" 'org-agenda)
+
+  (leader-super-agenda
+    :keymaps 'org-mode-map
+    "r" 'org-refile)
 #+END_SRC
 *** view
 Start with current day and do not show tasks that
