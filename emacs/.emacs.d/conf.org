@@ -4,7 +4,7 @@
     :init
     (general-auto-unbind-keys))
 #+END_SRC
-** s-SPC
+** s-SPC (general)
 #+BEGIN_SRC emacs-lisp
   (general-create-definer leader-super-spc
     :prefix "s-SPC")
@@ -14,6 +14,11 @@
 
   (leader-super-spc
     "p" 'macro/projectile)
+#+END_SRC
+** s-a (agenda)
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer leader-super-agenda
+    :prefix "s-a")
 #+END_SRC
 * exwm
 ** setup
@@ -529,11 +534,19 @@
                              ("~/Dropbox/org/agenda/tickler.org" :maxlevel . 2)))
 
 #+END_SRC
-**** key-binds
+*** key-binds
 #+BEGIN_SRC emacs-lisp
-  (leader-super-spc
-    "i" (find-file (concat org-directory "/agenda/inbox.org"))
-    "g" (find-file (concat org-directory "/agenda/gtd.org")))
+  (defun hesam/inbox ()
+       (interactive)
+       (find-file (concat org-directory "/agenda/inbox.org")))
+
+  (defun hesam/gtd ()
+       (interactive)
+       (find-file (concat org-directory "/agenda/gtd.org")))
+
+  (leader-super-agenda
+    "i" 'hesam/inbox
+    "g" 'hesam/gtd)
 #+END_SRC
 *** view
 Start with current day and do not show tasks that
