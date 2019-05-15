@@ -498,18 +498,18 @@
                "C-c C-w C-r" 'org-refile)
      :init
      (setq org-src-window-setup 'current-window)
-     (setq org-directory '("~/Dropbox/org")))
+     (setq org-directory "~/Dropbox/org"))
       #+END_SRC
 ** templates
 #+BEGIN_SRC emacs-lisp
   (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                 (file+headline "~/Dropbox/org/agenda/inbox.org" "Tasks")
+                                 (file+headline "~/Dropbox/org/agenda/inbox.org" "Inbox")
                                  "* TODO %i%?")
                                 ("T" "Tickler" entry
                                  (file+headline "~/Dropbox/org/agenda/tickler.org" "Tickler")
                                  "* %i%? \n %U")))
 #+END_SRC
-** langs
+** babel
 #+BEGIN_SRC emacs-lisp
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -519,7 +519,7 @@
 ** agenda
 *** files & keywords
 #+BEGIN_SRC emacs-lisp
-  (setq org-agenda-files '("~/Dropbox/org/agenda")
+  (setq org-agenda-files '("~/Dropbox/org/agenda/gtd.org")
         org-default-notes-file "~/Dropbox/org/notes.org")
 
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
@@ -528,6 +528,12 @@
                              ("~/Dropbox/org/agenda/someday.org" :level . 1)
                              ("~/Dropbox/org/agenda/tickler.org" :maxlevel . 2)))
 
+#+END_SRC
+**** key-binds
+#+BEGIN_SRC emacs-lisp
+  (leader-super-spc
+    "i" (find-file (concat org-directory "/agenda/inbox.org"))
+    "g" (find-file (concat org-directory "/agenda/gtd.org")))
 #+END_SRC
 *** view
 Start with current day and do not show tasks that
