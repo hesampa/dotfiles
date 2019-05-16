@@ -83,6 +83,7 @@
   (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
   (exwm-input-set-key (kbd "s-u") 'ansi-term)
   (push ?\s-\  exwm-input-prefix-keys)
+  (push ?\s-a exwm-input-prefix-keys)
 
   ;; toggle layout
   (defun hesam/keybr-toggle-layout ()
