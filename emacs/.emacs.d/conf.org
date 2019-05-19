@@ -499,8 +499,6 @@
      ("C-c l" 'org-store-link)
      ("C-c c" 'org-capture)
      ("C-c a" 'org-agenda)
-     (:keymaps 'org-mode-map
-               "C-c C-w C-r" 'org-refile)
      :init
      (setq org-src-window-setup 'current-window)
      (setq org-directory "~/Dropbox/org"))
@@ -527,28 +525,35 @@
   (setq org-agenda-files '("~/Dropbox/org/agenda/gtd.org")
         org-default-notes-file "~/Dropbox/org/notes.org")
 
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)")))
 
   (setq org-refile-targets '(("~/Dropbox/org/agenda/gtd.org" :maxlevel . 3)
                              ("~/Dropbox/org/agenda/someday.org" :level . 1)
                              ("~/Dropbox/org/agenda/tickler.org" :maxlevel . 2)))
 
+  (setq org-refile-use-outline-path 'file)
+  ;; makes org-refile outline working with helm/ivy
+  (setq org-outline-path-complete-in-steps nil)
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+
+
 #+END_SRC
 *** key-binds
 #+BEGIN_SRC emacs-lisp
   (defun hesam/inbox ()
-       (interactive)
-       (find-file-other-window (concat org-directory "/agenda/inbox.org")))
+    (interactive)
+    (find-file-other-window (concat org-directory "/agenda/inbox.org")))
 
   (defun hesam/gtd ()
-       (interactive)
-       (find-file-other-frame (concat org-directory "/agenda/gtd.org")))
+    (interactive)
+    (find-file-other-frame (concat org-directory "/agenda/gtd.org")))
 
   (leader-super-agenda
     "i" 'hesam/inbox
     "g" 'hesam/gtd
     "c" 'org-capture
-    "a" 'org-agenda)
+    "a" 'org-agenda
+    "x"  'org-archive-subtree)
 
   (leader-super-agenda
     :keymaps 'org-mode-map
@@ -567,15 +572,13 @@ are done.
 From emacs cafe [[https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html][blog]] to get gtd context filtered
 in the dispatcher.
 #+BEGIN_SRC emacs-lisp
-(setq org-agenda-custom-commands
+  (setq org-agenda-custom-commands
         '(("o" "Context office" tags-todo "@office"
            ((org-agenda-overriding-header "Office")
-            (org-agenda-skip-function #'my-org-agenda-skip-all-siblings-but-first))
-           )
+            (org-agenda-skip-function #'my-org-agenda-skip-all-siblings-but-first)))
           ("h" "Context home" tags-todo "@home"
            ((org-agenda-overriding-header "Home")
-            (org-agenda-skip-function #'my-org-agenda-skip-all-siblings-but-first))
-           )))
+            (org-agenda-skip-function #'my-org-agenda-skip-all-siblings-but-first)))))
 
   (defun my-org-agenda-skip-all-siblings-but-first ()
     "Skip all but the first non-done entry."
