@@ -8,10 +8,8 @@ alias sshrc="$EDITOR ~/.ssh/config"
 alias termiterc="$EDITOR ~/dotfiles/termite/.config/termite/config"
 alias tmuxrc="$EDITOR ~/dotfiles/tmux/.tmux.conf"
 alias xinitrc="$EDITOR ~/dotfiles/xinit/.xinitrc"
-alias alarc="$EDITOR ~/dotfiles/alacritty/.config/alacritty/alacritty.yml"
 alias vimrc="$EDITOR ~/dotfiles/vim/.vimrc"
-alias zshenv="$EDITOR ~/dotfiles/zsh/.zshenv"
-alias zshrc="$EDITOR ~/dotfiles/zsh/.zshrc"
+alias emacsrc="$EDITOR ~/dotfiles/emacs/.emacs.d/emacs.org"
 
 # source
 alias salice="source ~/dotfiles/bash/.bash_aliases"
@@ -69,9 +67,8 @@ alias t="tmux -u"
 
 # ls
 alias ls='ls --color=auto'
-alias ll="ls -1"
-alias lla="ll -a"
-alias lsgrep="ls | grep -P"
+alias ll="ls -l --color=auto"
+alias lla="ll -a --color=auto"
 
 # date
 alias week="date +%V"
@@ -134,7 +131,3 @@ alias xpaste="parcellite"
 
 # tlp
 alias fullcharge='sudo tlp fullcharge BAT0'
-
-# anacoda
-alias aa='source activate'
-alias ad='source deactivate'
