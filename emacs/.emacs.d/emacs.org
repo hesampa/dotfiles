@@ -452,7 +452,8 @@
     :init
     (setq doom-modeline-buffer-file-name-style 'file-name
           doom-modeline-mu4e nil
-          doom-modeline-env-version nil)
+          doom-modeline-env-version nil
+          doom-modeline-buffer-encoding nil)
     :defer t
     :hook (after-init . doom-modeline-init))
 #+END_SRC
@@ -818,7 +819,8 @@ We disable beacon-mode since it causes blinking.
 #+END_SRC
 ** midnight mode
 #+BEGIN_SRC emacs-lisp
-  (setq pdf-view-midnight-colors '("#abb2c0" . "#282c34")) ; dark-one theme
+  ;;; set doom-theme colors for pdf-tools, backquote comma to eval arguments
+  (setq pdf-view-midnight-colors `(,(doom-color 'fg) . ,(doom-color 'bg)))
 #+END_SRC
 * nov
 ** setup
