@@ -819,8 +819,8 @@ We disable beacon-mode since it causes blinking.
 #+END_SRC
 ** midnight mode
 #+BEGIN_SRC emacs-lisp
-  ;;; set doom-theme colors for pdf-tools, backquote comma to eval arguments
-  (setq pdf-view-midnight-colors `(,(doom-color 'fg) . ,(doom-color 'bg)))
+  ;;; set doom-theme colors for pdf-tools, the var expects cons
+  (setq pdf-view-midnight-colors (cons (doom-color 'fg) (doom-color 'bg)))
 #+END_SRC
 * nov
 ** setup
