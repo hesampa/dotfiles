@@ -527,6 +527,7 @@
         org-default-notes-file "~/Dropbox/org/notes.org")
 
   (setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)")))
+  (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h))
 
   (setq org-refile-targets '(("~/Dropbox/org/agenda/gtd.org" :maxlevel . 3)
                              ("~/Dropbox/org/agenda/someday.org" :level . 1)
@@ -574,8 +575,8 @@ From emacs cafe [[https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.ht
 in the dispatcher.
 #+BEGIN_SRC emacs-lisp
   (setq org-agenda-custom-commands
-        '(("o" "Context office" tags-todo "@office"
-           ((org-agenda-overriding-header "Office")
+        '(("w" "Context work" tags-todo "@work"
+           ((org-agenda-overriding-header "Work")
             (org-agenda-skip-function #'my-org-agenda-skip-all-siblings-but-first)))
           ("h" "Context home" tags-todo "@home"
            ((org-agenda-overriding-header "Home")
