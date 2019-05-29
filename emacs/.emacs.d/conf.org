@@ -750,8 +750,8 @@ General completion system.
 #+BEGIN_SRC emacs-lisp
   (use-package company
     :ensure t
-    :bind
-    ("C-c n" . 'company-complete)
+    :general
+    ("C-c n" 'company-complete)
     :config
     (add-hook 'after-init-hook 'global-company-mode))
 #+END_SRC
@@ -983,4 +983,11 @@ EXWM does not like the default option when using =ediff=,
   (general-def
     "C-s" 'isearch-forward-regexp
     "C-r" 'isearch-backward-regexp)
+#+END_SRC
+* C
+** style
+#+BEGIN_SRC emacs-lisp
+  (setq c-default-style '((java-mode . "java")
+                          (awk-mode . "awk")
+                          (other . "k&r")))
 #+END_SRC
