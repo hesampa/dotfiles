@@ -1,5 +1,6 @@
 xset s off -dpms # disable screen blanking
-xset r rate 180 60
+# delay/speed
+xset r rate 180 80
 
 # setxkbmap -option altwin:swap_alt_win
 setxkbmap -option altwin:prtsc_rwin
@@ -10,14 +11,6 @@ setxkbmap us
 if [ -f $HOME/.xbindkeysrc ]; then
     xbindkeys -p
 fi
-
-# if command -v dropbox &> /dev/null; then
-#     sleep 30 && /usr/bin/dropbox &
-# fi
-
-# if command -v keepassxc &> /dev/null; then
-#     sleep 30 && /usr/bin/keepassxc &
-# fi
 
 # emacs with EXWM
 exec emacs
