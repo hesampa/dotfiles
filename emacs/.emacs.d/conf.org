@@ -732,6 +732,7 @@ in the dispatcher.
 * disabled
 #+BEGIN_SRC emacs-lisp
   (put 'suspend-frame 'disabled t)
+  (put 'dired-find-alternate-file 'disabled nil)
 #+END_SRC
 * undo-tree
 #+BEGIN_SRC emacs-lisp
