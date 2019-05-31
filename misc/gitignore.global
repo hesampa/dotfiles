@@ -1,6 +1,0 @@
-# macOS stuff
-.DS_Store
-
-# vim stuff
-.netrwhist
-*.swp
