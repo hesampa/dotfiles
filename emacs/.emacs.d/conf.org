@@ -525,14 +525,10 @@
 #+BEGIN_SRC emacs-lisp
   (setq org-agenda-files '("~/Dropbox/org/agenda/gtd.org")
         org-default-notes-file "~/Dropbox/org/notes.org")
-
-  (setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)")))
-  (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h))
-
+  (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h)))
   (setq org-refile-targets '(("~/Dropbox/org/agenda/gtd.org" :maxlevel . 3)
                              ("~/Dropbox/org/agenda/someday.org" :level . 1)
                              ("~/Dropbox/org/agenda/tickler.org" :maxlevel . 2)))
-
   (setq org-refile-use-outline-path 'file)
   ;; makes org-refile outline working with helm/ivy
   (setq org-outline-path-complete-in-steps nil)
