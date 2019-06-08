@@ -947,7 +947,9 @@ EXWM does not like the default option when using =ediff=,
   (setq custom-file "~/.emacs.d/custom.el")
   (load custom-file)
   (load "~/dotfiles/emacs/.emacs.d/macros.el")
-  (load "~/.emacs.d/local.el")
+  (if (file-exists-p "~/.emacs.d/local.el")
+      (progn (load "~/.emacs.d/local.el")))
+
 #+END_SRC
 * flyspell
 ** flyspell-correct-popup
