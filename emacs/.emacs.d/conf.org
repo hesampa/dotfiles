@@ -328,8 +328,8 @@
 #+BEGIN_SRC emacs-lisp
   (use-package doom-themes
     :config
-    (load-theme 'doom-dracula t))
-    ;; (doom-themes-org-config))
+    (load-theme 'doom-dracula t)
+    (doom-themes-org-config))
 #+END_SRC
 ** bar-mode
 #+BEGIN_SRC emacs-lisp
@@ -565,7 +565,7 @@ in the dispatcher.
   (add-hook 'org-mode-hook (lambda ()
      "Beautify Org Checkbox Symbol"
      (push '("[X]" . "✓") prettify-symbols-alist)
-     (push '("[ ]" . "❍") prettify-symbols-alist)
+     (push '("[ ]" . "□") prettify-symbols-alist)
      (prettify-symbols-mode)))
 #+END_SRC
 * expand region
