@@ -324,51 +324,6 @@
   (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
 #+END_SRC
 * appearance
-** pretty-mode
-#+BEGIN_SRC emacs-lisp
-  ;; (use-package pretty-mode
-  ;;   :ensure t
-  ;;   :config
-  ;;   (pretty-deactivate-groups
-  ;;    '(:logic :sets))
-  ;;   (pretty-activate-groups
-  ;;    '(:greek :arithmetic-nary))
-  ;;   (add-hook 'python-mode-hook 'turn-on-pretty-mode))
-
-  ;; ;; (set-fontset-font "fontset-default" '(#x1d4d0 . #x1d4e2) "Symbola")
-  ;; (set-fontset-font "fontset-default" '(#x0192 . #x27fc) "DejaVu Sans Mono")
-  ;; (global-prettify-symbols-mode 1)
-
-  ;; (add-hook
-  ;;  'python-mode-hook
-  ;;  (lambda ()
-  ;;    (mapc (lambda (pair) (push pair prettify-symbols-alist))
-  ;;          '(;; Syntax
-  ;;            ("def" .      #x0192)
-  ;;            ;; ("not" .      #x2757)
-  ;;            ("in" .       #x2208)
-  ;;            ("not in" .   #x2209)
-  ;;            ("return" .   #x27fc)
-  ;;            ;; ("yield" .    #x27fb)
-  ;;            ("for" .      #x2200)
-  ;;            ("sum" .      #x2211)
-  ;;            ;; Base Types
-  ;;            ("int" .      #x2124)
-  ;;            ("float" .    #x211d)
-  ;;            ("str" .      #x1d54a)
-  ;;            ("True" .     #x1d54b)
-  ;;            ("False" .    #x1d53d)
-  ;;            ;; Mypy
-  ;;            ;; ("Dict" .     #x1d507)
-  ;;            ;; ("List" .     #x2112)
-  ;;            ;; ("Tuple" .    #x2a02)
-  ;;            ;; ("Set" .      #x2126)
-  ;;            ;; ("Iterable" . #x1d50a)
-  ;;            ;; ("Any" .      #x2754)
-  ;;            ;; ("Union" .    #x22c3)
-  ;;            ))))
-
-#+END_SRC
 ** theme
 #+BEGIN_SRC emacs-lisp
   (use-package doom-themes
@@ -608,9 +563,8 @@ in the dispatcher.
 #+BEGIN_SRC emacs-lisp
   (add-hook 'org-mode-hook (lambda ()
      "Beautify Org Checkbox Symbol"
-     (push '("[ ]" . "◩") prettify-symbols-alist)
      (push '("[X]" . "✓") prettify-symbols-alist)
-     (push '("[-]" . "◯") prettify-symbols-alist)
+     (push '("[ ]" . "❍") prettify-symbols-alist)
      (prettify-symbols-mode)))
 #+END_SRC
 * expand region
