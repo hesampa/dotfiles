@@ -166,7 +166,9 @@
     :config
     (setq whitespace-line-column 80)
     (setq whitespace-style '(face lines-tail))
-    (add-hook 'prog-mode-hook 'whitespace-mode))
+    (add-hook 'c-mode-hook 'whitespace-mode)
+    (add-hook 'c++-mode-hook 'whitespace-mode)
+    (add-hook 'python-mode-hook 'whitespace-mode))
 #+END_SRC
 *** ws-butler
 #+BEGIN_SRC emacs-lisp
