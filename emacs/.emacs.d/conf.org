@@ -419,7 +419,7 @@
 ** hideshow ellipsis
 #+BEGIN_SRC emacs-lisp
   (set-display-table-slot standard-display-table
-                          'selective-display (string-to-vector " [+]"))
+                          'selective-display (string-to-vector " [+] "))
 
 
 #+END_SRC
