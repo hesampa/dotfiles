@@ -342,7 +342,7 @@
 #+END_SRC
 ** fonts
  #+BEGIN_SRC emacs-lisp
-   (setq hesam-default-hires-height 170)
+   (setq hesam-default-hires-height 180)
    (setq hesam-default-lowres-height 120)
 
    (set-face-attribute 'default nil
@@ -490,12 +490,18 @@
     (interactive)
     (find-file-other-frame (concat org-directory "/agenda/gtd.org")))
 
+
+  (defun hesam/someday ()
+    (interactive)
+    (find-file-other-frame (concat org-directory "/agenda/someday.org")))
+
   (leader-super-agenda
     "i" 'hesam/inbox
     "g" 'hesam/gtd
     "c" 'org-capture
     "a" 'org-agenda
-    "x"  'org-archive-subtree)
+    "x" 'org-archive-subtree
+    "s" 'hesam/someday)
 
   (leader-super-agenda
     :keymaps 'org-mode-map
