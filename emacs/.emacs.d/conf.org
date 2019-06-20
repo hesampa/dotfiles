@@ -342,7 +342,7 @@
 #+END_SRC
 ** fonts
  #+BEGIN_SRC emacs-lisp
-   (setq hesam-default-hires-height 180)
+   (setq hesam-default-hires-height 185)
    (setq hesam-default-lowres-height 120)
 
    (set-face-attribute 'default nil
