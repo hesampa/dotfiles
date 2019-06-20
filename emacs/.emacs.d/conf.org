@@ -183,12 +183,6 @@
   (eval-after-load 'prog-mode
     '(define-key prog-mode-map (kbd "C-<return>") 'hs-toggle-hiding))
 #+END_SRC
-*** before-save-hook
-#+BEGIN_SRC emacs-lisp
-  (use-package py-autopep8
-    :ensure t)
-  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-#+END_SRC
 ** motion
 *** avy
 #+BEGIN_SRC emacs-lisp
@@ -938,4 +932,8 @@ EXWM does not like the default option when using =ediff=,
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
                           (other . "k&r")))
+#+END_SRC
+* py-autopep8
+#+BEGIN_SRC emacs-lisp
+  (use-package py-autopep8)
 #+END_SRC
