@@ -80,6 +80,8 @@
 #+BEGIN_SRC emacs-lisp
   (exwm-input-set-key (kbd "s-c")
                       (lambda () (interactive) (start-process "" nil "chromium")))
+  (exwm-input-set-key (kbd "s-b")
+                      (lambda () (interactive) (start-process "" nil "firefox")))
   (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
   (exwm-input-set-key (kbd "s-u") 'ansi-term)
   (push ?\s-\  exwm-input-prefix-keys)
