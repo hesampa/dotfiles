@@ -457,7 +457,8 @@
 #+BEGIN_SRC emacs-lisp
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((python . t)
+   '((C . t)
+     (python . t)
      (shell . t)))
 #+END_SRC
 ** agenda
