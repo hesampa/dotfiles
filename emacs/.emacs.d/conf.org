@@ -946,6 +946,13 @@ EXWM does not like the default option when using =ediff=,
                           (awk-mode . "awk")
                           (other . "k&r")))
 #+END_SRC
+** hooks
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/c-mode-electric ()
+    (electric-pair-local-mode t)
+    (electric-indent-local-mode t))
+  (add-hook 'c-mode-common-hook #'hesam/c-electric)
+#+END_SRC
 * py-autopep8
 #+BEGIN_SRC emacs-lisp
   (use-package py-autopep8)
