@@ -155,27 +155,26 @@
 *** paredit
 #+BEGIN_SRC emacs-lisp
   (use-package paredit
-    :ensure t
-    :config
+     :config
     (add-hook 'emacs-lisp-mode-hook #'paredit-mode))
 #+END_SRC
 ** prog
 *** highlight
 **** whitespace
+Colorize characters for long lines in python and C.
 #+BEGIN_SRC emacs-lisp
   (use-package whitespace
-    :ensure t
     :config
-    (setq whitespace-line-column 80)
+    (setq whitespace-line-column 81)
     (setq whitespace-style '(face lines-tail))
     (add-hook 'c-mode-hook 'whitespace-mode)
     (add-hook 'c++-mode-hook 'whitespace-mode)
     (add-hook 'python-mode-hook 'whitespace-mode))
 #+END_SRC
 *** ws-butler
+Removes trailing space and tabs from this user modified lines.
 #+BEGIN_SRC emacs-lisp
-  (use-package ws-butler
-    :ensure t)
+  (use-package ws-butler)
   (add-hook 'prog-mode-hook #'ws-butler-mode)
 #+END_SRC
 *** hideshow
@@ -184,6 +183,18 @@
   (add-hook 'prog-mode-hook 'hs-minor-mode)
   (eval-after-load 'prog-mode
     '(define-key prog-mode-map (kbd "C-<return>") 'hs-toggle-hiding))
+#+END_SRC
+*** row/column/line numbers
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'prog-mode-hook 'column-number-mode)
+#+END_SRC
+*** electric mode
+Will add closing brackets and indent code accordingly.
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/electric ()
+    (electric-pair-local-mode t)
+    (electric-indent-local-mode t))
+  (add-hook 'prog-mode-hook #'hesam/electric)
 #+END_SRC
 ** motion
 *** avy
@@ -945,13 +956,6 @@ EXWM does not like the default option when using =ediff=,
   (setq c-default-style '((java-mode . "java")
                           (awk-mode . "awk")
                           (other . "k&r")))
-#+END_SRC
-** hooks
-#+BEGIN_SRC emacs-lisp
-  (defun hesam/c-mode-electric ()
-    (electric-pair-local-mode t)
-    (electric-indent-local-mode t))
-  (add-hook 'c-mode-common-hook #'hesam/c-electric)
 #+END_SRC
 * py-autopep8
 #+BEGIN_SRC emacs-lisp
