@@ -10,10 +10,9 @@
     :prefix "s-SPC")
 
   (leader-super-spc
+    "b" 'hesam/book-folder-selector
+    "p" 'macro/projectile
     "s" 'shell)
-
-  (leader-super-spc
-    "p" 'macro/projectile)
 #+END_SRC
 ** s-a (agenda)
 #+BEGIN_SRC emacs-lisp
@@ -753,7 +752,24 @@ We disable beacon-mode since it causes blinking.
   ;;; set doom-theme colors for pdf-tools, the var expects cons
   (setq pdf-view-midnight-colors (cons (doom-color 'fg) (doom-color 'bg)))
 #+END_SRC
+* books
+** selector
+Choose a book folder in library and open notes.org.
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/book-folder-selector ()
+    (interactive)
+    (hesam/book-open-notes (counsel-find-file "~/Dropbox/lib")))
+
+  (defun hesam/book-open-notes (pth)
+    (delete-other-windows)
+    (dired pth)
+    (find-file-other-window (concat pth "/notes.org"))
+    (windmove-left)
+    (dired-hide-details-mode)
+    (dired-mark-files-regexp "pdf$\\|epub$"))
+#+END_SRC
 * nov
+For reading epubs in beautiful format.
 ** setup
 #+BEGIN_SRC emacs-lisp
   (use-package nov
