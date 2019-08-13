@@ -495,20 +495,25 @@ Will add closing brackets and indent code accordingly.
 
   (defun hesam/gtd ()
     (interactive)
-    (find-file-other-frame (concat org-directory "/agenda/gtd.org")))
+    (find-file-other-window (concat org-directory "/agenda/gtd.org")))
 
+  (defun hesam/tickler ()
+    (interactive)
+    (find-file-other-window (concat org-directory "/agenda/tickler.org")))
 
   (defun hesam/someday ()
     (interactive)
-    (find-file-other-frame (concat org-directory "/agenda/someday.org")))
+    (find-file-other-window (concat org-directory "/agenda/someday.org")))
 
   (leader-super-agenda
-    "i" 'hesam/inbox
-    "g" 'hesam/gtd
-    "c" 'org-capture
     "a" 'org-agenda
-    "x" 'org-archive-subtree
-    "s" 'hesam/someday)
+    "c" 'org-capture
+    "g" 'hesam/gtd
+    "l" 'hesam/ledger
+    "i" 'hesam/inbox
+    "s" 'hesam/someday
+    "t" 'hesam/tickler
+    "x" 'org-archive-subtree)
 
   (leader-super-agenda
     :keymaps 'org-mode-map
@@ -981,4 +986,13 @@ EXWM does not like the default option when using =ediff=,
 ** history
 #+BEGIN_SRC emacs-lisp
   (setq tramp-histfile-override "/tmp/.tramp_history")
+#+END_SRC
+* ledger
+Plain text double-entry bookkeeping.
+#+BEGIN_SRC emacs-lisp
+  (use-package ledger-mode)
+
+  (defun hesam/ledger ()
+    (interactive)
+    (find-file-other-window "~/Dropbox/ledger/ledger.dat"))
 #+END_SRC
