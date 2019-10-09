@@ -920,14 +920,6 @@ Dedicate windows to only display certain types of buffers.
     (purpose-compile-user-configuration)
     (purpose-mode t))
 #+END_SRC
-* auto-package-update
-#+BEGIN_SRC emacs-lisp
-  (use-package auto-package-update
-    :init
-    (setq auto-package-update-prompt-before-update t
-          auto-package-update-delete-old-versions t
-          auto-package-update-hide-results t))
-#+END_SRC
 * ediff
 EXWM does not like the default option when using =ediff=,
  therefore we change it per the [[https://github.com/ch11ng/exwm/wiki][wiki]].
