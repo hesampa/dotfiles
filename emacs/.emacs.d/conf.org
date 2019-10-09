@@ -48,11 +48,11 @@
   (if (string-equal system-name "olivia")
       (progn
         (require 'exwm-randr)
-        (setq exwm-randr-workspace-output-plist '(1 "HDMI1" 2 "eDP1" 3 "DP2"))
+        (setq exwm-randr-workspace-output-plist '(1 "DP2" 2 "eDP1" 3 "DP1"))
         (add-hook 'exwm-randr-refresh-hook
                   (lambda ()
                     (start-process-shell-command
-                     "xrandr" nil "xrandr --output HDMI1 --left-of eDP1 --auto; xrandr --output DP2 --right-of eDP1 --auto")))
+                     "xrandr" nil "xrandr --output DP2 --left-of eDP1 --auto --rate 30; xrandr --output DP1 --right-of eDP1 --auto")))
         (exwm-randr-enable)))
 #+END_SRC
 ** binds
