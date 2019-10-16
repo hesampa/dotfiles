@@ -12,7 +12,8 @@
   (leader-super-spc
     "b" 'hesam/book-folder-selector
     "p" 'macro/projectile
-    "s" 'shell)
+    "s" 'shell
+    "v" 'vterm)
 #+END_SRC
 ** s-a (agenda)
 #+BEGIN_SRC emacs-lisp
@@ -987,4 +988,9 @@ Plain text double-entry bookkeeping.
   (defun hesam/ledger ()
     (interactive)
     (find-file-other-window "~/Dropbox/ledger/ledger.dat"))
+#+END_SRC
+* vterm
+Shell based on libvterm
+#+BEGIN_SRC emacs-lisp
+  (use-package vterm)
 #+END_SRC
