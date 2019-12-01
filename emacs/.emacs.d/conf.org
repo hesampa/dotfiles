@@ -994,3 +994,9 @@ Shell based on libvterm
 #+BEGIN_SRC emacs-lisp
   (use-package vterm)
 #+END_SRC
+* flush-lines
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/remove-blank-lines ()
+    (interactive)
+    (flush-lines "^$"))
+#+END_SRC
