@@ -13,7 +13,8 @@
     "b" 'hesam/book-folder-selector
     "p" 'macro/projectile
     "s" 'shell
-    "v" 'vterm)
+    "v" 'vterm
+    "c" 'hesam/start-calibre)
 #+END_SRC
 ** s-a (agenda)
 #+BEGIN_SRC emacs-lisp
@@ -773,6 +774,13 @@ Choose a book folder in library and open notes.org.
     (windmove-left)
     (dired-hide-details-mode)
     (dired-mark-files-regexp "pdf$\\|epub$"))
+#+END_SRC
+** calibre
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/start-calibre ()
+    (interactive)
+    (start-process "" nil "calibre"))
+
 #+END_SRC
 * nov
 For reading epubs in beautiful format.
