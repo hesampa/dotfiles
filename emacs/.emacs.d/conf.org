@@ -400,14 +400,12 @@ Will add closing brackets and indent code accordingly.
 ** modeline
 #+BEGIN_SRC emacs-lisp
   (use-package doom-modeline
-    :ensure t
-    :init
+    :init (doom-modeline-mode 1)
+    :config
     (setq doom-modeline-buffer-file-name-style 'file-name
           doom-modeline-mu4e nil
           doom-modeline-env-version nil
-          doom-modeline-buffer-encoding nil)
-    :defer t
-    :hook (after-init . doom-modeline-init))
+          doom-modeline-buffer-encoding nil))
 #+END_SRC
 ** display-time
 #+BEGIN_SRC emacs-lisp
