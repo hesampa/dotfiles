@@ -336,10 +336,9 @@ Will add closing brackets and indent code accordingly.
 * appearance
 ** theme
 #+BEGIN_SRC emacs-lisp
-  (use-package doom-themes
+  (use-package modus-vivendi-theme
     :config
-    (load-theme 'doom-dracula t)
-    (doom-themes-org-config))
+    (load-theme 'modus-vivendi t))
 #+END_SRC
 ** bar-mode
 #+BEGIN_SRC emacs-lisp
@@ -754,8 +753,9 @@ We disable beacon-mode since it causes blinking.
 #+END_SRC
 ** midnight mode
 #+BEGIN_SRC emacs-lisp
-  ;;; set doom-theme colors for pdf-tools, the var expects cons
-  (setq pdf-view-midnight-colors (cons (doom-color 'fg) (doom-color 'bg)))
+  ;;; set colors for pdf-tools, the var expects cons
+  ;; (setq pdf-view-midnight-colors (cons (doom-color 'fg) (doom-color 'bg)))
+  (setq pdf-view-midnight-colors (cons "#ffffff" "#000000"))
 #+END_SRC
 * books
 ** selector
