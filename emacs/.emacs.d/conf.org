@@ -555,10 +555,6 @@ in the dispatcher.
   (defun org-current-is-todo ()
     (string= "TODO" (org-get-todo-state)))
 #+END_SRC
-** hooks
-#+BEGIN_SRC emacs-lisp
-  (add-hook 'org-mode-hook #'flyspell-mode)
-#+END_SRC
 ** appearance
 *** org bullets
 #+BEGIN_SRC emacs-lisp
