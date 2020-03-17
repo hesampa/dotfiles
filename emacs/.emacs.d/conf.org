@@ -84,7 +84,8 @@
   (exwm-input-set-key (kbd "s-b")
                       (lambda () (interactive) (start-process "" nil "firefox")))
   (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
-  (exwm-input-set-key (kbd "s-u") 'ansi-term)
+
+  ;; So that General package to be used in EXWM window
   (push ?\s-\  exwm-input-prefix-keys)
   (push ?\s-a exwm-input-prefix-keys)
 #+END_SRC
