@@ -350,7 +350,7 @@ Will add closing brackets and indent code accordingly.
 ** fonts
  #+BEGIN_SRC emacs-lisp
    (setq hesam-default-hires-height 185)
-   (setq hesam-default-lowres-height 120)
+   (setq hesam-default-lowres-height 110)
 
    (set-face-attribute 'default nil
                        :family "Input"
