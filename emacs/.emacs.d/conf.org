@@ -87,16 +87,22 @@
   (exwm-input-set-key (kbd "s-u") 'ansi-term)
   (push ?\s-\  exwm-input-prefix-keys)
   (push ?\s-a exwm-input-prefix-keys)
-
+#+END_SRC
+*** keyboard toggler
+#+BEGIN_SRC emacs-lisp
   ;; toggle layout
   (defun hesam/keybr-toggle-layout ()
     (interactive)
+    (setq current-dir default-directory)
+    (cd "~")
     (shell-command "source ~/Dropbox/keys.sh")
-    (let ((default-directory "~"))
-      (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us")
-      (message nil)				; suppress shell-cmd msg
-      ;; echo new layout in use
-      (message (shell-command-to-string "setxkbmap -query | grep 'layout.*' | tr '\n' ' '"))))
+    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us")
+    (message nil)				; suppress shell-cmd msg
+    ;; echo new layout in use
+    (message (shell-command-to-string "setxkbmap -query | grep 'layout.*' | tr '\n' ' '"))
+    (cd current-dir))
+
+  ;; bind fn to s-t
   (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
 #+END_SRC
 *** simulation keys
