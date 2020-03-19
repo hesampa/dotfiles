@@ -14,7 +14,8 @@
     "p" 'macro/projectile
     "s" 'shell
     "v" 'vterm
-    "c" 'hesam/start-calibre)
+    "c" 'hesam/start-calibre
+    "t" 'hesam/theme-toggle)
 #+END_SRC
 ** s-a (agenda)
 #+BEGIN_SRC emacs-lisp
@@ -343,9 +344,26 @@ Will add closing brackets and indent code accordingly.
 * appearance
 ** theme
 #+BEGIN_SRC emacs-lisp
-  (use-package modus-vivendi-theme
-    :config
-    (load-theme 'modus-vivendi t))
+  (use-package modus-operandi-theme)
+  (use-package modus-vivendi-theme)
+
+  ;;; default theme
+  (load-theme 'modus-vivendi t)
+
+  (defvar light-theme 'modus-operandi)
+  (defvar dark-theme 'modus-vivendi)
+  (defvar global-current-theme light-theme)
+  (defvar global-next-theme dark-theme)
+
+  (defun hesam/switch-theme (current-theme next-theme)
+    (disable-theme current-theme)
+    (enable-theme next-theme)
+    (setq global-current-theme next-theme)
+    (setq global-next-theme current-theme))
+
+  (defun hesam/theme-toggle ()
+    (interactive)
+    (hesam/switch-theme global-current-theme global-next-theme))
 #+END_SRC
 ** bar-mode
 #+BEGIN_SRC emacs-lisp
