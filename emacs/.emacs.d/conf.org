@@ -419,7 +419,6 @@ Will add closing brackets and indent code accordingly.
   (defun hesam/cursor ()
     (hl-line-mode t))
   (add-hook 'prog-mode-hook 'hesam/cursor)
-  (add-hook 'shell-mode-hook 'hesam/cursor)
 #+END_SRC
 ** modeline
 #+BEGIN_SRC emacs-lisp
