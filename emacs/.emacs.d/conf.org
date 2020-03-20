@@ -362,6 +362,10 @@ Will add closing brackets and indent code accordingly.
   (defun hesam/theme-toggle ()
     (interactive)
     (hesam/switch-theme global-current-theme global-next-theme))
+
+  (defun hesam/switch-theme-dark ()
+    (if (eq global-current-theme light-theme)
+        (hesam/theme-toggle)))
 #+END_SRC
 ** bar-mode
 #+BEGIN_SRC emacs-lisp
@@ -1013,4 +1017,10 @@ Shell based on libvterm
   (defun hesam/remove-blank-lines ()
     (interactive)
     (flush-lines "^$"))
+#+END_SRC
+* timers
+** appearance
+#+BEGIN_SRC emacs-lisp
+  (run-at-time "18:00" nil #'hesam/switch-theme-dark)
+  (run-at-time "20:00" nil #'hesam/night)
 #+END_SRC
