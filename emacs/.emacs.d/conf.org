@@ -634,13 +634,6 @@ in the dispatcher.
   (global-unset-key (kbd "C-z"))
   (global-unset-key (kbd "C-x C-z"))
 #+END_SRC
-** python
-#+BEGIN_SRC emacs-lisp
-  ;; (eval-after-load "python"
-  ;;     '(progn
-  ;;        (define-key python-mode-map (kbd "M-n") 'python-nav-forward-defun)
-  ;;        (define-key python-mode-map (kbd "M-p") 'python-nav-backward-defun)))
-#+END_SRC
 * server
 #+BEGIN_SRC emacs-lisp
   (server-start)
