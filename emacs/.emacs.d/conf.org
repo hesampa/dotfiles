@@ -30,67 +30,6 @@
                      "xrandr" nil "xrandr --output DP-2 --left-of eDP-1 --auto --rate 30; xrandr --output DP-1 --right-of eDP-1 --auto")))
         (exwm-randr-enable)))
 #+END_SRC
-** binds
-*** window
-#+BEGIN_SRC emacs-lisp
-(exwm-input-set-key (kbd "s-h") 'windmove-left)
-(exwm-input-set-key (kbd "s-j") 'windmove-down)
-(exwm-input-set-key (kbd "s-k") 'windmove-up)
-(exwm-input-set-key (kbd "s-l") 'windmove-right)
-(exwm-input-set-key (kbd "s-K") 'buf-move-up)
-(exwm-input-set-key (kbd "s-J") 'buf-move-down)
-(exwm-input-set-key (kbd "s-H") 'buf-move-left)
-(exwm-input-set-key (kbd "s-L") 'buf-move-right)
-(exwm-input-set-key (kbd "s-s") 'split-window-horizontally)
-(exwm-input-set-key (kbd "s-v") 'split-window-vertically)
-(exwm-input-set-key (kbd "s-d") 'kill-buffer-and-window)
-(exwm-input-set-key (kbd "s-K") 'buf-move-up)
-(exwm-input-set-key (kbd "s-J") 'buf-move-down)
-(exwm-input-set-key (kbd "s-H") 'buf-move-left)
-(exwm-input-set-key (kbd "s-L") 'buf-move-right)
-(exwm-input-set-key (kbd "s-f") 'exwm-reset)
-#+END_SRC
-*** applications
-#+BEGIN_SRC emacs-lisp
-  (exwm-input-set-key (kbd "s-b")
-                      (lambda () (interactive) (start-process "" nil "firefox")))
-  (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
-
-  ;; So that General package to be used in EXWM window
-  (push ?\s-\  exwm-input-prefix-keys)
-  (push ?\s-a exwm-input-prefix-keys)
-#+END_SRC
-*** keyboard toggler
-#+BEGIN_SRC emacs-lisp
-  ;; toggle layout
-  (defun hesam/keybr-toggle-layout ()
-    (interactive)
-    (setq current-dir default-directory)
-    (cd "~")
-    (shell-command "source ~/Dropbox/keys.sh")
-    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us")
-    (message nil)				; suppress shell-cmd msg
-    ;; echo new layout in use
-    (message (shell-command-to-string "setxkbmap -query | grep 'layout.*' | tr '\n' ' '"))
-    (cd current-dir))
-
-  ;; bind fn to s-t
-  (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
-#+END_SRC
-*** simulation keys
-#+BEGIN_SRC emacs-lisp
-  (setq exwm-input-simulation-keys
-        '(([?\C-b] . [left])
-          ([?\C-f] . [right])
-          ([?\C-p] . [up])
-          ([?\C-n] . [down])
-          ([?\C-a] . [home])
-          ([?\C-e] . [end])
-          ([?\M-v] . [prior])
-          ([?\C-v] . [next])
-          ([?\C-d] . [delete])
-          ([?\C-k] . [S-end delete])))
-#+END_SRC
 * emms
 #+BEGIN_SRC emacs-lisp
   (use-package emms
@@ -621,6 +560,67 @@ in the dispatcher.
 #+BEGIN_SRC emacs-lisp
   (general-create-definer leader-super-agenda
     :prefix "s-a")
+#+END_SRC
+** EXWM
+*** window
+#+BEGIN_SRC emacs-lisp
+(exwm-input-set-key (kbd "s-h") 'windmove-left)
+(exwm-input-set-key (kbd "s-j") 'windmove-down)
+(exwm-input-set-key (kbd "s-k") 'windmove-up)
+(exwm-input-set-key (kbd "s-l") 'windmove-right)
+(exwm-input-set-key (kbd "s-K") 'buf-move-up)
+(exwm-input-set-key (kbd "s-J") 'buf-move-down)
+(exwm-input-set-key (kbd "s-H") 'buf-move-left)
+(exwm-input-set-key (kbd "s-L") 'buf-move-right)
+(exwm-input-set-key (kbd "s-s") 'split-window-horizontally)
+(exwm-input-set-key (kbd "s-v") 'split-window-vertically)
+(exwm-input-set-key (kbd "s-d") 'kill-buffer-and-window)
+(exwm-input-set-key (kbd "s-K") 'buf-move-up)
+(exwm-input-set-key (kbd "s-J") 'buf-move-down)
+(exwm-input-set-key (kbd "s-H") 'buf-move-left)
+(exwm-input-set-key (kbd "s-L") 'buf-move-right)
+(exwm-input-set-key (kbd "s-f") 'exwm-reset)
+#+END_SRC
+*** applications
+#+BEGIN_SRC emacs-lisp
+  (exwm-input-set-key (kbd "s-b")
+                      (lambda () (interactive) (start-process "" nil "firefox")))
+  (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
+
+  ;; So that General package to be used in EXWM window
+  (push ?\s-\  exwm-input-prefix-keys)
+  (push ?\s-a exwm-input-prefix-keys)
+#+END_SRC
+*** keyboard toggler
+#+BEGIN_SRC emacs-lisp
+  ;; toggle layout
+  (defun hesam/keybr-toggle-layout ()
+    (interactive)
+    (setq current-dir default-directory)
+    (cd "~")
+    (shell-command "source ~/Dropbox/keys.sh")
+    (shell-command "(setxkbmap -query | grep -q 'layout:.*us') && setxkbmap se || setxkbmap us")
+    (message nil)				; suppress shell-cmd msg
+    ;; echo new layout in use
+    (message (shell-command-to-string "setxkbmap -query | grep 'layout.*' | tr '\n' ' '"))
+    (cd current-dir))
+
+  ;; bind fn to s-t
+  (exwm-input-set-key (kbd "s-t") 'hesam/keybr-toggle-layout)
+#+END_SRC
+*** simulation keys
+#+BEGIN_SRC emacs-lisp
+  (setq exwm-input-simulation-keys
+        '(([?\C-b] . [left])
+          ([?\C-f] . [right])
+          ([?\C-p] . [up])
+          ([?\C-n] . [down])
+          ([?\C-a] . [home])
+          ([?\C-e] . [end])
+          ([?\M-v] . [prior])
+          ([?\C-v] . [next])
+          ([?\C-d] . [delete])
+          ([?\C-k] . [S-end delete])))
 #+END_SRC
 ** global keys
 #+BEGIN_SRC emacs-lisp
