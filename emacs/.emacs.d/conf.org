@@ -581,12 +581,8 @@ in the dispatcher.
 (exwm-input-set-key (kbd "s-L") 'buf-move-right)
 (exwm-input-set-key (kbd "s-f") 'exwm-reset)
 #+END_SRC
-*** applications
+*** general binds
 #+BEGIN_SRC emacs-lisp
-  (exwm-input-set-key (kbd "s-b")
-                      (lambda () (interactive) (start-process "" nil "firefox")))
-  (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
-
   ;; So that General package to be used in EXWM window
   (push ?\s-\  exwm-input-prefix-keys)
   (push ?\s-a exwm-input-prefix-keys)
@@ -622,7 +618,12 @@ in the dispatcher.
           ([?\C-d] . [delete])
           ([?\C-k] . [S-end delete])))
 #+END_SRC
-** global keys
+*** applications
+#+BEGIN_SRC emacs-lisp
+  (exwm-input-set-key (kbd "s-b") 'hesam/start-browser)
+  (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
+#+END_SRC
+** global
 #+BEGIN_SRC emacs-lisp
   ;; completion suggestions
   (global-set-key (kbd "C-c h") 'hippie-expand)
@@ -876,6 +877,12 @@ For reading epubs in beautiful format.
   (call-process-shell-command "sleep 10; dropbox &" nil 0)
   (call-process-shell-command "unclutter --timeout 1 &" nil 0)
   (call-process-shell-command "flameshot &" nil 0)
+#+END_SRC
+** browser
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/start-browser ()
+    (interactive)
+    (start-process "" nil "firefox"))
 #+END_SRC
 * eyebrowse
 #+BEGIN_SRC emacs-lisp
