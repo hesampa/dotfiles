@@ -540,7 +540,8 @@ in the dispatcher.
     "s" 'shell
     "v" 'vterm
     "c" 'hesam/start-calibre
-    "t" 'hesam/theme-toggle)
+    "t" 'hesam/theme-toggle
+    "]" 'hesam/start-flameshot)
 #+END_SRC
 *** s-a (agenda)
 #+BEGIN_SRC emacs-lisp
@@ -883,6 +884,12 @@ For reading epubs in beautiful format.
   (defun hesam/start-browser ()
     (interactive)
     (start-process "" nil "firefox"))
+#+END_SRC
+** screenshot
+#+BEGIN_SRC emacs-lisp
+  (defun hesam/start-flameshot ()
+    (interactive)
+    (start-process-shell-command "" nil "flameshot gui"))
 #+END_SRC
 * eyebrowse
 #+BEGIN_SRC emacs-lisp
