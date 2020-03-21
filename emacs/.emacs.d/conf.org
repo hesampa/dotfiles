@@ -426,7 +426,7 @@ Will add closing brackets and indent code accordingly.
 
 
 #+END_SRC
-*** key-binds
+*** GTD
 #+BEGIN_SRC emacs-lisp
   (defun hesam/inbox ()
     (interactive)
@@ -443,20 +443,6 @@ Will add closing brackets and indent code accordingly.
   (defun hesam/someday ()
     (interactive)
     (find-file-other-window (concat org-directory "/agenda/someday.org")))
-
-  (leader-super-agenda
-    "a" 'org-agenda
-    "c" 'org-capture
-    "g" 'hesam/gtd
-    "l" 'hesam/ledger
-    "i" 'hesam/inbox
-    "s" 'hesam/someday
-    "t" 'hesam/tickler
-    "x" 'org-archive-subtree)
-
-  (leader-super-agenda
-    :keymaps 'org-mode-map
-    "r" 'org-refile)
 #+END_SRC
 *** view
 Start with current day and do not show tasks that
@@ -560,6 +546,20 @@ in the dispatcher.
 #+BEGIN_SRC emacs-lisp
   (general-create-definer leader-super-agenda
     :prefix "s-a")
+
+  (leader-super-agenda
+    "a" 'org-agenda
+    "c" 'org-capture
+    "g" 'hesam/gtd
+    "l" 'hesam/ledger
+    "i" 'hesam/inbox
+    "s" 'hesam/someday
+    "t" 'hesam/tickler
+    "x" 'org-archive-subtree)
+
+  (leader-super-agenda
+    :keymaps 'org-mode-map
+    "r" 'org-refile)
 #+END_SRC
 ** EXWM
 *** window
