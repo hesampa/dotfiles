@@ -4,24 +4,6 @@
     :init
     (general-auto-unbind-keys))
 #+END_SRC
-** s-SPC (general)
-#+BEGIN_SRC emacs-lisp
-  (general-create-definer leader-super-spc
-    :prefix "s-SPC")
-
-  (leader-super-spc
-    "b" 'hesam/book-folder-selector
-    "p" 'macro/projectile
-    "s" 'shell
-    "v" 'vterm
-    "c" 'hesam/start-calibre
-    "t" 'hesam/theme-toggle)
-#+END_SRC
-** s-a (agenda)
-#+BEGIN_SRC emacs-lisp
-  (general-create-definer leader-super-agenda
-    :prefix "s-a")
-#+END_SRC
 * exwm
 ** setup
 #+BEGIN_SRC emacs-lisp
@@ -621,6 +603,26 @@ in the dispatcher.
     :bind ("s-o" . (lambda () (interactive) (ace-window 4))))
 #+END_SRC
 * bindings
+** general
+*** s-SPC (general)
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer leader-super-spc
+    :prefix "s-SPC")
+
+  (leader-super-spc
+    "b" 'hesam/book-folder-selector
+    "p" 'macro/projectile
+    "s" 'shell
+    "v" 'vterm
+    "c" 'hesam/start-calibre
+    "t" 'hesam/theme-toggle)
+#+END_SRC
+*** s-a (agenda)
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer leader-super-agenda
+    :prefix "s-a")
+#+END_SRC
+** global keys
 #+BEGIN_SRC emacs-lisp
   ;; completion suggestions
   (global-set-key (kbd "C-c h") 'hippie-expand)
