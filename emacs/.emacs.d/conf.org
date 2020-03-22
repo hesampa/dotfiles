@@ -423,8 +423,6 @@ Will add closing brackets and indent code accordingly.
   ;; makes org-refile outline working with helm/ivy
   (setq org-outline-path-complete-in-steps nil)
   (setq org-refile-allow-creating-parent-nodes 'confirm)
-
-
 #+END_SRC
 *** GTD
 #+BEGIN_SRC emacs-lisp
@@ -492,8 +490,6 @@ in the dispatcher.
 *** misc
 #+BEGIN_SRC emacs-lisp
   (setq org-startup-indented t
-        ;; org-bullets-bullet-list '(" ") 
-        org-ellipsis "  "
         org-pretty-entities t
         org-hide-emphasis-markers t
         org-agenda-block-separator ""
