@@ -777,9 +777,11 @@ Choose a book folder in library and open notes.org.
     (delete-other-windows)
     (dired pth)
     (find-file-other-window (concat pth "/notes.org"))
+    (olivetti-mode)
     (windmove-left)
-    (dired-hide-details-mode)
-    (dired-mark-files-regexp "pdf$\\|epub$"))
+    (dired-mark-files-regexp "pdf$\\|epub$")
+    (dired-next-marked-file 1 t)
+    (dired-find-file))
 #+END_SRC
 ** calibre
 #+BEGIN_SRC emacs-lisp
