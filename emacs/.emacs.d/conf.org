@@ -33,9 +33,9 @@
 * emms
 #+BEGIN_SRC emacs-lisp
   (use-package emms
-    :ensure t
     :config
-    (emms-all))
+    (emms-all)
+    (emms-default-players))
 #+END_SRC
 * calendar
 #+BEGIN_SRC emacs-lisp
