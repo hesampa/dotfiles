@@ -558,7 +558,26 @@ in the dispatcher.
     :keymaps 'org-mode-map
     "r" 'org-refile)
 #+END_SRC
-** EXWM
+*** C-c
+**** ivy
+#+BEGIN_SRC emacs-lisp
+  (general-define-key
+   :prefix "C-c"
+   "g" 'counsel-git
+   "j" 'counsel-git-grep
+   "k" 'counsel-ag
+   "l" 'counsel-locate)
+#+END_SRC
+
+*** C-x
+**** ivy
+#+BEGIN_SRC emacs-lisp
+  (general-define-key
+   :prefix "C-x"
+   "C-f" 'counsel-find-file)
+#+END_SRC
+
+* EXWM
 *** window
 #+BEGIN_SRC emacs-lisp
 (exwm-input-set-key (kbd "s-h") 'windmove-left)
@@ -641,14 +660,6 @@ in the dispatcher.
   (use-package ivy
     :init
     (ido-mode 0)
-    :bind
-    ("C-x C-f" . 'counsel-find-file)
-    ("M-x" . 'counsel-M-x)
-    ("C-c g" . 'counsel-git)
-    ("C-c j" . 'counsel-git-grep)
-    ("C-c k" . 'counsel-ag)
-    ("C-x l" . 'counsel-locate)
-    ;; ("C-S-o" . 'counsel-rhythmbox)
     :config
     (ivy-mode 1)
     (counsel-mode 1)
