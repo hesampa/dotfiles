@@ -672,19 +672,14 @@ in the dispatcher.
           ivy-use-virtual-buffers t
           ivy-count-format "%d/%d "))
 
-  ;; (use-package ivy-explorer
-  ;;   :config
-  ;;   (ivy-explorer-mode))
-
-  (use-package flx)
-
-  (use-package smex)
-
-  (use-package swiper)
-
-  (put 'upcase-region 'disabled nil)
-  (put 'downcase-region 'disabled nil)
+  (use-package amx
+    :after ivy
+    :custom
+    (amx-backend 'auto)
+    :config
+    (amx-mode 1))
 #+END_SRC
+
 * which-key
 #+BEGIN_SRC emacs-lisp
   (use-package which-key
@@ -710,8 +705,10 @@ in the dispatcher.
 #+END_SRC
 * disabled
 #+BEGIN_SRC emacs-lisp
-  (put 'suspend-frame 'disabled t)
   (put 'dired-find-alternate-file 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+  (put 'suspend-frame 'disabled t)
+  (put 'upcase-region 'disabled nil)
 #+END_SRC
 * undo-tree
 #+BEGIN_SRC emacs-lisp
