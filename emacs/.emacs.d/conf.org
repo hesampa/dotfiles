@@ -558,6 +558,19 @@ in the dispatcher.
     :keymaps 'org-mode-map
     "r" 'org-refile)
 #+END_SRC
+*** s-r
+Bindings to control screen luminance.
+#+BEGIN_SRC emacs-lisp
+  (general-create-definer leader-super-r
+    :prefix "s-r")
+
+  (leader-super-r
+    "d" 'hesam/day
+    "n" 'hesam/night
+    "s" 'hesam/dark)
+
+#+END_SRC
+
 *** C-c
 **** ivy
 #+BEGIN_SRC emacs-lisp
@@ -602,6 +615,7 @@ in the dispatcher.
   ;; So that General package to be used in EXWM window
   (push ?\s-\  exwm-input-prefix-keys)
   (push ?\s-a exwm-input-prefix-keys)
+  (push ?\s-r exwm-input-prefix-keys)
 #+END_SRC
 *** keyboard toggler
 #+BEGIN_SRC emacs-lisp
@@ -637,7 +651,7 @@ in the dispatcher.
 *** applications
 #+BEGIN_SRC emacs-lisp
   (exwm-input-set-key (kbd "s-b") 'hesam/start-browser)
-  (exwm-input-set-key (kbd "s-r") 'counsel-linux-app)
+  (exwm-input-set-key (kbd "s-w") 'counsel-linux-app)
 #+END_SRC
 ** global
 #+BEGIN_SRC emacs-lisp
