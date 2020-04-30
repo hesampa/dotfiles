@@ -292,6 +292,8 @@ Will add closing brackets and indent code accordingly.
  #+BEGIN_SRC emacs-lisp
    (setq hesam-default-hires-height 185)
    (setq hesam-default-lowres-height 110)
+   (setq hesam-modeline-hires-height (- hesam-default-hires-height 10))
+   (setq hesam-modeline-lowres-height hesam-default-lowres-height)
 
    (set-face-attribute 'default nil
                        :family "Input"
@@ -309,8 +311,15 @@ Will add closing brackets and indent code accordingly.
          (progn
            (dolist (elem (frame-list))	; for all frames
              (if (> (car (last (assq 'geometry (frame-monitor-attributes elem)))) 2000)
-                 (set-face-attribute 'default elem :height hesam-default-hires-height)
-               (set-face-attribute 'default elem :height hesam-default-lowres-height)))))
+                 (progn
+                   (set-face-attribute 'default elem :height hesam-default-hires-height)
+                   (set-face-attribute 'mode-line elem :height hesam-modeline-hires-height)
+                   (set-face-attribute 'mode-line-inactive elem :height hesam-modeline-hires-height))
+               (progn
+                 (set-face-attribute 'default elem :height hesam-default-lowres-height)
+                   (set-face-attribute 'mode-line elem :height hesam-modeline-lowres-height)
+                   (set-face-attribute 'mode-line-inactive elem :height hesam-modeline-lowres-height)
+                 )))))
      (exwm-randr-refresh))
 
    (add-hook 'exwm-randr-screen-change-hook 'hesam/font-monitors)
