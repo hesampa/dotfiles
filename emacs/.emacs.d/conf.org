@@ -345,16 +345,6 @@ Will add closing brackets and indent code accordingly.
     (hl-line-mode t))
   (add-hook 'prog-mode-hook 'hesam/cursor)
 #+END_SRC
-** modeline
-#+BEGIN_SRC emacs-lisp
-  (use-package doom-modeline
-    :init (doom-modeline-mode 1)
-    :config
-    (setq doom-modeline-buffer-file-name-style 'file-name
-          doom-modeline-mu4e nil
-          doom-modeline-env-version nil
-          doom-modeline-buffer-encoding nil))
-#+END_SRC
 ** display-time
 #+BEGIN_SRC emacs-lisp
 (setq display-time-24hr-format t)
