@@ -1021,11 +1021,6 @@ EXWM does not like the default option when using =ediff=,
 #+BEGIN_SRC emacs-lisp
   (use-package py-autopep8)
 #+END_SRC
-* TRAMP
-** history
-#+BEGIN_SRC emacs-lisp
-  (setq tramp-histfile-override "/tmp/.tramp_history")
-#+END_SRC
 * ledger
 Plain text double-entry bookkeeping.
 #+BEGIN_SRC emacs-lisp
